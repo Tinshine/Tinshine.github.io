@@ -421,6 +421,318 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2017/09/09/极化码小结（1）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="There is nothing worth behind it, all that good things are waiting ahead.">
+      <meta itemprop="image" content="/uploads/cat.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/09/极化码小结（1）/" itemprop="url">
+                  极化码小结（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2017-09-09 23:37:03" itemprop="dateCreated datePublished" datetime="2017-09-09T23:37:03+08:00">2017-09-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-06-09 11:28:30" itemprop="dateModified" datetime="2018-06-09T11:28:30+08:00">2018-06-09</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Chapter1-极化码简介"><a href="#Chapter1-极化码简介" class="headerlink" title="Chapter1 极化码简介"></a>Chapter1 极化码简介</h1><p>极化码建立在<strong>信道极化</strong>这一现象之上。信道极化现象来自于<strong>信道合并</strong>与<strong>信道分裂</strong>这两种信道操作。<br></p>
+<h2 id="信道合并"><a href="#信道合并" class="headerlink" title="信道合并"></a><strong>信道合并</strong></h2><p>将$N$个独立信道$W$通过变换使之变为一个具有“集体意义”的信道$W_N$，这里“集体意义”的产生来源于变换，而变换遵循固定的规则。<br>首先，变换是一个递归过程。对于$N(N=2n)$个独立信道$W$，想要将其变为一个具有“集体意义”的信道$W_N$需要进行$n$次信道操作，每次信道操作都将$N$个信道变为$N/2$个小型的信道集合体，这样通过递归$N$–&gt;$N/2$–&gt;……–&gt;$2$–&gt;$1$就可以实现$N$个信道的合并。每次信道操作又分为两个部分：</p>
+<ul>
+<li>对信道输入向量的运算<br>  譬如在B-DMC信道中，输入向量服从等概率分布，我们假设输入向量为$u_1^N$。对它进行的操作为 $s_{2i-1}=u_{2i-1} \oplus u_{2i}$, $s_{2i}=u_{2i}$。</li>
+<li>置换操作<br>  对于上一步得到的向量s<sub>1</sub><sup style="Margin-left:-6px">N</sup>=(s<sub>1</sub>,s<sub>2</sub>,&hellip;,s<sub>N</sub>),通过置换操作使其变为v<sub>1</sub><sup style="Margin-left:-6px">N</sup>=(s<sub>1</sub>,s<sub>3</sub>,&hellip;s<sub>N-1</sub>,s<sub>2</sub>,s<sub>4</sub>,&hellip;,s<sub>N</sub>)。</li>
+</ul>
+<p>&emsp;&emsp;图解如下<br><br><img src="D:/Program Files/Hexo/source/uploads/1.png" alt="置换操作"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2017/07/02/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="There is nothing worth behind it, all that good things are waiting ahead.">
+      <meta itemprop="image" content="/uploads/cat.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/02/test/" itemprop="url">
+                  开启极化码之路
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2017-07-02 14:34:11" itemprop="dateCreated datePublished" datetime="2017-07-02T14:34:11+08:00">2017-07-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-06-09 09:45:36" itemprop="dateModified" datetime="2018-06-09T09:45:36+08:00">2018-06-09</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>极化码（Polar Codes）是一种新型的编码方式，于2008年左右酝酿成型。由于其在二元对称删除信道中能够达到信道容量而受到关注。自出现以来，极化码吸引了许多国内外学者的关注。华为公司递交的入选5G的信道控制方案就是一个基于极化码理论的方案。</p>
+<p>极化码属于信息论的范畴，对于我一个本科生来说其实十分茫然。一次偶然的机会我接触到学院一位进行相关方面研究的老师，于是抱着尝试的心态，我开始了对极化码理论的了解。目前还处于非常基本的认识阶段。</p>
+<p>希望能够将自己学习中收获的知识和理解在博客上记录分享，以后不管是否从事这个领域，回看起来如果有一些成就感，也算值得了。博客上的分享来自个人的总结思考，水平有限，纰漏之处在所难免，望看客斧正。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -470,7 +782,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -478,6 +790,19 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">Tags</span>
+                  
+                </div>
               
             </nav>
           
