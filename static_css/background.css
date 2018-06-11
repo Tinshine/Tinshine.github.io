@@ -1,6 +1,6 @@
 body{
-    background-image: url(/uploads/cat.png);
+    background-image: url(/uploads/img2.png);
     background-attachment: fixed;
     background-position: left;
-    background-size: contain;
+    background-size: cover;
 }
