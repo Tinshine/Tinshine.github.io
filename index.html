@@ -378,7 +378,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-06-12 23:19:37" itemprop="dateModified" datetime="2018-06-12T23:19:37+08:00">2018-06-12</time>
+                <time title="Updated at: 2018-06-13 23:12:45" itemprop="dateModified" datetime="2018-06-13T23:12:45+08:00">2018-06-13</time>
               
             
           </span>
@@ -420,8 +420,7 @@
 <h1 id="emsp-生成矩阵的构造"><a href="#emsp-生成矩阵的构造" class="headerlink" title="&emsp;生成矩阵的构造"></a>&emsp;<strong>生成矩阵的构造</strong></h1><p>&emsp;&emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes for symmetric binary-input memoryless channels》）：</p>
 <p><div align="center"><img width="350" height="400" src="/uploads/polar-2/1.png"></div><br>&emsp;&emsp;请读者留意这是fig.3，也即图三。根据这张图所表现的形式，我们可以归纳出$G_N$的表达式：</p>
 <p><div align="center"><img src="/uploads/polar-2/2.png"></div><br>&emsp;&emsp;疑问：这个表达式如何得到？它与上图有什么对应关系？<br>&emsp;&emsp;我们来看等式右端第一部分:</p>
-<p><div align="center"><img src="/uploads/polar-2/3.png"></div><br>&emsp;&emsp;观察$R_N$前面的表达式，符号“$\otimes$”是一种矩阵运算，称为“克罗内克积”，详细内容读者可自行查阅百科词条：</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%E7%A7%AF" target="_blank" rel="noopener">克罗内克积-维基百科</a>；“$F$”定义为矩阵$\left[\begin{smallmatrix} 1&amp;0 \\ 1&amp;1 \end{smallmatrix}\right]$。F的定义又有何意义呢？我们用一个二维向量来测试一下：</p>
+<p><div align="center"><img src="/uploads/polar-2/3.png"></div><br>&emsp;&emsp;观察$R_N$前面的表达式，符号“$\otimes$”是一种矩阵运算，称为“克罗内克积”，详细内容读者可自行查阅百科词条：<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%E7%A7%AF" target="_blank" rel="noopener">克罗内克积-维基百科</a>；“$F$”定义为矩阵$\left[\begin{smallmatrix} 1&amp;0 \\ 1&amp;1 \end{smallmatrix}\right]$。F的定义又有何意义呢？我们用一个二维向量来测试一下：</p>
 <p><div align="center"><img src="/uploads/polar-2/4.png"></div><br>&emsp;&emsp;可见用输入向量左乘$F$矩阵，就能够实现图中第一步线性变换。当N&gt;2时，由于F只有二维，为了完成运算，我们通过克罗内克积的办法在保持F矩阵属性的同时扩展它的维度，使得它满足我们的运算要求。所以RN前面的运算可以与上图中的线性变换对应起来。<br>&emsp;&emsp;$R_N$对应图中的自身，这个不需要再说。<br>&emsp;&emsp;观察$R_N$的右端，$I_2$为二维的单位矩阵，$G_{N/2}$则体现了递推、迭代的思想。用$I_2$与$G_N$进行克罗内克积，就是为了实现生成矩阵的递推和迭代。这部分对应了图中最右端的操作。因此我们可以看到，Arikan给出的生成矩阵的定义式确实与上图是完全对应的。<br>&emsp;&emsp;接下来，Arikan又给出了另一张图：</p>
 <p><div align="center"><img src="/uploads/polar-2/5.png"></div><br>&emsp;&emsp;这是fig.8，它与fig.3的不同之处在于，fig.3中先进行线性变换再进行置换操作，而fig.8中先进行置换操作再进行线性变换。根绝Arikan的说法，这两个图是全等的。fig.8对应的公式为：</p>
 <p><div align="center"><img src="/uploads/polar-2/6.png"></div><br>&emsp;&emsp;也就是说这两个公式是等价的：</p>
