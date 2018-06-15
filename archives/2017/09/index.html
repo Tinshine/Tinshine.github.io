@@ -12,7 +12,7 @@
 
 
 
-<html class="theme-next mist" lang="zh-Hans">
+<html class="theme-next mist" lang="zh-CN">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -116,7 +116,7 @@
 <meta property="og:url" content="http://tinshine.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
 <meta property="og:description" content="There is nothing worth behind it, all that good things are waiting ahead.">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tinshine&#39;s blog">
 <meta name="twitter:description" content="There is nothing worth behind it, all that good things are waiting ahead.">
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Archiv | Tinshine's blog</title>
+  <title>归档 | Tinshine's blog</title>
   
 
 
@@ -176,7 +176,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -200,7 +200,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -334,7 +334,7 @@
         
           
         
-        Öhm..! Insgesamt 3 Artikel. Bleib dran.
+        嗯..! 目前共计 4 篇日志。 继续努力。
       </span>
       
 
@@ -473,26 +473,41 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
 
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
               
 
               
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">Tags</span>
-                  
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
                 </div>
               
             </nav>
@@ -544,7 +559,7 @@
 
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
 
 
@@ -552,7 +567,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
 
 
 
@@ -790,7 +805,7 @@
     $('.highlight').each(function (i, e) {
       var $wrap = $('<div>').addClass('highlight-wrap')
       $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
           return $(e).text()
         }).toArray().join('\n')
@@ -805,14 +820,14 @@
         var result = document.execCommand('copy')
         document.body.removeChild(ta)
         
-          if(result)$(this).text('Copied')
-          else $(this).text('Copy failed')
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
         
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')
         setTimeout(function () {
-          $b.text('Copy')
+          $b.text('复制')
         }, 300)
       }).append(e)
     })
