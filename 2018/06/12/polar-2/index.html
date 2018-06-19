@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next mist" lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/cat.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/cat.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.3.0',
+    sidebar: {"Sidebar Display, available value (only for Muse | Mist)":null,"display":"post","offset":12,"scrollpercent":false,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+<link href="/static_css/background.css" rel="stylesheet" type="text/css" />
+
+  <meta name="description" content="希望在旧版博客访问该文章？请戳：极化码小结(2)  &amp;emsp;&amp;emsp;极化码的编码问题主要包括两个方面。 &amp;emsp;生成矩阵的构造&amp;emsp;&amp;emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes">
+<meta name="keywords" content="极化码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chapter2 极化码编码">
+<meta property="og:url" content="http://tinshine.github.io/2018/06/12/polar-2/index.html">
+<meta property="og:site_name" content="Tinshine&#39;s blog">
+<meta property="og:description" content="希望在旧版博客访问该文章？请戳：极化码小结(2)  &amp;emsp;&amp;emsp;极化码的编码问题主要包括两个方面。 &amp;emsp;生成矩阵的构造&amp;emsp;&amp;emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/1.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/2.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/3.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/4.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/5.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/6.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/7.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/8.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/9.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/10.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/11.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/12.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/13.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/14.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/15.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/16.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/17.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/18.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/19.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/20.png">
+<meta property="og:updated_time" content="2018-06-19T04:48:00.260Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter2 极化码编码">
+<meta name="twitter:description" content="希望在旧版博客访问该文章？请戳：极化码小结(2)  &amp;emsp;&amp;emsp;极化码的编码问题主要包括两个方面。 &amp;emsp;生成矩阵的构造&amp;emsp;&amp;emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes">
+<meta name="twitter:image" content="http://tinshine.github.io/uploads/polar-2/1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://tinshine.github.io/2018/06/12/polar-2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Chapter2 极化码编码 | Tinshine's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tinshine's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-主页">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />主页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-标签">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-分类">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-时间轴">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />时间轴</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-关于我">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于我</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/Tinsine" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2018/06/12/polar-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="There is nothing worth behind it, all that good things are waiting ahead.">
+      <meta itemprop="image" content="/uploads/head1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Chapter2 极化码编码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-12 22:32:34" itemprop="dateCreated datePublished" datetime="2018-06-12T22:32:34+08:00">2018-06-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-19 12:48:00" itemprop="dateModified" datetime="2018-06-19T12:48:00+08:00">2018-06-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/极化码之路/" itemprop="url" rel="index"><span itemprop="name">极化码之路</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>希望在旧版博客访问该文章？请戳：<a href="https://www.cnblogs.com/Mr-Tiger/p/7501916.html" target="_blank" rel="noopener">极化码小结(2)</a></p>
+<hr>
+<p>&emsp;&emsp;极化码的编码问题主要包括两个方面。</p>
+<h1 id="emsp-生成矩阵的构造"><a href="#emsp-生成矩阵的构造" class="headerlink" title="&emsp;生成矩阵的构造"></a>&emsp;<strong>生成矩阵的构造</strong></h1><p>&emsp;&emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes for symmetric binary-input memoryless channels》）：</p>
+<p><div align="center"><img width="350" height="400" src="/uploads/polar-2/1.png"></div><br>&emsp;&emsp;请读者留意这是fig.3，也即图三。根据这张图所表现的形式，我们可以归纳出$G_N$的表达式：</p>
+<p><div align="center"><img src="/uploads/polar-2/2.png"></div><br>&emsp;&emsp;疑问：这个表达式如何得到？它与上图有什么对应关系？<br><a id="more"></a><br>&emsp;&emsp;我们来看等式右端第一部分:</p>
+<p><div align="center"><img src="/uploads/polar-2/3.png"></div><br>&emsp;&emsp;观察$R_N$前面的表达式，符号“$\otimes$”是一种矩阵运算，称为“克罗内克积”，详细内容读者可自行查阅百科词条：<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%E7%A7%AF" target="_blank" rel="noopener">克罗内克积-维基百科</a>；“$F$”定义为矩阵$\left[\begin{smallmatrix} 1&amp;0 \\ 1&amp;1 \end{smallmatrix}\right]$。F的定义又有何意义呢？我们用一个二维向量来测试一下：</p>
+<p><div align="center"><img src="/uploads/polar-2/4.png"></div><br>&emsp;&emsp;可见用输入向量左乘$F$矩阵，就能够实现图中第一步线性变换。当N&gt;2时，由于F只有二维，为了完成运算，我们通过克罗内克积的办法在保持F矩阵属性的同时扩展它的维度，使得它满足我们的运算要求。所以RN前面的运算可以与上图中的线性变换对应起来。<br>&emsp;&emsp;$R_N$对应图中的自身，这个不需要再说。<br>&emsp;&emsp;观察$R_N$的右端，$I_2$为二维的单位矩阵，$G_{N/2}$则体现了递推、迭代的思想。用$I_2$与$G_N$进行克罗内克积，就是为了实现生成矩阵的递推和迭代。这部分对应了图中最右端的操作。因此我们可以看到，Arikan给出的生成矩阵的定义式确实与上图是完全对应的。<br>&emsp;&emsp;接下来，Arikan又给出了另一张图：</p>
+<p><div align="center"><img src="/uploads/polar-2/5.png"></div><br>&emsp;&emsp;这是fig.8，它与fig.3的不同之处在于，fig.3中先进行线性变换再进行置换操作，而fig.8中先进行置换操作再进行线性变换。根绝Arikan的说法，这两个图是全等的。fig.8对应的公式为：</p>
+<p><div align="center"><img src="/uploads/polar-2/6.png"></div><br>&emsp;&emsp;也就是说这两个公式是等价的：</p>
+<p><div align="center"><img src="/uploads/polar-2/7.png"></div><br>&emsp;&emsp;以下为简单的证明过程：</p>
+<p><div align="center"><img src="/uploads/polar-2/8.png"></div><br>&emsp;&emsp;让我们回到Arikan的论文中，继续看他是如何一步一步得到GN的构造方法的。</p>
+<p><div align="center"><img src="/uploads/polar-2/9.png"></div><br>&emsp;&emsp;上面这个公式第一行我们已经证明过了，从第一行到第二行的理论支持来自于克罗内克积的混合乘积性质：</p>
+<p><div align="center"><img src="/uploads/polar-2/10.png"></div><br>&emsp;&emsp;继续往下看：</p>
+<p><div align="center"><img src="/uploads/polar-2/11.png"></div><br>&emsp;&emsp;这个就很好理解了，直接迭代代入GN/2然后利用混合乘积性质的逆定理就可以得到了。重复上述操作，不断进行迭代，最后我们可以得到这样一个式子：</p>
+<p><div align="center"><img src="/uploads/polar-2/12.png"></div><br>&emsp;&emsp;其中$B_N$用来代替迭代所产生的式子为：</p>
+<p><div align="center"><img src="/uploads/polar-2/13.png"></div><br>&emsp;&emsp;写成递推公式就是：</p>
+<p><div align="center"><img src="/uploads/polar-2/14.png"></div><br>&emsp;&emsp;得到上面的公式之后，我们很容易就可以计算出$B_N$并求出$G_N$。</p>
+<h1 id="emsp-信息位选取"><a href="#emsp-信息位选取" class="headerlink" title="&emsp;信息位选取"></a>&emsp;<strong>信息位选取</strong></h1><p>&emsp;&emsp;通过上一节的介绍，我们了解到了信道的极化现象，并且认识到正是信道极化现象催生了极化码。现在，我们就要利用这个现象来构造极化码。根据我们所设想的，通过在误差率较低的信道（无噪信道）上传输有用信息，在误差较高的信道（纯噪信道）上传输信息量为0的信息，我们可以实现在有噪信道下进行无噪传输。<br>&emsp;&emsp;因此，如何挑选要传输信息的信道成为了至关重要的事情。在表征信道质量的参数向量P中，我们称传输有用信息的位为<strong>信息位</strong>，传输无用信息的位为<strong>冻结位</strong>。问题变成了如何求出这个参数向量$P$。只要我们求得这个$P$，然后对它进行从小到大的排序，再根据码率确定要用到多少信息位，然后从排好序的P中挑选出性能最好的那部分，就可以实现我们的需求。<br>&emsp;&emsp;Arikan的论文中这样说道：“对于一个给定的B-DMC信道$W$，本论文对信道的两个参数感兴趣：一个是信道的对称容量$I(W)$</p>
+<p><div align="center"><img src="/uploads/polar-2/15.png"></div><br>&emsp;&emsp;$I(W)$代表了等概率输入下，通过信道$W$进行可靠信息传输的最大速率。第二个称为巴氏参数$Z(W)$</p>
+<p><div align="center"><img src="/uploads/polar-2/16.png"></div><br>&emsp;&emsp;巴氏参数代表了在一次通过$W$传输0或1时，最大似然判决错误概率的上限。显然，$Z(W)$反映了信道的可靠度 。<br>&emsp;&emsp;显然，我们可以分别将这两个参数作为参数向量$P$，对于$I(W)$，我们选择较大的$I(W)$作为信息位；对于$Z(W)$，我们选择较小的$Z(W)$作为信息位。<br>&emsp;&emsp;早期Arikan提出，当$W$为BEC（二进制删除信道）时，有:</p>
+<p><div align="center"><img src="/uploads/polar-2/17.png"></div><br>&emsp;&emsp;计算二者中的任何一个都可以。Arikan论文中也给出了$Z(W)$的递推计算公式：</p>
+<p><div align="center"><img src="/uploads/polar-2/18.png"></div><br>&emsp;&emsp;其中第二个式子的不等号在W为BEC取等，因此我们可以精确的计算巴氏参数，而且计算复杂度也较低，为$O(NlogN)$。<br>&emsp;&emsp;后来，Arikan给出了当W不为BEC信道时的计算方法，他提出使用“Monte-Carlo算法”（蒙特卡罗法）来近似计算巴氏参数，然而，这个计算的复杂度因输出符号集的指数型爆炸增长而变得不可能。<br>&emsp;&emsp;还有一种方法也用来进行巴氏参数的估计——Density Evolution（密度进化），但是这个方法缺点在于计算复杂度还是较高（为$O(n)$），同时精确度也不好。<br>&emsp;&emsp;目前我们项目组所使用的信息位选择采用的是tal-vardy所提出的算法。这种算法是Tal和Vardy于2013年发表在IEEE上的一篇21页的论文中提出的，论文名为《how to construct polar code》，感兴趣的读者可以去了解一下。如果对英文阅读感觉到不舒服，读者也可以参考《极化码编码与译码算法研究》[王继伟]在2.2.3节中对这种算法的较为详细的中文介绍。<br>&emsp;&emsp;这种算法主要通过信道弱化和信道强化操作，将输出符号集进行合并，使其能够具有符合我们需要长度的输出符号集大小。另外，对于我们经常用到的AWGN信道，通过高斯近似（GA）方法可以在非常低的复杂度下在较高的精确度上选择信息位。这里列出两篇发表在IEEE上的参考论文，有兴趣的读者可以自行去了解，这里不再展开说了。<br>&emsp;&emsp;【1】《Evaluation and Optimization of Gaussian Approximation for Polar Codes》.Jincheng Dai等.(2016.5)<br>&emsp;&emsp;【2】《Construction and Block Error Rate Analysis of Polar Codes Over AWGN Channel Based on Gaussian Approximation》.Daolong Wu等.(2014.7)<br>&emsp;&emsp;除此之外，还有一种办法可以提高极化码的构造效率。那就是使用“design-SNR”。<br>&emsp;&emsp;不管我们采用什么构造办法，信息位的选取总是与SNR的取值密切相关。我们在仿真极化码性能的时候，往往会以SNR为仿真图的横坐标，以BER、FER为纵坐标，观察曲线走向，通过对比曲线判断优劣。但是每一次带入新的SNR值，都要重新构造一个新的参数向量P，然后重新挑选信息位，这种传统的构造方法我们称为“point-by-point（逐点SNR）”。这种重复性的工作无疑增加了极化码构造的时间复杂度。<br>&emsp;&emsp;通过研究，我们发现，对于一个特定的码率，总存在一个完美的SNR，我们称之为“design-SNR（设计SNR）”，我们只需要代入这个SNR进行一次参数向量P的构造，然后将挑选好的信息位储存起来。以后在这个码率下，不论在哪个SNR值下进行仿真，我们只代入预存的这个信息位进行极化码的构造。由于信息位只构造了一次，时间复杂度得到了显著降低。<br>&emsp;&emsp;根据仿真结果显示，在码长和码块较大的情况下，design-SNR与point-by-point法契合的非常好，如下图：</p>
+<p><div align="center"><img src="/uploads/polar-2/19.png"></div></p>
+<p><div align="center"><img src="/uploads/polar-2/20.png"></div><br>&emsp;&emsp;得到了生成矩阵，又构造了信息位。接下来只需要进行简单的矩阵操作，再叠加上噪声，就可以实现极化码的编码。</p>
+<hr>
+<p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
+<hr>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/极化码/" rel="tag"># 极化码</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/09/polar-1/" rel="next" title="Chapter1 极化码简介">
+                <i class="fa fa-chevron-left"></i> Chapter1 极化码简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/15/polar-3/" rel="prev" title="Chapter3 MATLAB仿真——系统参数">
+                Chapter3 MATLAB仿真——系统参数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/head1.png"
+                alt="Tinshine" />
+            
+              <p class="site-author-name" itemprop="name">Tinshine</p>
+              <p class="site-description motion-element" itemprop="description">There is nothing worth behind it, all that good things are waiting ahead.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-生成矩阵的构造"><span class="nav-number">1.</span> <span class="nav-text"> 生成矩阵的构造</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-信息位选取"><span class="nav-number">2.</span> <span class="nav-text"> 信息位选取</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tinshine</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.3.0"></script>
+
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</body>
+</html>

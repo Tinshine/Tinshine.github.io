@@ -109,46 +109,34 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="希望在旧版博客访问该文章？请戳：极化码小结(2)  &amp;emsp;&amp;emsp;极化码的编码问题主要包括两个方面。 &amp;emsp;生成矩阵的构造&amp;emsp;&amp;emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes">
-<meta name="keywords" content="极化码">
+  <meta name="description" content="希望在旧版博客访问该文章？请戳:极化码的matlab仿真(2)  &amp;emsp;&amp;emsp;极化码的编码重点在于生成矩阵的产生和信息位的选取。 生成矩阵&amp;emsp;&amp;emsp;下图是Arikan论文中的编码示意图，好像挺复杂，不过看不懂也没关系。我们来看一下编码过程中都做了哪些事。">
+<meta name="keywords" content="极化码,MATLAB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chapter2 极化码编码">
-<meta property="og:url" content="http://tinshine.github.io/2017/09/11/polar-2/index.html">
+<meta property="og:title" content="Chapter4 MATLAB仿真——编码部分">
+<meta property="og:url" content="http://tinshine.github.io/2018/06/18/polar-4/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="希望在旧版博客访问该文章？请戳：极化码小结(2)  &amp;emsp;&amp;emsp;极化码的编码问题主要包括两个方面。 &amp;emsp;生成矩阵的构造&amp;emsp;&amp;emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes">
+<meta property="og:description" content="希望在旧版博客访问该文章？请戳:极化码的matlab仿真(2)  &amp;emsp;&amp;emsp;极化码的编码重点在于生成矩阵的产生和信息位的选取。 生成矩阵&amp;emsp;&amp;emsp;下图是Arikan论文中的编码示意图，好像挺复杂，不过看不懂也没关系。我们来看一下编码过程中都做了哪些事。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/1.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/2.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/3.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/4.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/5.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/6.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/7.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/8.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/9.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/10.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/11.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/12.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/13.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/14.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/15.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/16.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/17.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/18.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/19.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/polar-2/20.png">
-<meta property="og:updated_time" content="2018-06-15T08:08:41.915Z">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/1.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/2.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/3.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/4.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/5.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/6.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/7.png">
+<meta property="og:image" content="http://tinshine.github.io/uploads/polar-4/8.png">
+<meta property="og:updated_time" content="2018-06-19T04:47:34.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter2 极化码编码">
-<meta name="twitter:description" content="希望在旧版博客访问该文章？请戳：极化码小结(2)  &amp;emsp;&amp;emsp;极化码的编码问题主要包括两个方面。 &amp;emsp;生成矩阵的构造&amp;emsp;&amp;emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes">
-<meta name="twitter:image" content="http://tinshine.github.io/uploads/polar-2/1.png">
+<meta name="twitter:title" content="Chapter4 MATLAB仿真——编码部分">
+<meta name="twitter:description" content="希望在旧版博客访问该文章？请戳:极化码的matlab仿真(2)  &amp;emsp;&amp;emsp;极化码的编码重点在于生成矩阵的产生和信息位的选取。 生成矩阵&amp;emsp;&amp;emsp;下图是Arikan论文中的编码示意图，好像挺复杂，不过看不懂也没关系。我们来看一下编码过程中都做了哪些事。">
+<meta name="twitter:image" content="http://tinshine.github.io/uploads/polar-4/1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2017/09/11/polar-2/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2018/06/18/polar-4/"/>
 
 
 
@@ -158,7 +146,7 @@
   };
 </script>
 
-  <title>Chapter2 极化码编码 | Tinshine's blog</title>
+  <title>Chapter4 MATLAB仿真——编码部分 | Tinshine's blog</title>
   
 
 
@@ -336,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2017/09/11/polar-2/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2018/06/18/polar-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -353,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chapter2 极化码编码
+          <h1 class="post-title" itemprop="name headline">Chapter4 MATLAB仿真——编码部分
               
             
           </h1>
@@ -378,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2017-09-11 22:17:00" itemprop="dateCreated datePublished" datetime="2017-09-11T22:17:00+08:00">2017-09-11</time>
+              <time title="创建时间：2018-06-18 17:57:17" itemprop="dateCreated datePublished" datetime="2018-06-18T17:57:17+08:00">2018-06-18</time>
             
 
             
@@ -395,7 +383,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-15 16:08:41" itemprop="dateModified" datetime="2018-06-15T16:08:41+08:00">2018-06-15</time>
+                <time title="修改时间：2018-06-19 12:47:34" itemprop="dateModified" datetime="2018-06-19T12:47:34+08:00">2018-06-19</time>
               
             
           </span>
@@ -447,31 +435,24 @@
 
       
         <hr>
-<p>希望在旧版博客访问该文章？请戳：<a href="https://www.cnblogs.com/Mr-Tiger/p/7501916.html" target="_blank" rel="noopener">极化码小结(2)</a></p>
+<p>希望在旧版博客访问该文章？请戳:<a href="https://www.cnblogs.com/Mr-Tiger/p/7120590.html" target="_blank" rel="noopener">极化码的matlab仿真(2)</a></p>
 <hr>
-<p>&emsp;&emsp;极化码的编码问题主要包括两个方面。</p>
-<h1 id="emsp-生成矩阵的构造"><a href="#emsp-生成矩阵的构造" class="headerlink" title="&emsp;生成矩阵的构造"></a>&emsp;<strong>生成矩阵的构造</strong></h1><p>&emsp;&emsp;先来看信道合并示意图，下图截自Arikan论文（以后不再解释，Arikan论文 特指论文《Channel polarization: A method for constructing capacity-achieving codes for symmetric binary-input memoryless channels》）：</p>
-<p><div align="center"><img width="350" height="400" src="/uploads/polar-2/1.png"></div><br>&emsp;&emsp;请读者留意这是fig.3，也即图三。根据这张图所表现的形式，我们可以归纳出$G_N$的表达式：</p>
-<p><div align="center"><img src="/uploads/polar-2/2.png"></div><br>&emsp;&emsp;疑问：这个表达式如何得到？它与上图有什么对应关系？<br><a id="more"></a><br>&emsp;&emsp;我们来看等式右端第一部分:</p>
-<p><div align="center"><img src="/uploads/polar-2/3.png"></div><br>&emsp;&emsp;观察$R_N$前面的表达式，符号“$\otimes$”是一种矩阵运算，称为“克罗内克积”，详细内容读者可自行查阅百科词条：<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%E7%A7%AF" target="_blank" rel="noopener">克罗内克积-维基百科</a>；“$F$”定义为矩阵$\left[\begin{smallmatrix} 1&amp;0 \\ 1&amp;1 \end{smallmatrix}\right]$。F的定义又有何意义呢？我们用一个二维向量来测试一下：</p>
-<p><div align="center"><img src="/uploads/polar-2/4.png"></div><br>&emsp;&emsp;可见用输入向量左乘$F$矩阵，就能够实现图中第一步线性变换。当N&gt;2时，由于F只有二维，为了完成运算，我们通过克罗内克积的办法在保持F矩阵属性的同时扩展它的维度，使得它满足我们的运算要求。所以RN前面的运算可以与上图中的线性变换对应起来。<br>&emsp;&emsp;$R_N$对应图中的自身，这个不需要再说。<br>&emsp;&emsp;观察$R_N$的右端，$I_2$为二维的单位矩阵，$G_{N/2}$则体现了递推、迭代的思想。用$I_2$与$G_N$进行克罗内克积，就是为了实现生成矩阵的递推和迭代。这部分对应了图中最右端的操作。因此我们可以看到，Arikan给出的生成矩阵的定义式确实与上图是完全对应的。<br>&emsp;&emsp;接下来，Arikan又给出了另一张图：</p>
-<p><div align="center"><img src="/uploads/polar-2/5.png"></div><br>&emsp;&emsp;这是fig.8，它与fig.3的不同之处在于，fig.3中先进行线性变换再进行置换操作，而fig.8中先进行置换操作再进行线性变换。根绝Arikan的说法，这两个图是全等的。fig.8对应的公式为：</p>
-<p><div align="center"><img src="/uploads/polar-2/6.png"></div><br>&emsp;&emsp;也就是说这两个公式是等价的：</p>
-<p><div align="center"><img src="/uploads/polar-2/7.png"></div><br>&emsp;&emsp;以下为简单的证明过程：</p>
-<p><div align="center"><img src="/uploads/polar-2/8.png"></div><br>&emsp;&emsp;让我们回到Arikan的论文中，继续看他是如何一步一步得到GN的构造方法的。</p>
-<p><div align="center"><img src="/uploads/polar-2/9.png"></div><br>&emsp;&emsp;上面这个公式第一行我们已经证明过了，从第一行到第二行的理论支持来自于克罗内克积的混合乘积性质：</p>
-<p><div align="center"><img src="/uploads/polar-2/10.png"></div><br>&emsp;&emsp;继续往下看：</p>
-<p><div align="center"><img src="/uploads/polar-2/11.png"></div><br>&emsp;&emsp;这个就很好理解了，直接迭代代入GN/2然后利用混合乘积性质的逆定理就可以得到了。重复上述操作，不断进行迭代，最后我们可以得到这样一个式子：</p>
-<p><div align="center"><img src="/uploads/polar-2/12.png"></div><br>&emsp;&emsp;其中$B_N$用来代替迭代所产生的式子为：</p>
-<p><div align="center"><img src="/uploads/polar-2/13.png"></div><br>&emsp;&emsp;写成递推公式就是：</p>
-<p><div align="center"><img src="/uploads/polar-2/14.png"></div><br>&emsp;&emsp;得到上面的公式之后，我们很容易就可以计算出$B_N$并求出$G_N$。</p>
-<h1 id="emsp-信息位选取"><a href="#emsp-信息位选取" class="headerlink" title="&emsp;信息位选取"></a>&emsp;<strong>信息位选取</strong></h1><p>&emsp;&emsp;通过上一节的介绍，我们了解到了信道的极化现象，并且认识到正是信道极化现象催生了极化码。现在，我们就要利用这个现象来构造极化码。根据我们所设想的，通过在误差率较低的信道（无噪信道）上传输有用信息，在误差较高的信道（纯噪信道）上传输信息量为0的信息，我们可以实现在有噪信道下进行无噪传输。<br>&emsp;&emsp;因此，如何挑选要传输信息的信道成为了至关重要的事情。在表征信道质量的参数向量P中，我们称传输有用信息的位为<strong>信息位</strong>，传输无用信息的位为<strong>冻结位</strong>。问题变成了如何求出这个参数向量$P$。只要我们求得这个$P$，然后对它进行从小到大的排序，再根据码率确定要用到多少信息位，然后从排好序的P中挑选出性能最好的那部分，就可以实现我们的需求。<br>&emsp;&emsp;Arikan的论文中这样说道：“对于一个给定的B-DMC信道$W$，本论文对信道的两个参数感兴趣：一个是信道的对称容量$I(W)$</p>
-<p><div align="center"><img src="/uploads/polar-2/15.png"></div><br>&emsp;&emsp;$I(W)$代表了等概率输入下，通过信道$W$进行可靠信息传输的最大速率。第二个称为巴氏参数$Z(W)$</p>
-<p><div align="center"><img src="/uploads/polar-2/16.png"></div><br>&emsp;&emsp;巴氏参数代表了在一次通过$W$传输0或1时，最大似然判决错误概率的上限。显然，$Z(W)$反映了信道的可靠度 。<br>&emsp;&emsp;显然，我们可以分别将这两个参数作为参数向量$P$，对于$I(W)$，我们选择较大的$I(W)$作为信息位；对于$Z(W)$，我们选择较小的$Z(W)$作为信息位。<br>&emsp;&emsp;早期Arikan提出，当$W$为BEC（二进制删除信道）时，有:</p>
-<p><div align="center"><img src="/uploads/polar-2/17.png"></div><br>&emsp;&emsp;计算二者中的任何一个都可以。Arikan论文中也给出了$Z(W)$的递推计算公式：</p>
-<p><div align="center"><img src="/uploads/polar-2/18.png"></div><br>&emsp;&emsp;其中第二个式子的不等号在W为BEC取等，因此我们可以精确的计算巴氏参数，而且计算复杂度也较低，为$O(NlogN)$。<br>&emsp;&emsp;后来，Arikan给出了当W不为BEC信道时的计算方法，他提出使用“Monte-Carlo算法”（蒙特卡罗法）来近似计算巴氏参数，然而，这个计算的复杂度因输出符号集的指数型爆炸增长而变得不可能。<br>&emsp;&emsp;还有一种方法也用来进行巴氏参数的估计——Density Evolution（密度进化），但是这个方法缺点在于计算复杂度还是较高（为$O(n)$），同时精确度也不好。<br>&emsp;&emsp;目前我们项目组所使用的信息位选择采用的是tal-vardy所提出的算法。这种算法是Tal和Vardy于2013年发表在IEEE上的一篇21页的论文中提出的，论文名为《how to construct polar code》，感兴趣的读者可以去了解一下。如果对英文阅读感觉到不舒服，读者也可以参考《极化码编码与译码算法研究》[王继伟]在2.2.3节中对这种算法的较为详细的中文介绍。<br>&emsp;&emsp;这种算法主要通过信道弱化和信道强化操作，将输出符号集进行合并，使其能够具有符合我们需要长度的输出符号集大小。另外，对于我们经常用到的AWGN信道，通过高斯近似（GA）方法可以在非常低的复杂度下在较高的精确度上选择信息位。这里列出两篇发表在IEEE上的参考论文，有兴趣的读者可以自行去了解，这里不再展开说了。<br>&emsp;&emsp;【1】《Evaluation and Optimization of Gaussian Approximation for Polar Codes》.Jincheng Dai等.(2016.5)<br>&emsp;&emsp;【2】《Construction and Block Error Rate Analysis of Polar Codes Over AWGN Channel Based on Gaussian Approximation》.Daolong Wu等.(2014.7)<br>&emsp;&emsp;除此之外，还有一种办法可以提高极化码的构造效率。那就是使用“design-SNR”。<br>&emsp;&emsp;不管我们采用什么构造办法，信息位的选取总是与SNR的取值密切相关。我们在仿真极化码性能的时候，往往会以SNR为仿真图的横坐标，以BER、FER为纵坐标，观察曲线走向，通过对比曲线判断优劣。但是每一次带入新的SNR值，都要重新构造一个新的参数向量P，然后重新挑选信息位，这种传统的构造方法我们称为“point-by-point（逐点SNR）”。这种重复性的工作无疑增加了极化码构造的时间复杂度。<br>&emsp;&emsp;通过研究，我们发现，对于一个特定的码率，总存在一个完美的SNR，我们称之为“design-SNR（设计SNR）”，我们只需要代入这个SNR进行一次参数向量P的构造，然后将挑选好的信息位储存起来。以后在这个码率下，不论在哪个SNR值下进行仿真，我们只代入预存的这个信息位进行极化码的构造。由于信息位只构造了一次，时间复杂度得到了显著降低。<br>&emsp;&emsp;根据仿真结果显示，在码长和码块较大的情况下，design-SNR与point-by-point法契合的非常好，如下图：</p>
-<p><div align="center"><img src="/uploads/polar-2/19.png"></div></p>
-<p><div align="center"><img src="/uploads/polar-2/20.png"></div><br>&emsp;&emsp;得到了生成矩阵，又构造了信息位。接下来只需要进行简单的矩阵操作，再叠加上噪声，就可以实现极化码的编码。</p>
+<p>&emsp;&emsp;极化码的编码重点在于生成矩阵的产生和信息位的选取。</p>
+<h1 id="生成矩阵"><a href="#生成矩阵" class="headerlink" title="生成矩阵"></a>生成矩阵</h1><p>&emsp;&emsp;下图是Arikan论文中的编码示意图，好像挺复杂，不过看不懂也没关系。我们来看一下编码过程中都做了哪些事。</p>
+<p><div align="center"><img width="350" height="400" src="/uploads/polar-4/1.png"></div><br><a id="more"></a><br>&emsp;&emsp;首先是向量元素的翻转，通过翻转矩阵$R_N$来实现。然后是信道的联合和信道的分裂。论文中将这个翻转过程简化为矩阵运算，这就为我们进行程序仿真提供了方便：</p>
+<p><div align="center"><img src="/uploads/polar-4/2.png"></div><br>&emsp;&emsp;其中:</p>
+<p><div align="center"><img src="/uploads/polar-4/3.png"></div><br>&emsp;&emsp;$B_N$为排序矩阵，以N=8为例来看它的作用：</p>
+<p><div align="center"><img src="/uploads/polar-4/4.png"></div><br>&emsp;&emsp;转化过程为：<em>将向量下标减一后，转化为二进制数</em>——<em>将得到的二进制数反序排列</em>——<em>将反序后的二进制数转化为十进制数，加一</em><br>&emsp;&emsp;例：</p>
+<p><div align="center"><img src="/uploads/polar-4/5.png"></div><br>&emsp;&emsp;我们通过$B_N$的递推式可以求得$B_N$，再将其与$F$的$n$次克劳尼克积相乘，就能够得到生成矩阵。<br>&emsp;&emsp;这样说你明白了吗？什么？没有？？？<br>&emsp;&emsp;不错，说明你是个正常人。实际编码的时候，如果真的在matlab中将上述过程模拟一遍来求生成矩阵的话，是非常耗时耗力的。我们还有另外一条路可以走——找规律。</p>
+<p><div align="center"><img src="/uploads/polar-4/6.png"></div><br>&emsp;&emsp;上式为$G_N$的原始求解方法，其中$I$为单位矩阵，$F$定义为$\left[\begin{smallmatrix} 1&amp;0 \\ 1&amp;1 \end{smallmatrix}\right]$。$R_N$为翻转矩阵，对于，有：$A_N=(I_{N/2} \otimes F) \times R_N$，有：<br>&emsp;&emsp;N=4：</p>
+<p><div align="center"><img src="/uploads/polar-4/7.png"></div><br>&emsp;&emsp;N=8：</p>
+<p><div align="center"><img src="/uploads/polar-4/8.png"></div><br>&emsp;&emsp;可以发现$A$的元素排列十分有规律。前$N/2$列元素总是奇偶成对出现“1”，后$N/2$元素仅出现在偶数位，且与同处在一行的前一个“1”保持固定距离。根据此规律编写程序如下：<br><figure class="highlight matlab"><figcaption><span>规律</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : N/<span class="number">2</span>             </span><br><span class="line">    A(<span class="number">2</span> * <span class="built_in">i</span> - <span class="number">1</span>, <span class="built_in">i</span>) = <span class="number">1</span>;</span><br><span class="line">    A(<span class="number">2</span> * <span class="built_in">i</span>, <span class="built_in">i</span>) = <span class="number">1</span>;</span><br><span class="line">    A(<span class="number">2</span> * <span class="built_in">i</span>, N / <span class="number">2</span> + <span class="built_in">i</span>) = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p>递归部分：<br><figure class="highlight matlab"><figcaption><span>递归调用</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">G = A * kron(<span class="built_in">eye</span>(<span class="number">2</span>),Gpre);    <span class="comment">%Gpre即上一层递归所得生成矩阵</span></span><br><span class="line">Gpre = G;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight matlab"><figcaption><span>封装成函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GN</span> = <span class="title">G</span><span class="params">(n)</span></span></span><br><span class="line">    N = <span class="number">2</span> ^ n;   </span><br><span class="line">    Gpre = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:n　　　　　　　<span class="comment">%每一层递归都相当于计算一个新的生成矩阵</span></span><br><span class="line">        Ni = <span class="number">2</span> ^ <span class="built_in">i</span>;　　　　<span class="comment">%这个新的生成矩阵的维度为 Ni/2</span></span><br><span class="line">        G = <span class="built_in">zeros</span>(Ni);</span><br><span class="line">        <span class="comment">%Fn = zeros(Ni);</span></span><br><span class="line">        A = <span class="built_in">zeros</span>(Ni);</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span> : Ni / <span class="number">2</span></span><br><span class="line">            A(<span class="number">2</span> * <span class="built_in">j</span> - <span class="number">1</span> , <span class="built_in">j</span>) = <span class="number">1</span>;</span><br><span class="line">            A(<span class="number">2</span> * <span class="built_in">j</span> , <span class="built_in">j</span>) = <span class="number">1</span>;</span><br><span class="line">            A(<span class="number">2</span> * <span class="built_in">j</span> , Ni / <span class="number">2</span> + <span class="built_in">j</span>) = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        G = A*kron(<span class="built_in">eye</span>(<span class="number">2</span>),Gpre);</span><br><span class="line">        Gpre = G;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    GN = G;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h1 id="挑选信息位"><a href="#挑选信息位" class="headerlink" title="挑选信息位"></a>挑选信息位</h1><p>&emsp;&emsp;信道极化过程中，有一部分信道的信道容量 I(W) 可以到达1，另一部分则趋近于0。信道容量反映了信道无失真传输的最大信息率，我们可以通过计算联合、分裂后各信道的信道容量并对它们进行排序，然后根据码率，选择排序靠前的信道作为信息传输的信道，剩余的信道用来传输冻结位。<br>&emsp;&emsp;另一种方法是计算巴氏参数Z(W)，对于一个给定信道，巴氏参数越大说明该信道越不可靠。因此我们只需计算出联合、分裂后信道的巴氏参数，并对它们进行排序，然后根据码率选择巴氏参数较小的信道作为信息位，剩余信道作为冻结位。Arikan论文中给出了巴氏参数的递归求解办法，这使得我们能够很方便的通过编程实现信息位的选取。<br><figure class="highlight matlab"><figcaption><span>计算巴氏参数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 将巴氏参数计算过程封装在函数B_para之中方便调用，Z为数组，作为实参传递进来。数组中只有第一个元素。Z第一个元素可以通过计算得到，计算公式为Z(1) = 2*(p*(1-p))^0.5;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span> = <span class="title">B_para</span><span class="params">(Z)</span></span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : <span class="built_in">log2</span>(N)         <span class="comment">%迭代次数，N为码长</span></span><br><span class="line">    Z_pre = Z;              <span class="comment">%z_pre为上一层信道巴氏参数</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span> : <span class="number">2</span>^(<span class="built_in">i</span><span class="number">-1</span>)     <span class="comment">%本层运算使用的下标</span></span><br><span class="line">        Z(<span class="number">2</span>*<span class="built_in">j</span><span class="number">-1</span>) = <span class="number">2</span>*Z_pre(<span class="built_in">j</span>) - Z_pre(<span class="built_in">j</span>)^<span class="number">2</span>;</span><br><span class="line">        Z(<span class="number">2</span>*<span class="built_in">j</span>) = Z_pre(<span class="built_in">j</span>)^<span class="number">2</span>;    <span class="comment">%递推公式</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>　　</span><br><span class="line">y = z;　　　　<span class="comment">% y作为实参从函数中传递出去，y就是最终的巴氏参数</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;得到巴氏参数序列后，下面的操作就是将此序列进行排序，并根据码率确定信息位和固定位。<br><figure class="highlight matlab"><figcaption><span>挑选信息位</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Z_in_order,index] = sort( y );            <span class="comment">%将巴氏参数从小到大排列</span></span><br><span class="line">signal_index = sort( index( <span class="number">1</span>:S ) );    　　<span class="comment">%前S位作为信息位</span></span><br><span class="line">frozen_index = sort( index( s+<span class="number">1</span>:<span class="keyword">end</span> ) );    <span class="comment">%后面的作为冻结位</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;得到了生成矩阵，确定了信息位冻结位，下面要做的就是进行编码：<br><figure class="highlight matlab"><figcaption><span>编码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:block　　　　               <span class="comment">%对每一个码块都要进行编码处理</span></span><br><span class="line">    encoded(<span class="number">1</span>,((<span class="built_in">j</span><span class="number">-1</span>)*N+<span class="number">1</span>):(<span class="built_in">j</span>*N)) = signal(((<span class="built_in">j</span><span class="number">-1</span>)*S+<span class="number">1</span>):(<span class="built_in">j</span>*S))*G(signal_index,:) + frozen(((<span class="built_in">j</span><span class="number">-1</span>)*F+<span class="number">1</span>):(<span class="built_in">j</span>*F))*G(frozen_index,:);</span><br><span class="line"><span class="keyword">end</span>　　　　　　　　　　　　　　　　　　<span class="comment">%进行编码</span></span><br><span class="line">encode = <span class="built_in">mod</span>(encode,<span class="number">2</span>);     　      <span class="comment">%调制</span></span><br><span class="line">encode = <span class="number">2</span> * encode - <span class="number">1</span>;　　　</span><br><span class="line">encode = encode + noise;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;数组 encode 就是我们得到的编码矩阵。下一节我们要探讨的是polar code中非常重要的译码部分——连续消除译码（SC译码）。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -497,6 +478,8 @@
           
             <a href="/tags/极化码/" rel="tag"># 极化码</a>
           
+            <a href="/tags/MATLAB/" rel="tag"># MATLAB</a>
+          
         </div>
       
 
@@ -508,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/09/polar-1/" rel="next" title="Chapter1 极化码简介">
-                <i class="fa fa-chevron-left"></i> Chapter1 极化码简介
+              <a href="/2018/06/15/polar-3/" rel="next" title="Chapter3 MATLAB仿真——系统参数">
+                <i class="fa fa-chevron-left"></i> Chapter3 MATLAB仿真——系统参数
               </a>
             
           </div>
@@ -517,10 +500,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/02/polar-3/" rel="prev" title="Chapter3 MATLAB仿真——系统参数">
-                Chapter3 MATLAB仿真——系统参数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -600,7 +579,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -668,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-生成矩阵的构造"><span class="nav-number">1.</span> <span class="nav-text"> 生成矩阵的构造</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-信息位选取"><span class="nav-number">2.</span> <span class="nav-text"> 信息位选取</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#生成矩阵"><span class="nav-number">1.</span> <span class="nav-text">生成矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挑选信息位"><span class="nav-number">2.</span> <span class="nav-text">挑选信息位</span></a></li></ol></div>
             
 
           </div>
@@ -894,30 +873,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
