@@ -109,32 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="希望在旧版博客访问该文章？请戳：极化码小结(1)  &amp;emsp;&amp;emsp;极化码建立在信道极化这一现象之上。信道极化现象来自于信道合并与信道分裂这两种信道操作。 &amp;emsp;信道合并&amp;emsp;&amp;emsp;将$N$个独立信道$W$通过变换使之变为一个具有“集体意义”的信道$W_N$，这里“集体意义”的产生来源于变换，而变换遵循固定的规则。&amp;emsp;&amp;emsp;首先，变换是一个递归过程。对于$">
-<meta name="keywords" content="极化码">
+  <meta name="description" content="题目：给定由大写，小写字母和空格组成的字符串，返回最后一个单词的长度。如果输入中不存在单词，返回0。 输入格式:输入仅一行，为字符串 ss（长度不超过 1000），以回车结尾。 输出格式：输出 ss 中最后一个单词的长度。&amp;lt;/font&amp;gt;">
+<meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chapter1 极化码简介">
-<meta property="og:url" content="http://tinshine.github.io/2018/06/09/polar-1/index.html">
+<meta property="og:title" content="最后一个单词的长度">
+<meta property="og:url" content="http://tinshine.github.io/2019/01/08/Last_Word_Length/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="希望在旧版博客访问该文章？请戳：极化码小结(1)  &amp;emsp;&amp;emsp;极化码建立在信道极化这一现象之上。信道极化现象来自于信道合并与信道分裂这两种信道操作。 &amp;emsp;信道合并&amp;emsp;&amp;emsp;将$N$个独立信道$W$通过变换使之变为一个具有“集体意义”的信道$W_N$，这里“集体意义”的产生来源于变换，而变换遵循固定的规则。&amp;emsp;&amp;emsp;首先，变换是一个递归过程。对于$">
+<meta property="og:description" content="题目：给定由大写，小写字母和空格组成的字符串，返回最后一个单词的长度。如果输入中不存在单词，返回0。 输入格式:输入仅一行，为字符串 ss（长度不超过 1000），以回车结尾。 输出格式：输出 ss 中最后一个单词的长度。&amp;lt;/font&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tinshine.github.io/uploads/pic_introduction/1.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/pic_introduction/2.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/pic_introduction/3.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/pic_introduction/4.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/pic_introduction/5.png">
-<meta property="og:image" content="http://tinshine.github.io/uploads/pic_introduction/6.png">
-<meta property="og:updated_time" content="2018-06-19T04:48:12.805Z">
+<meta property="og:updated_time" content="2019-01-10T14:23:57.761Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter1 极化码简介">
-<meta name="twitter:description" content="希望在旧版博客访问该文章？请戳：极化码小结(1)  &amp;emsp;&amp;emsp;极化码建立在信道极化这一现象之上。信道极化现象来自于信道合并与信道分裂这两种信道操作。 &amp;emsp;信道合并&amp;emsp;&amp;emsp;将$N$个独立信道$W$通过变换使之变为一个具有“集体意义”的信道$W_N$，这里“集体意义”的产生来源于变换，而变换遵循固定的规则。&amp;emsp;&amp;emsp;首先，变换是一个递归过程。对于$">
-<meta name="twitter:image" content="http://tinshine.github.io/uploads/pic_introduction/1.png">
+<meta name="twitter:title" content="最后一个单词的长度">
+<meta name="twitter:description" content="题目：给定由大写，小写字母和空格组成的字符串，返回最后一个单词的长度。如果输入中不存在单词，返回0。 输入格式:输入仅一行，为字符串 ss（长度不超过 1000），以回车结尾。 输出格式：输出 ss 中最后一个单词的长度。&amp;lt;/font&amp;gt;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2018/06/09/polar-1/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/01/08/Last_Word_Length/"/>
 
 
 
@@ -144,7 +137,7 @@
   };
 </script>
 
-  <title>Chapter1 极化码简介 | Tinshine's blog</title>
+  <title>最后一个单词的长度 | Tinshine's blog</title>
   
 
 
@@ -322,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2018/06/09/polar-1/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/08/Last_Word_Length/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -339,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chapter1 极化码简介
+          <h1 class="post-title" itemprop="name headline">最后一个单词的长度
               
             
           </h1>
@@ -364,7 +357,7 @@
                 
               
 
-              <time title="创建时间：2018-06-09 09:46:03" itemprop="dateCreated datePublished" datetime="2018-06-09T09:46:03+08:00">2018-06-09</time>
+              <time title="创建时间：2019-01-08 12:42:16" itemprop="dateCreated datePublished" datetime="2019-01-08T12:42:16+08:00">2019-01-08</time>
             
 
             
@@ -381,7 +374,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-19 12:48:12" itemprop="dateModified" datetime="2018-06-19T12:48:12+08:00">2018-06-19</time>
+                <time title="修改时间：2019-01-10 22:23:57" itemprop="dateModified" datetime="2019-01-10T22:23:57+08:00">2019-01-10</time>
               
             
           </span>
@@ -398,7 +391,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/极化码之路/" itemprop="url" rel="index"><span itemprop="name">极化码之路</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/初识C/" itemprop="url" rel="index"><span itemprop="name">初识C++</span></a></span>
 
                 
                 
@@ -432,32 +425,13 @@
       
 
       
-        <hr>
-<p>希望在旧版博客访问该文章？请戳：<a href="https://www.cnblogs.com/Mr-Tiger/p/7496501.html" target="_blank" rel="noopener">极化码小结(1)</a></p>
-<hr>
-<p>&emsp;&emsp;极化码建立在<strong>信道极化</strong>这一现象之上。信道极化现象来自于<strong>信道合并</strong>与<strong>信道分裂</strong>这两种信道操作。<br></p>
-<h1 id="emsp-信道合并"><a href="#emsp-信道合并" class="headerlink" title="&emsp;信道合并"></a>&emsp;<strong>信道合并</strong></h1><p>&emsp;&emsp;将$N$个独立信道$W$通过变换使之变为一个具有“集体意义”的信道$W_N$，这里“集体意义”的产生来源于变换，而变换遵循固定的规则。<br>&emsp;&emsp;首先，变换是一个递归过程。对于$N(N=2n)$个独立信道$W$，想要将其变为一个具有“集体意义”的信道$W_N$需要进行$n$次信道操作，每次信道操作都将$N$个信道变为$N/2$个小型的信道集合体，这样通过递归$N$—&gt;$N/2$—&gt;……—&gt;$2$—&gt;$1$就可以实现$N$个信道的合并。每次信道操作又分为两个部分：<br><a id="more"></a></p>
-<ul>
-<li>对信道输入向量的运算<br>  譬如在B-DMC信道中，输入向量服从等概率分布，我们假设输入向量为$u_1^N$。对它进行的操作为$s_{2i-1}=u_{2i-1} \oplus u_{2i}$, $s_{2i}=u_{2i}$。</li>
-<li>置换操作<br>  对于上一步得到的向量$s_1^N=(s_1,s_2,\cdots,s_N)$,通过置换操作使其变为$v_1^N=(s_1,s_3,\cdots,s_{N-1},s_2,s_4,\cdots,s_N)$。</li>
-</ul>
-<p>&emsp;&emsp;图解如下：</p>
-<div align="center"><img width="350" height="400" src="/uploads/pic_introduction/1.png"></div>
-
-<p>&emsp;&emsp;对于一个单独的信道$W:X-&gt;Y$来说，它的信道转移概率为$W(Y|X)$。对于具有“集合意义”的$W_N$来说，它的转移概率为$W_N(Y_1^N|u_1^N)$。上述两步变换可以用生成矩阵$G_N$来代替，运算关系为$x_1^N=u_1^NG_N$。于是转移概率变为$W_N(y_1^N|u_1^N)$。这里的向量$x$跟上面说的$v$是一个道理。<br>&emsp;&emsp;这里我们关注转移概率公式的一个细节。公式左边是$W_N$，指代一个由$N$个独立信道合并得到的“信道集合体”。右边是$W^N$，指代$N$个排列在一起但是相互独立的信道。公式的左边很好理解，课将其看做一个单独的信道，$(y_1,\cdots,y_N)$为它的输出，$(u_1,\cdots,u_N)$为它的输入。但是如何理解公式的右边内容？$W^N$表述的是一种怎样的运算？是$W$的$N$次方吗？<br>&emsp;&emsp;答案是，$W^N$代表的是乘积运算，表示$N$个信道的转移概率$W$相乘，但它又不仅仅是相乘。当我们把$W^N$拆成$N$个因子相乘的形式来写的时候，我们必须考虑到生成矩阵在其中所起到的线性变换作用。以$W^2$和$W^4$为例：$W^2(y_1^2|u_1^2)=W(y_1^N|u_1\oplus u_2)W(y_1|u_2)$，这是$W^2$的展开式，我们看到，展开时$u_1$和$u_2$先是根据生成矩阵进行了线性变换，然后才相乘。$W^4$同理：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$W^4(y_1^4|u_1^4)$<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  $=W_2(y_1^2|u_1\oplus u_2,u_3\oplus u_4)W_2(y_3^4|u_2,u_4)$<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $=W(y_1|u_1\oplus u_2\oplus u_3\oplus u_4)W(y_2|u_3\oplus u_4)W(y_3|u_2\oplus u_4)W(y_4|u_4)$<br>&emsp;&emsp;可见，信道合并并未在物理层面上真正的将互不干涉的信道进行了合并，而是通过数学的方法使这些信道产生千丝万缕的联系，形成了一个具有某种“集合意义”的信道集合体。因此下面我们再进行信道分裂的时候也并不是简单地将两个信道分离出来。实际上，因为这些信道一直都是有机的结合在一起，所以信道分裂只是提取出信道在集体中保持的完整的个体属性。正如我们将发现的那样，在集体中的这一特性与原来单独的个体特性已经大不相同，在宏观上这种现象的表现就是信道极化。</p>
-<h1 id="emsp-信道分裂"><a href="#emsp-信道分裂" class="headerlink" title="&emsp;信道分裂"></a>&emsp;<strong>信道分裂</strong></h1><p>&emsp;&emsp;所谓信道分裂，其实就是在上述形成的集合体中观察单个信道的属性（主要观察转移概率）。<br>&emsp;&emsp;对于信道集合体中的单个信道来说，它的转移概率通过以下定义来求得：</p>
-<p><div align="center"><img src="/uploads/pic_introduction/2.png"></div><br>&emsp;&emsp;这是一个定义式。从这个式子我们看到，由于原本独立的信道与其他信道有机的结合在了一起，当我们再次观察每个信道时，它们的转移概率将受到其他信道的影响。由于信道合并是一个递归过程，信道分裂作为信道合并的“逆过程”，不可避免的也是一个递归过程。<br>&emsp;&emsp;文献《极化码编码与译码算法研究》（作者：王继伟）中指出，对于上式计算分裂信道的转移概率，其算法复杂度随码长增加呈指数型增加。而将定义式写成如下的迭代式能够使算法具有线性复杂度：</p>
-<p><div align="center"><img src="/uploads/pic_introduction/3.png"></div><br>&emsp;&emsp;这个公式是通过归纳法得到的。<br>&emsp;&emsp;从信道的合并与分裂的描述中我们可以隐约发现 ，信道合并与极化码的编码在形式上非常相似，而信道分裂与极化码的解码在形式上非常相似。根据我们对信道合并与分裂的观察，在极化码的仿真体系中：为了完成极化码编码，工作的重点放在生成矩阵的构造；而信道分裂的特殊定义又指明了极化码的译码应该采用串行译码的方式。此外，信道极化现象展示了极化码的宏观特性 ，通过分析极化现象中的特定参数，我们可以确定极化码编码过程中的信息位选取方案。</p>
-<h1 id="emsp-信道极化"><a href="#emsp-信道极化" class="headerlink" title="&emsp;信道极化"></a>&emsp;<strong>信道极化</strong></h1><p>&emsp;&emsp;信道极化是信道合并与信道分裂两种信道操作的结果。在上述两种操作下，原本相同的N个W信道产生了极化现象，其中一部分信道的信道容量趋近于1，另一部分信道的信道容量趋近于0。<br>&emsp;&emsp;这是一个非常特别的现象，因为我们可以利用这种极端的情况，通过在信道容量趋近于1的一部分信道传输有用信息，而在另一部分信道上传递无用信息（即信息量为0的信息），实现对香农限的逼近。<br>&emsp;&emsp;这里是我曾经编写的对信道极化现象进行仿真的matlab代码和结果图：</p>
-<p><div align="center"><img width="420" height="420" src="/uploads/pic_introduction/4.png"></div></p>
-<p><div align="center"><img width="420" height="420" src="/uploads/pic_introduction/5.png"></div><br>&emsp;&emsp;理论依据主要是这个公式：</p>
-<p><div align="center"><img src="/uploads/pic_introduction/6.png"></div><br>&emsp;&emsp;当然不仅仅是这个公式，具体内容请移步论文《channel polarization……》的第【I-B-3) 】节。</p>
-<h1 id="emsp-极化码的特点"><a href="#emsp-极化码的特点" class="headerlink" title="&emsp;极化码的特点"></a>&emsp;<strong>极化码的特点</strong></h1><p>&emsp;&emsp;极化码的特点大家应该都已经有所了解，归纳起来主要有两点：</p>
-<ul>
-<li>可以到达香农限<br>  什么是香农限？如何到达香农限？到达香农限有什么意义？<br>  香农第二定理（有噪信道编码定理）指出：<strong>当信道的信息传输率不超过信道容量时（R≤C），采用合适的信道编码方法可以实现任意低的传输差错</strong>。香农第二定理通俗来说就是，在R不大于C的情况下，存在一种能够实现信息的绝对可靠传输的编码方案。而所谓香农限就是同时满足绝对可靠、R逼近C的理想情况。香农第二定理并没有告诉我们如何进行信道编码，但是它指导着我们去寻找更加符合这种理想状态的编码方案，从turbo码到LDPC码，越来越逼近这一理想，而极化码的出现，在理论上实现了这一理想。这种理想的编码方案使我们能够在一个噪声信道中以理论上最小的差错率和最快的速度进行信息传输。</li>
-<li>复杂度低<br>  根据Arikan的论文《channel polarization……》中的计算和描述，使用递推方法进行编码和译码的极化码的编码、译码复杂度均为O(NlogN)。这是一个线性复杂度，相对来说其复杂度比较低。复杂度的计算具体位置在论文的VII-C，VIII-A两节，感兴趣者请移步论文。</li>
-</ul>
-<p>&emsp;&emsp;以上就是对极化码的简单介绍。</p>
+        <h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><p><font face="黑体">给定由大写，小写字母和空格组成的字符串，返回最后一个单词的长度。如果输入中不存在单词，返回0。</font></p>
+<p>输入格式:<br>输入仅一行，为字符串 ss（长度不超过 1000），以回车结尾。</p>
+<p>输出格式：<br>输出 ss 中最后一个单词的长度。&lt;/font&gt;<br><a id="more"></a></p>
+<h3 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h3><p>&emsp;<font face="黑体">1.要求打印最后一个单词，当输入字符串的末尾为空格时，需要忽略掉。</font><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: <span class="string">"abc abc  "</span></span><br><span class="line">Output: <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;<font face="黑体">2.要求当输入为空时，返回0。“返回0”意为打印字符0并返回，而非简单“return 0”。</font></p>
+<h3 id="C-知识："><a href="#C-知识：" class="headerlink" title="C++知识："></a>C++知识：</h3><p>&emsp;<font face="黑体">字符串的输入：题目要求输入为一行，以回车结束，所以使用C++中的getline()函数，格式为:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getline(<span class="built_in">cin</span>, str); <span class="comment">//str为string类型变量</span></span><br></pre></td></tr></table></figure></font></p>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdlib.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"string"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> input;</span><br><span class="line">    getline(<span class="built_in">cin</span>, input);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(input.empty())&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> index = input.length()<span class="number">-1</span>, len = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(input[index] == <span class="string">' '</span>) index--;</span><br><span class="line">    <span class="keyword">while</span>(input[index] != <span class="string">' '</span>)&#123;</span><br><span class="line">        len++;</span><br><span class="line">        index--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; len &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -481,7 +455,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/极化码/" rel="tag"># 极化码</a>
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
         </div>
       
@@ -494,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/preface/" rel="next" title="开启极化码之路">
-                <i class="fa fa-chevron-left"></i> 开启极化码之路
+              <a href="/2018/06/18/polar-4/" rel="next" title="Chapter4 MATLAB仿真——编码部分">
+                <i class="fa fa-chevron-left"></i> Chapter4 MATLAB仿真——编码部分
               </a>
             
           </div>
@@ -504,8 +478,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/12/polar-2/" rel="prev" title="Chapter2 极化码编码">
-                Chapter2 极化码编码 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/09/Count_Character_in_string/" rel="prev" title="统计字符串中字符种类及频次">
+                统计字符串中字符种类及频次 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-信道合并"><span class="nav-number">1.</span> <span class="nav-text"> 信道合并</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-信道分裂"><span class="nav-number">2.</span> <span class="nav-text"> 信道分裂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-信道极化"><span class="nav-number">3.</span> <span class="nav-text"> 信道极化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#emsp-极化码的特点"><span class="nav-number">4.</span> <span class="nav-text"> 极化码的特点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析："><span class="nav-number">2.</span> <span class="nav-text">解析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-知识："><span class="nav-number">3.</span> <span class="nav-text">C++知识：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码："><span class="nav-number">4.</span> <span class="nav-text">代码：</span></a></li></ol></div>
             
 
           </div>
@@ -886,30 +860,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
