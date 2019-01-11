@@ -109,24 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="Thanks for your visiting.">
-<meta name="keywords" content="MATLAB, PolarCodes, C++">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tinshine&#39;s blog">
-<meta property="og:url" content="http://tinshine.github.io/archives/index.html">
+  <meta name="description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+<meta name="keywords" content="海滩上的扇贝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用#define和const定义常量的区别">
+<meta property="og:url" content="http://tinshine.github.io/2019/01/11/Difference_of_define_and_const/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="Thanks for your visiting.">
+<meta property="og:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-11T15:53:09.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tinshine&#39;s blog">
-<meta name="twitter:description" content="Thanks for your visiting.">
+<meta name="twitter:title" content="使用#define和const定义常量的区别">
+<meta name="twitter:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/archives/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/01/11/Difference_of_define_and_const/"/>
 
 
 
@@ -136,7 +137,7 @@
   };
 </script>
 
-  <title>归档 | Tinshine's blog</title>
+  <title>使用#define和const定义常量的区别 | Tinshine's blog</title>
   
 
 
@@ -181,7 +182,7 @@
   
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,28 +264,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -320,344 +299,199 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/11/Difference_of_define_and_const/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="Thanks for your visiting.">
+      <meta itemprop="image" content="/uploads/head1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">使用#define和const定义常量的区别
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-11 23:22:19 / 修改时间：23:53:09" itemprop="dateCreated datePublished" datetime="2019-01-11T23:22:19+08:00">2019-01-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 8 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/初识C/" itemprop="url" rel="index"><span itemprop="name">初识C++</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/11/Difference_of_define_and_const/" itemprop="url">
-              
-                <span itemprop="name">使用#define和const定义常量的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-11T23:22:19+08:00"
-              content="2019-01-11" >
-          01-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/09/Count_Character_in_string/" itemprop="url">
-              
-                <span itemprop="name">统计字符串中字符种类及频次</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-09T23:20:55+08:00"
-              content="2019-01-09" >
-          01-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/08/Last_Word_Length/" itemprop="url">
-              
-                <span itemprop="name">最后一个单词的长度</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-08T12:42:16+08:00"
-              content="2019-01-08" >
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/18/polar-4/" itemprop="url">
-              
-                <span itemprop="name">Chapter4 MATLAB仿真——编码部分</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-18T17:57:17+08:00"
-              content="2018-06-18" >
-          06-18
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/polar-3/" itemprop="url">
-              
-                <span itemprop="name">Chapter3 MATLAB仿真——系统参数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T10:25:26+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/12/polar-2/" itemprop="url">
-              
-                <span itemprop="name">Chapter2 极化码编码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-12T22:32:34+08:00"
-              content="2018-06-12" >
-          06-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <hr>
+<p>本文重点参考了@<a href="https://www.cnblogs.com/hello-Huashan/p/5015902.html" target="_blank" rel="noopener">FCBayern</a>，在此致谢！</p>
+<hr>
+<h2 id="define"><a href="#define" class="headerlink" title="#define"></a><font color="#009fff">#define</font></h2><p>&emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a><font color="#009fff">const</font></h2><p>&emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a><font color="#009fff">比较</font></h2><p>&emsp;对于const定义的常量，系统为其分配空间的大小取决于const所修饰的常量的数据类型，可见const是与数据类型密切相关的。而#define除了可以定义常量外，还能定义一个表达式甚至函数，可见宏定义对于数据类型是透明的，这在带来了一些方便的同时也增加了安全隐患。比如由于预料之外的优先级混乱问题，或者滥用宏函数导致程序长度不合理增加等。</p>
+<hr>
+<p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
+<hr>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/polar-1/" itemprop="url">
-              
-                <span itemprop="name">Chapter1 极化码简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T09:46:03+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/preface/" itemprop="url">
-              
-                <span itemprop="name">开启极化码之路</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T00:16:11+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/海滩上的扇贝/" rel="tag"># 海滩上的扇贝</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/09/Count_Character_in_string/" rel="next" title="统计字符串中字符种类及频次">
+                <i class="fa fa-chevron-left"></i> 统计字符串中字符种类及频次
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -680,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -764,6 +607,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#define"><span class="nav-number">1.</span> <span class="nav-text">#define</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">2.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">3.</span> <span class="nav-text">比较</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -927,6 +786,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
