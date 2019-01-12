@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+  <meta name="description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。">
 <meta name="keywords" content="海滩上的扇贝">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用#define和const定义常量的区别">
 <meta property="og:url" content="http://tinshine.github.io/2019/01/11/Difference_of_define_and_const/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+<meta property="og:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-11T15:53:09.810Z">
+<meta property="og:updated_time" content="2019-01-12T08:31:46.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用#define和const定义常量的区别">
-<meta name="twitter:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+<meta name="twitter:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。">
 
 
 
@@ -357,12 +357,24 @@
                 
               
 
-              <time title="创建时间：2019-01-11 23:22:19 / 修改时间：23:53:09" itemprop="dateCreated datePublished" datetime="2019-01-11T23:22:19+08:00">2019-01-11</time>
+              <time title="创建时间：2019-01-11 23:22:19" itemprop="dateCreated datePublished" datetime="2019-01-11T23:22:19+08:00">2019-01-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-12 16:31:46" itemprop="dateModified" datetime="2019-01-12T16:31:46+08:00">2019-01-12</time>
               
             
           </span>
@@ -416,9 +428,9 @@
         <hr>
 <p>本文重点参考了@<a href="https://www.cnblogs.com/hello-Huashan/p/5015902.html" target="_blank" rel="noopener">FCBayern</a>，在此致谢！</p>
 <hr>
-<h2 id="define"><a href="#define" class="headerlink" title="#define"></a><font color="#009fff">#define</font></h2><p>&emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。</p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a><font color="#009fff">const</font></h2><p>&emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。</p>
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a><font color="#009fff">比较</font></h2><p>&emsp;对于const定义的常量，系统为其分配空间的大小取决于const所修饰的常量的数据类型，可见const是与数据类型密切相关的。而#define除了可以定义常量外，还能定义一个表达式甚至函数，可见宏定义对于数据类型是透明的，这在带来了一些方便的同时也增加了安全隐患。比如由于预料之外的优先级混乱问题，或者滥用宏函数导致程序长度不合理增加等。</p>
+<h2 id="define"><a href="#define" class="headerlink" title="#define"></a>#define</h2><p>&emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。<br><a id="more"></a></p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>&emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>&emsp;对于const定义的常量，系统为其分配空间的大小取决于const所修饰的常量的数据类型，可见const是与数据类型密切相关的。而#define除了可以定义常量外，还能定义一个表达式甚至函数，可见宏定义对于数据类型是透明的，这在带来了一些方便的同时也增加了安全隐患。比如由于预料之外的优先级混乱问题，或者滥用宏函数导致程序长度不合理增加等。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -464,6 +476,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/12/random_number/" rel="prev" title="C++随机数">
+                C++随机数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -543,7 +559,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
