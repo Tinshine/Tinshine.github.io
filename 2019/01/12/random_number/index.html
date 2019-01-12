@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="Tinshine&#39;s blog">
 <meta property="og:description" content="目标&amp;emsp;产生一个介于[a, b]的随机整数。 工具rand()">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-12T08:30:27.579Z">
+<meta property="og:updated_time" content="2019-01-12T12:02:12.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++随机数">
 <meta name="twitter:description" content="目标&amp;emsp;产生一个介于[a, b]的随机整数。 工具rand()">
@@ -349,7 +349,7 @@
                 
               
 
-              <time title="创建时间：2019-01-12 14:49:19 / 修改时间：16:30:27" itemprop="dateCreated datePublished" datetime="2019-01-12T14:49:19+08:00">2019-01-12</time>
+              <time title="创建时间：2019-01-12 14:49:19 / 修改时间：20:02:12" itemprop="dateCreated datePublished" datetime="2019-01-12T14:49:19+08:00">2019-01-12</time>
             
 
             
@@ -407,10 +407,10 @@
       
         <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>&emsp;产生一个介于[a, b]的随机整数。</p>
 <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="rand"><a href="#rand" class="headerlink" title="rand()"></a>rand()</h3><a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdlib"</span> <span class="comment">// rand()和srand()都包含在此文件中</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rand</span><span class="params">(<span class="keyword">void</span>)</span>  <span class="comment">// 调用格式</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstdlib"</span> <span class="comment">// rand()和srand()都包含在此文件中</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rand</span><span class="params">(<span class="keyword">void</span>)</span></span>;    <span class="comment">// 调用格式</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;rand()函数用于产生一个随机数，数值介于[seed, RAND_MAX]之间。其中，seed由srand()来提供，而RAND_MAX为定义在头文件“cstdlib”中的一个常量，其数值为0x7fff = 32767。</p>
 <h3 id="srand"><a href="#srand" class="headerlink" title="srand()"></a>srand()</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srand(seed); <span class="comment">// 调用格式</span></span><br></pre></td></tr></table></figure>
-<p>&emsp; srand()函数为rand()提供seed，在使用时放置于rand()前。如果srand()提供的seed可以动态变化，那么rand()生成的随机数也会动态变化，否则多次编译时，rand()会一直返回一个相同的随机数。实际中常常使用time()函数来实现这个动态变化。</p>
+<p>&emsp; srand()函数为rand()提供seed，在使用时放置于rand()前。如果srand()提供的seed可以动态变化，那么rand()生成的随机数也会动态变化，否则多次编译时，rand()会一直返回一个相同的随机数。实际中常常使用time()函数来实现这个动态变化。要注意的是，在循环产生随机数时，应该将srand()语句放在循环体外，否则由于循环语句执行很快可能导致time()值未刷新，无法实现动态变化的要求。</p>
 <h3 id="time"><a href="#time" class="headerlink" title="time()"></a>time()</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ctime"</span></span></span><br><span class="line"><span class="keyword">int</span> t = (<span class="keyword">int</span>)time(<span class="literal">NULL</span>); <span class="comment">// time(0)和time(NULL)用法一样</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;time()函数返回从1970/1/1,00:00:00到当前系统时间所差的秒钟数。显然这个数字是不断变化的。但是仍要注意，如果在多次编译中要求随机数种子seed变化的时间小于1s则不能使用此法。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>&emsp;1.记得在头文件中包含“cstdlib”和“ctime”两个文件。</p>
@@ -462,6 +462,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/12/Binary_Search/" rel="prev" title="二分法递归查找数组元素">
+                二分法递归查找数组元素 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -541,7 +545,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
