@@ -86,7 +86,7 @@
     root: '/',
     scheme: 'Mist',
     version: '6.3.0',
-    sidebar: {"Sidebar Display, available value (only for Muse | Mist)":null,"display":"post","offset":12,"scrollpercent":false,"onmobile":true},
+    sidebar: {"Sidebar Display, available value (only for Muse | Mist)":null,"display":"hide","offset":12,"scrollpercent":false,"onmobile":true},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -109,25 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+  <meta name="description" content="简介&amp;emsp;C语言对字符串的处理是比较麻烦的，用字符数组的形式来实现，这就使得字符串的输入输出、比较等操作非常僵硬。在C++、Java、C#等语言中都使用到了string这一类型来处理字符串，其特点大同小异。">
 <meta name="keywords" content="海滩上的扇贝">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用#define和const定义常量的区别">
-<meta property="og:url" content="http://tinshine.github.io/2019/01/11/Difference_of_#define_and_const/index.html">
+<meta property="og:title" content="C++中的string类型">
+<meta property="og:url" content="http://tinshine.github.io/2019/01/19/Introduce_StringType/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+<meta property="og:description" content="简介&amp;emsp;C语言对字符串的处理是比较麻烦的，用字符数组的形式来实现，这就使得字符串的输入输出、比较等操作非常僵硬。在C++、Java、C#等语言中都使用到了string这一类型来处理字符串，其特点大同小异。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-11T15:47:23.397Z">
+<meta property="og:updated_time" content="2019-01-19T03:28:42.189Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用#define和const定义常量的区别">
-<meta name="twitter:description" content="本文重点参考了@FCBayern，在此致谢！  #define&amp;emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。 const&amp;emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。 比较&amp;emsp;对于c">
+<meta name="twitter:title" content="C++中的string类型">
+<meta name="twitter:description" content="简介&amp;emsp;C语言对字符串的处理是比较麻烦的，用字符数组的形式来实现，这就使得字符串的输入输出、比较等操作非常僵硬。在C++、Java、C#等语言中都使用到了string这一类型来处理字符串，其特点大同小异。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2019/01/11/Difference_of_#define_and_const/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/01/19/Introduce_StringType/"/>
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>使用#define和const定义常量的区别 | Tinshine's blog</title>
+  <title>C++中的string类型 | Tinshine's blog</title>
   
 
 
@@ -244,8 +244,8 @@
         
           
           <li class="menu-item menu-item-时间轴">
-    <a href="/schedule/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />时间轴</a>
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />时间轴</a>
   </li>
         
         
@@ -279,17 +279,6 @@
     </header>
 
     
-  
-  
-  
-    
-      
-    
-    <a href="https://github.com/Tinsine" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg>
-    
-      </a>
-    
-
 
 
     <main id="main" class="main">
@@ -315,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/11/Difference_of_#define_and_const/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/19/Introduce_StringType/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -332,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用#define和const定义常量的区别
+          <h1 class="post-title" itemprop="name headline">C++中的string类型
               
             
           </h1>
@@ -357,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-01-11 23:22:19 / 修改时间：23:47:23" itemprop="dateCreated datePublished" datetime="2019-01-11T23:22:19+08:00">2019-01-11</time>
+              <time title="创建时间：2019-01-19 11:18:59 / 修改时间：11:28:42" itemprop="dateCreated datePublished" datetime="2019-01-19T11:18:59+08:00">2019-01-19</time>
             
 
             
@@ -413,12 +402,15 @@
       
 
       
-        <hr>
-<p>本文重点参考了@<a href="https://www.cnblogs.com/hello-Huashan/p/5015902.html" target="_blank" rel="noopener">FCBayern</a>，在此致谢！</p>
-<hr>
-<h2 id="define"><a href="#define" class="headerlink" title="#define"></a><font color="#009fff">#define</font></h2><p>&emsp;使用#define进行常量的宏定义，在预处理时对代码段中出现的常量进行直接替换，不会为该常量分配内容空间。</p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a><font color="#009fff">const</font></h2><p>&emsp; 使用const进行定义的常量又被称为“常变量”，编译时系统会为该变量分配内存空间，并且该内存的访问权限为只读，这样就保证了该变量在运行期间不能被改变，实现了常量的功能。</p>
-<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a><font color="#009fff">比较</font></h2><p>&emsp;对于const定义的常量，系统为其分配空间的大小取决于const所修饰的常量的数据类型，可见const是与数据类型密切相关的。而#define除了可以定义常量外，还能定义一个表达式甚至函数，可见宏定义对于数据类型是透明的，这在带来了一些方便的同时也增加了安全隐患。比如由于预料之外的优先级混乱问题，或者滥用宏函数导致程序长度不合理增加等。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>&emsp;C语言对字符串的处理是比较麻烦的，用字符数组的形式来实现，这就使得字符串的输入输出、比较等操作非常僵硬。在C++、Java、C#等语言中都使用到了string这一类型来处理字符串，其特点大同小异。<br><a id="more"></a><br>&emsp;在C++中，string严格来说并不是一种传统的数据类型，而是一个类,因此它具有和类相同的操作，可以通过在头文件中包含”cstring”来使用这个类。在创建一个string类对象时需要调用构造函数，在程序结束销毁它时需要调用析构函数，string类字符串进行操作实际上就是调用各种成员函数。</p>
+<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>&emsp;对实例化一个string类变量并赋初值，实际上就是调用构造函数。<br><figure class="highlight cpp"><figcaption><span>缺省参数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s; <span class="comment">// s为一个空串</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><figcaption><span>传入一个参数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s1</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;     <span class="comment">// 直接用常字符串来初始化s1</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s2</span><span class="params">(<span class="built_in">string</span> str)</span></span>;  <span class="comment">// 用另一个字符串来初始化新字符串</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>传入两个参数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> c)</span></span>;   <span class="comment">// s = cccc··ccc; 共n个c</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="built_in">string</span> str, <span class="keyword">int</span> first)</span></span>; <span class="comment">// 截取string型变量str中从first开始的后续所有字符作为新串，first从0开始取</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="keyword">char</span> str[], <span class="keyword">int</span> length)</span></span>; <span class="comment">// 截取char型字符数组str前length个字符作为新串</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>传入三个参数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="built_in">string</span> str, <span class="keyword">int</span> first, <span class="keyword">int</span> length)</span></span>; <span class="comment">// 截取str中从first位置开始的length个字符作为一个新串，first从0开始取</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;此外还可以使用成员函数assign()完成赋值操作。以下用例来自@<a href="https://blog.csdn.net/samkieth/article/details/50876347" target="_blank" rel="noopener">samkieth</a>：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s.assign(str); </span><br><span class="line">s.assign(<span class="string">"Hi"</span>);</span><br><span class="line">s.assign(<span class="number">5</span>,<span class="string">'x'</span>);     <span class="comment">//把五个x赋给字符串</span></span><br><span class="line">s.assign(<span class="string">"nico"</span>, <span class="number">5</span>); <span class="comment">//把'n' ‘I' ‘c' ‘o' ‘/0'赋给字符串</span></span><br><span class="line">s.assign(str, <span class="number">1</span>, <span class="number">3</span>); <span class="comment">// 如果str是”iamangel” 就是把”ama”赋给字符串</span></span><br><span class="line">s.assign(str, <span class="number">2</span>, <span class="built_in">string</span>::npos); <span class="comment">//把字符串str从索引值2开始到结尾赋给s</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="常用操作和成员函数"><a href="#常用操作和成员函数" class="headerlink" title="常用操作和成员函数"></a>常用操作和成员函数</h1><h2 id="size-length-——获取字符串长度"><a href="#size-length-——获取字符串长度" class="headerlink" title="size()/length()——获取字符串长度"></a>size()/length()——获取字符串长度</h2><p>&emsp;使用size()和length()来获取字符串长度，这两个函数没有本质区别。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">str</span><span class="params">(<span class="string">"Hello"</span>)</span></span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.size() &lt;&lt; <span class="built_in">endl</span> &lt;&lt; str.length() &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 两个输出都是5</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="符号运算"><a href="#符号运算" class="headerlink" title="符号运算"></a>符号运算</h2><h3 id="比较操作"><a href="#比较操作" class="headerlink" title="比较操作"></a>比较操作</h3><p>&emsp; string类型字符串灵活的将字符串和字符操作与运算符号相结合，字符串之间的比较不必像C语言中的那样需要调用strcmp()，而是通过’&lt;’，’&gt;’，’&lt;=’，’&gt;=’，’==’就可以完成比较工作。</p>
+<h2 id="其他成员函数"><a href="#其他成员函数" class="headerlink" title="其他成员函数"></a>其他成员函数</h2><h3 id="swap-——交换字符串内容"><a href="#swap-——交换字符串内容" class="headerlink" title="swap()——交换字符串内容"></a>swap()——交换字符串内容</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s1 = <span class="string">"Hi"</span>, s2 = <span class="string">"Hello"</span>;</span><br><span class="line">s2.swap(s1);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s1 &lt;&lt; <span class="string">" "</span> &lt;&lt; s2 &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// s1 = "Hello", s2 = "Hi"</span></span><br></pre></td></tr></table></figure>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -455,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/09/Count_Character_in_string/" rel="next" title="统计字符串中字符种类及频次">
-                <i class="fa fa-chevron-left"></i> 统计字符串中字符种类及频次
+              <a href="/2019/01/17/Function_of_String/" rel="next" title="常用字符串函数梳理">
+                <i class="fa fa-chevron-left"></i> 常用字符串函数梳理
               </a>
             
           </div>
@@ -471,6 +463,8 @@
 
       
       
+
+    
     </footer>
   </div>
   
@@ -543,7 +537,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -617,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#define"><span class="nav-number">1.</span> <span class="nav-text">#define</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">2.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较"><span class="nav-number">3.</span> <span class="nav-text">比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化"><span class="nav-number">2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用操作和成员函数"><span class="nav-number">3.</span> <span class="nav-text">常用操作和成员函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#size-length-——获取字符串长度"><span class="nav-number">3.1.</span> <span class="nav-text">size()/length()——获取字符串长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号运算"><span class="nav-number">3.2.</span> <span class="nav-text">符号运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比较操作"><span class="nav-number">3.2.1.</span> <span class="nav-text">比较操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他成员函数"><span class="nav-number">3.3.</span> <span class="nav-text">其他成员函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#swap-——交换字符串内容"><span class="nav-number">3.3.1.</span> <span class="nav-text">swap()——交换字符串内容</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -655,11 +649,7 @@
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
 
 
 
