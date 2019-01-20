@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211 要求多组输入，读到文件结束，每组一个整数n（1≤n≤30）。输出为每个n相应的序列，样例如下：Input:1234137eof output:12312113112221 解析规律&amp;emsp;这是一个类似斐波那">
+  <meta name="description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计数和数数">
 <meta property="og:url" content="http://tinshine.github.io/2019/01/20/Count_and_Counts/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211 要求多组输入，读到文件结束，每组一个整数n（1≤n≤30）。输出为每个n相应的序列，样例如下：Input:1234137eof output:12312113112221 解析规律&amp;emsp;这是一个类似斐波那">
+<meta property="og:description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-20T12:25:39.470Z">
+<meta property="og:updated_time" content="2019-01-20T12:32:24.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计数和数数">
-<meta name="twitter:description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211 要求多组输入，读到文件结束，每组一个整数n（1≤n≤30）。输出为每个n相应的序列，样例如下：Input:1234137eof output:12312113112221 解析规律&amp;emsp;这是一个类似斐波那">
+<meta name="twitter:description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211">
 
 
 
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-01-20 19:20:35 / 修改时间：20:25:39" itemprop="dateCreated datePublished" datetime="2019-01-20T19:20:35+08:00">2019-01-20</time>
+              <time title="创建时间：2019-01-20 19:20:35 / 修改时间：20:32:24" itemprop="dateCreated datePublished" datetime="2019-01-20T19:20:35+08:00">2019-01-20</time>
             
 
             
@@ -404,6 +404,7 @@
       
         <p>来源：@<a href="https://nanti.jisuanke.com/t/23" target="_blank" rel="noopener">计蒜客—计数和数数</a></p>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>一个找规律的题目：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">1</span>)</span></span> = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">2</span>)</span></span> = <span class="number">11</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">3</span>)</span></span> = <span class="number">21</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">4</span>)</span></span> = <span class="number">1211</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">5</span>)</span></span> = <span class="number">111221</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">6</span>)</span></span> = <span class="number">312211</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h1 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h1><p>多组输入，读到文件结束，每组一个整数n（1≤n≤30）。输出为每个n相应的序列，样例如下：<br><figure class="highlight cpp"><figcaption><span>Input:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line">eof</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight cpp"><figcaption><span>output:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">21</span></span><br><span class="line"><span class="number">13112221</span></span><br></pre></td></tr></table></figure>
 <h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><h2 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h2><p>&emsp;这是一个类似斐波那契数列的迭代过程。n=1时，f(1)=1。将其看作一个字符串，这就是1个’1’，将两个数字写在一起就是：f(2)=’11’。依此类推，’11’是2个’1’，f(3)就应该是’21’；’21’是1个’2’，1个’1’，因此f(4)=’1211’。</p>
