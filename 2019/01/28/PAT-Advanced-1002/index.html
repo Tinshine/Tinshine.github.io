@@ -109,25 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="在做一些题目时，常常会对各种数据类型的取值范围感到困惑，这里做一个总结。">
-<meta name="keywords" content="海滩上的扇贝">
+  <meta name="description" content="PAT甲级-1002  题目翻译1002: 多项式A和B的合并 输入格式&amp;emsp;每个输入文件包含一个测试样例，每个样例占两行，每行存放着一个多项式的信息，格式如下：">
+<meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常见数据类型的取值范围">
-<meta property="og:url" content="http://tinshine.github.io/2019/01/24/Limit-of-DataType/index.html">
+<meta property="og:title" content="PAT甲级-1002">
+<meta property="og:url" content="http://tinshine.github.io/2019/01/28/PAT-Advanced-1002/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="在做一些题目时，常常会对各种数据类型的取值范围感到困惑，这里做一个总结。">
+<meta property="og:description" content="PAT甲级-1002  题目翻译1002: 多项式A和B的合并 输入格式&amp;emsp;每个输入文件包含一个测试样例，每个样例占两行，每行存放着一个多项式的信息，格式如下：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-24T14:51:11.022Z">
+<meta property="og:updated_time" content="2019-01-28T14:10:44.123Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常见数据类型的取值范围">
-<meta name="twitter:description" content="在做一些题目时，常常会对各种数据类型的取值范围感到困惑，这里做一个总结。">
+<meta name="twitter:title" content="PAT甲级-1002">
+<meta name="twitter:description" content="PAT甲级-1002  题目翻译1002: 多项式A和B的合并 输入格式&amp;emsp;每个输入文件包含一个测试样例，每个样例占两行，每行存放着一个多项式的信息，格式如下：">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2019/01/24/Limit-of-DataType/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/01/28/PAT-Advanced-1002/"/>
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>常见数据类型的取值范围 | Tinshine's blog</title>
+  <title>PAT甲级-1002 | Tinshine's blog</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/24/Limit-of-DataType/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/28/PAT-Advanced-1002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">常见数据类型的取值范围
+          <h1 class="post-title" itemprop="name headline">PAT甲级-1002
               
             
           </h1>
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-01-24 22:28:36 / 修改时间：22:51:11" itemprop="dateCreated datePublished" datetime="2019-01-24T22:28:36+08:00">2019-01-24</time>
+              <time title="创建时间：2019-01-28 16:58:23 / 修改时间：22:10:44" itemprop="dateCreated datePublished" datetime="2019-01-28T16:58:23+08:00">2019-01-28</time>
             
 
             
@@ -368,7 +368,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/初识C/" itemprop="url" rel="index"><span itemprop="name">初识C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-Advanced-Level-Practice/" itemprop="url" rel="index"><span itemprop="name">PAT(Advanced Level Practice)</span></a></span>
 
                 
                 
@@ -402,11 +402,26 @@
       
 
       
-        <p>在做一些题目时，常常会对各种数据类型的取值范围感到困惑，这里做一个总结。</p>
-<a id="more"></a>
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"climits"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cfloat"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Range of all kinds of data types: "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"char: ("</span> &lt;&lt; CHAR_MAX &lt;&lt; <span class="string">", "</span> &lt;&lt; CHAR_MIN &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"short: ("</span> &lt;&lt; SHRT_MIN &lt;&lt; <span class="string">", "</span> &lt;&lt; SHRT_MAX &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"int: ("</span> &lt;&lt; INT_MIN &lt;&lt; <span class="string">", "</span> &lt;&lt; INT_MAX &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"long: ("</span> &lt;&lt; LONG_MIN &lt;&lt; <span class="string">", "</span> &lt;&lt; LONG_MAX &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"float: ("</span> &lt;&lt; FLT_MIN &lt;&lt; <span class="string">", "</span> &lt;&lt; FLT_MAX &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"double: ("</span> &lt;&lt; DBL_MAX &lt;&lt; <span class="string">", "</span> &lt;&lt; DBL_MIN &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Range of all kinds of data types:</span><br><span class="line"><span class="keyword">char</span>:   (<span class="number">127</span>, <span class="number">-128</span>)</span><br><span class="line"><span class="keyword">short</span>:  (<span class="number">-32768</span>, <span class="number">32767</span>)</span><br><span class="line"><span class="keyword">int</span>:    (<span class="number">-2147483648</span>, <span class="number">2147483647</span>)</span><br><span class="line"><span class="keyword">long</span>:   (<span class="number">-2147483648</span>, <span class="number">2147483647</span>)</span><br><span class="line"><span class="keyword">float</span>:  (<span class="number">1.17549e-038</span>, <span class="number">3.40282e+038</span>)</span><br><span class="line"><span class="keyword">double</span>: (<span class="number">1.79769e+308</span>, <span class="number">2.22507e-308</span>)</span><br></pre></td></tr></table></figure>
-<p>值得注意的是，对于本机器和编译器而言，int和long型的数据拥有相同的取值范围。</p>
+        <hr>
+<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805526272000000" target="_blank" rel="noopener">PAT甲级-1002</a></p>
+<hr>
+<h1 id="题目翻译"><a href="#题目翻译" class="headerlink" title="题目翻译"></a>题目翻译</h1><p>1002: 多项式A和B的合并</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>&emsp;每个输入文件包含一个测试样例，每个样例占两行，每行存放着一个多项式的信息，格式如下：<br><a id="more"></a></p>
+<center>KN<sub>1</sub>a<sub>N<sub>1</sub></sub>N<sub>2</sub>a<sub>N<sub>2</sub></sub>···N<sub>K</sub>a<sub>N<sub>K</sub></sub></center>
+
+<p>&emsp;其中K为多项式中的非零项数；N<sub>i</sub>和a<sub>N</sub><sub>i</sub>分别为各项的幂指数和系数。给定1≤K≤10，0≤N<sub>K</sub>≤1000。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对于每个测试样例，在一行中输出A和B的和，输出格式同输入格式相同。要格外注意在每行的末尾没有额外的空格。结果精确到小数点后一位。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><figure class="highlight cpp"><figcaption><span>输入</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="number">1</span> <span class="number">2.4</span> <span class="number">0</span> <span class="number">3.2</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">1.5</span> <span class="number">1</span> <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>输出</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> <span class="number">2</span> <span class="number">1.5</span> <span class="number">1</span> <span class="number">2.9</span> <span class="number">0</span> <span class="number">3.2</span></span><br></pre></td></tr></table></figure>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;首先要弄懂题目中的标准表示法的原理。以样例为例：第一行为A，A的第一个数字2表示有两项，<code>1 2.4</code>表示幂指数为1的项系数为2.4，<code>0 3.2</code>同理，可得A=2.4x<sup>1</sup>+3.2x<sup>0</sup>=2.4x+3.2；同理B=1.5x<sup>2</sup>+0.5x。设C=A+B，C=1.5x<sup>2</sup>+2.9x+3.2=1.5x<sup>2</sup>+2.9x<sup>1</sup>+3.2x<sup>0</sup>，用标准表示法为：<code>3 2 1.5 1 2.9 0 3.2</code>。排列顺序为从高次幂到低次幂。</p>
+<p>&emsp;要完成这一多项式合并的功能，只需借助一个数组来存储个多项式的系数即可。我们可以借助结构体来整合这个问题。每个多项式都是一个结构体<code>poly</code>，其成员有两个，一个<code>int num</code>代表结构体的项数，一个<code>double coef[max]</code>代表从0到max次幂的每一项的系数。然后我们实例化三个结构体A，B和SUM，分别将两个加项数据读入A和B，完成合并后存入SUM中，再以标准格式打印出来即可。</p>
+<p>&emsp;这里有两个注意事项：</p>
+<p>&emsp;&emsp;一是，题目要求精确到一位小数，这个功能可以通过<code>cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(/* 这里填入你要保留到小数点后多少位 */) &lt;&lt; /* 这里是你要输出的数据 */ ;</code>实现。要使用这两个函数，必须在头文件中包含<code>&quot;iomanip&quot;</code>。</p>
+<p>&emsp;&emsp;二是，对于合并后系数抵消的项，不计入项数，且不打印出来。这里只需要在打印函数中用if语句进行判断即可。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iomanip"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max_expo 1005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">poly</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">double</span> coef[max_expo];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 初始化结构体</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(poly &amp;P)</span></span>&#123;</span><br><span class="line">    P.num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;max_expo; ++i)&#123;</span><br><span class="line">        P.coef[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 结构体数据的读入</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">input</span><span class="params">(poly &amp;P)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; P.num;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;P.num; ++i)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; index;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; P.coef[index];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 合并函数</span></span><br><span class="line"><span class="function">poly <span class="title">poly_add</span><span class="params">(poly A, poly B)</span></span>&#123;</span><br><span class="line">    poly SUM;</span><br><span class="line">    init(SUM);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;max_expo; ++i)&#123;</span><br><span class="line">        SUM.coef[i] = A.coef[i] + B.coef[i];</span><br><span class="line">        <span class="keyword">if</span>(SUM.coef[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            SUM.num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> SUM;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 打印函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">output</span><span class="params">(poly SUM)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; SUM.num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=max_expo<span class="number">-1</span>; i&gt;=<span class="number">0</span>; --i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(SUM.coef[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; i &lt;&lt; <span class="string">" "</span> &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setprecision(<span class="number">1</span>) &lt;&lt; SUM.coef[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    poly A, B, SUM;</span><br><span class="line">    init(A); init(B);</span><br><span class="line">    input(A); input(B);</span><br><span class="line">    SUM = poly_add(A, B);</span><br><span class="line">    output(SUM);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h1><p>&emsp;接下来喜闻乐见的踩坑环节。</p>
+<p>&emsp;首先是没有考虑0系数抵消的问题，在网上查阅了许多题解后才注意到这个问题。其次是在初始化函数中只初始化了数组，没有初始化<code>num</code>变量，导致程序在自己电脑上正常运行，但一直无法通过在线判题系统。声明变量一定要初始化，这又为我敲响了一次警钟。</p>
+<p>&emsp;最后是程序的优化过程，最初我使用了一个bool型数组来标记合并过程中出现了哪些项，从而可以只对有标记的项进行合并，虽然说时间上有微小的效率提升，但是对编程人员很不友好，弃之；此外，由于输入项中按降幂顺序给出整式，因此只需要用两个数记录两个加项的最高次幂，然后取其较大者作为循环边界，这样可以不用循环到max_expo处，不过这个优化由于跟上面相同的原因也未应用到本程序中。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -430,7 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/海滩上的扇贝/" rel="tag"># 海滩上的扇贝</a>
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
         </div>
       
@@ -443,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/20/Count_and_Counts/" rel="next" title="计数和数数">
-                <i class="fa fa-chevron-left"></i> 计数和数数
+              <a href="/2019/01/25/PAT-Advanced-1001/" rel="next" title="PAT甲级-1001">
+                <i class="fa fa-chevron-left"></i> PAT甲级-1001
               </a>
             
           </div>
@@ -452,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/25/PAT-Advanced-1001/" rel="prev" title="PAT甲级-1001">
-                PAT甲级-1001 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#测试代码"><span class="nav-number">1.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行结果"><span class="nav-number">2.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目翻译"><span class="nav-number">1.</span> <span class="nav-text">题目翻译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">1.1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">1.2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例"><span class="nav-number">1.3.</span> <span class="nav-text">样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑指南"><span class="nav-number">4.</span> <span class="nav-text">踩坑指南</span></a></li></ol></div>
             
 
           </div>
