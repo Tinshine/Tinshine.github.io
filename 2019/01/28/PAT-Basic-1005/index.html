@@ -109,25 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="希望在旧版博客访问该文章？请戳：极化码的matlab仿真(1)——参数设置  &amp;emsp;&amp;emsp;仿真的手段有很多种。可以利用C，C++，matlab甚至python等进行仿真的实现。其中matlab由于具有强大的函数库和可观的矩阵运算能力而特别适合于工程领域的仿真。matlab的语法非常简单，接近自然语言。其优秀的绘图能力，众多的集成工具箱极大的方便了使用者。当然用C来仿真也是可以的，C语">
-<meta name="keywords" content="极化码,MATLAB">
+  <meta name="description" content="PAT乙级-1005  题目分析在3n+1的猜想基础上，要求分离出数列中的关键数字。做法就是对于数列中的每一个数字都进行3n+1猜想中的验证，记录过程中间出现的数字。凡是作为中间数出现在验证过程中的数列中的数都是被覆盖的数，予以标记。最后剩下的未被覆盖的就是关键数字，再按照某种算法从大到小输出即可。 算法实现&amp;emsp;用两个数组来完成筛选和排序的过程。一个int num[maxn]用于读入数列">
+<meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chapter3 MATLAB仿真——系统参数">
-<meta property="og:url" content="http://tinshine.github.io/2018/06/15/polar-3/index.html">
+<meta property="og:title" content="PAT乙级-1005">
+<meta property="og:url" content="http://tinshine.github.io/2019/01/28/PAT-Basic-1005/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="希望在旧版博客访问该文章？请戳：极化码的matlab仿真(1)——参数设置  &amp;emsp;&amp;emsp;仿真的手段有很多种。可以利用C，C++，matlab甚至python等进行仿真的实现。其中matlab由于具有强大的函数库和可观的矩阵运算能力而特别适合于工程领域的仿真。matlab的语法非常简单，接近自然语言。其优秀的绘图能力，众多的集成工具箱极大的方便了使用者。当然用C来仿真也是可以的，C语">
+<meta property="og:description" content="PAT乙级-1005  题目分析在3n+1的猜想基础上，要求分离出数列中的关键数字。做法就是对于数列中的每一个数字都进行3n+1猜想中的验证，记录过程中间出现的数字。凡是作为中间数出现在验证过程中的数列中的数都是被覆盖的数，予以标记。最后剩下的未被覆盖的就是关键数字，再按照某种算法从大到小输出即可。 算法实现&amp;emsp;用两个数组来完成筛选和排序的过程。一个int num[maxn]用于读入数列">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-19T08:49:42.792Z">
+<meta property="og:updated_time" content="2019-01-29T03:21:48.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter3 MATLAB仿真——系统参数">
-<meta name="twitter:description" content="希望在旧版博客访问该文章？请戳：极化码的matlab仿真(1)——参数设置  &amp;emsp;&amp;emsp;仿真的手段有很多种。可以利用C，C++，matlab甚至python等进行仿真的实现。其中matlab由于具有强大的函数库和可观的矩阵运算能力而特别适合于工程领域的仿真。matlab的语法非常简单，接近自然语言。其优秀的绘图能力，众多的集成工具箱极大的方便了使用者。当然用C来仿真也是可以的，C语">
+<meta name="twitter:title" content="PAT乙级-1005">
+<meta name="twitter:description" content="PAT乙级-1005  题目分析在3n+1的猜想基础上，要求分离出数列中的关键数字。做法就是对于数列中的每一个数字都进行3n+1猜想中的验证，记录过程中间出现的数字。凡是作为中间数出现在验证过程中的数列中的数都是被覆盖的数，予以标记。最后剩下的未被覆盖的就是关键数字，再按照某种算法从大到小输出即可。 算法实现&amp;emsp;用两个数组来完成筛选和排序的过程。一个int num[maxn]用于读入数列">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2018/06/15/polar-3/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/01/28/PAT-Basic-1005/"/>
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>Chapter3 MATLAB仿真——系统参数 | Tinshine's blog</title>
+  <title>PAT乙级-1005 | Tinshine's blog</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2018/06/15/polar-3/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/28/PAT-Basic-1005/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chapter3 MATLAB仿真——系统参数
+          <h1 class="post-title" itemprop="name headline">PAT乙级-1005
               
             
           </h1>
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2018-06-15 10:25:26" itemprop="dateCreated datePublished" datetime="2018-06-15T10:25:26+08:00">2018-06-15</time>
+              <time title="创建时间：2019-01-28 22:11:46" itemprop="dateCreated datePublished" datetime="2019-01-28T22:11:46+08:00">2019-01-28</time>
             
 
             
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-19 16:49:42" itemprop="dateModified" datetime="2018-06-19T16:49:42+08:00">2018-06-19</time>
+                <time title="修改时间：2019-01-29 11:21:48" itemprop="dateModified" datetime="2019-01-29T11:21:48+08:00">2019-01-29</time>
               
             
           </span>
@@ -380,7 +380,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/极化码之路/" itemprop="url" rel="index"><span itemprop="name">极化码之路</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-Basic-Level-Practice/" itemprop="url" rel="index"><span itemprop="name">PAT(Basic Level Practice)</span></a></span>
 
                 
                 
@@ -415,10 +415,15 @@
 
       
         <hr>
-<p>希望在旧版博客访问该文章？请戳：<a href="https://www.cnblogs.com/Mr-Tiger/p/7106115.html" target="_blank" rel="noopener">极化码的matlab仿真(1)——参数设置</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805320306507776" target="_blank" rel="noopener">PAT乙级-1005</a></p>
 <hr>
-<p>&emsp;&emsp;仿真的手段有很多种。可以利用C，C++，matlab甚至python等进行仿真的实现。其中matlab由于具有强大的函数库和可观的矩阵运算能力而特别适合于工程领域的仿真。matlab的语法非常简单，接近自然语言。其优秀的绘图能力，众多的集成工具箱极大的方便了使用者。当然用C来仿真也是可以的，C语言编写的程序仿真速度非常快，但是编写起来很不友好。试想一个简单的函数，matlab只需要调用一下就好了，Ｃ语言基本上都要自己动手写。<br>&emsp;&emsp;话不多说，本节我们主要介绍matlab仿真极化码的第一步——设置仿真参数。<br><a id="more"></a><br>&emsp;&emsp;<strong>码块：block；</strong>block，<em>码块</em>或<em>码组</em>，“一次信息发送动作所传递的信息位数”，一个码块代表着一个具有完整意义的信息集，因此码块不可分割发送。<br>&emsp;&emsp;<strong>码长：N；</strong>N，<em>码长</em>，“一个信息单元所占据的比特位数”，码长是码组的次级单元。<br>&emsp;&emsp;<strong>码率：R；</strong>R，<em>码率</em>，就是有用信息占所传输信息的比例。在信息传输之中，为了能够提高传输准确性，常常在信息位中插入不具有信息量的冗余位用于检错和纠错，从通信的意义上来说是牺牲速率换取可靠性。一般来说R越小，准确性越高，但是对应传输效率就越低。<br>&emsp;&emsp;<strong>信噪比：SNR(dB)、snr;</strong>SNR，signal noise ratio，<em>信噪比</em>即信号与噪声的功率之比。极化码是一种与信道有关的编码方式，对于不同的SNR极化码的编码所用的信息位不同。一般常用dB单位来表示信噪比，换算关系如下：$SNR(dB)=10*log10(snr)$。<br>&emsp;&emsp;对于极化码，上面这几个参数是最基本的系统参数，当我们向别人展示仿真结果的时候，这些参数都是需要提供和说明的。<br><figure class="highlight matlab"><figcaption><span>参数设置 </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">block = <span class="number">100</span>;            <span class="comment">% simulation block numbers</span></span><br><span class="line">SNR = <span class="number">0</span>:<span class="number">1</span>:<span class="number">4</span>;            <span class="comment">% SNR values</span></span><br><span class="line">snr=<span class="number">10</span> .^ (SNR ./ <span class="number">10</span>);  <span class="comment">% transform the SNR vector into dB forms</span></span><br><span class="line">n = <span class="number">3</span>;                  <span class="comment">% code level</span></span><br><span class="line">R = <span class="number">0.5</span>;                <span class="comment">% code rate</span></span><br><span class="line">N = <span class="number">2</span> ^ n;              <span class="comment">% code length</span></span><br><span class="line">S = <span class="built_in">floor</span>(N*R);         <span class="comment">% numbers of information bits</span></span><br><span class="line">F = N-K;                <span class="comment">% numbers of frozen bits</span></span><br><span class="line">Total_S = block*K;      <span class="comment">% total source bit length</span></span><br><span class="line">Total_F = block*NF;     <span class="comment">% total frozen bit length</span></span><br><span class="line">SF= block*N;            <span class="comment">% total bit length</span></span><br><span class="line">BER = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(SNR));      <span class="comment">% bit error rate of each SNR</span></span><br><span class="line">BLER = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(SNR));     <span class="comment">% block error rate of each SNR</span></span><br></pre></td></tr></table></figure></p>
-<p>以上就是系统参数设置，下一节我们将介绍极化码的编码部分。</p>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>在3n+1的猜想基础上，要求分离出数列中的关键数字。做法就是对于数列中的每一个数字都进行3n+1猜想中的验证，记录过程中间出现的数字。凡是作为中间数出现在验证过程中的数列中的数都是被覆盖的数，予以标记。最后剩下的未被覆盖的就是关键数字，再按照某种算法从大到小输出即可。</p>
+<h1 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h1><p>&emsp;用两个数组来完成筛选和排序的过程。一个<code>int num[maxn]</code>用于读入数列中的元素，一个<code>bool num_flag[maxn]</code>用于标记每个数字是否被覆盖，初始化全为<code>false</code>表示未覆盖。</p>
+<p>&emsp;对于<code>num</code>数组，遍历之，对其每个元素做3n+1猜想，并将计算过程每个中间数对应的<code>num_flag</code>位标记为<code>true</code>，猜想的计算过程可以递归完成。遍历完后<code>num_flag</code>中被覆盖的数对应位为<code>true</code>，关键数字和非<code>num</code>数组中的数对应的标记位为<code>false</code>。</p>
+<p>&emsp;为实现从大到小排序，用下标<code>i</code>从<code>maxn</code>到<code>0</code>进行循环，对每个<code>i</code>检查其是否为<code>num</code>中的数，如果是的话再检查<code>i</code>对应的标记位是否为<code>false</code>，若是则为关键数字。</p>
+<p>&emsp;输格式要求末尾没有额外空格，因此用一个开关量<code>bool first = true</code>来辨别当前是否为第一个输出的数字，如果是就直接输出并令<code>first = false</code>。对于后续不是第一个输出的数字则先输出空格再输出关键数字。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 105</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> k = <span class="number">0</span>, num[maxn];</span><br><span class="line"><span class="keyword">bool</span> num_flag[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_flag</span><span class="params">(<span class="keyword">int</span> num, <span class="keyword">bool</span> org)</span></span>&#123;</span><br><span class="line"><span class="comment">//条件1.判断防止数组越界 条件2.org防止数列中的原有数被标记，保证只标记被覆盖的数</span></span><br><span class="line">    <span class="keyword">if</span>(num &lt;= maxn &amp;&amp; !org) </span><br><span class="line">        num_flag[num] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(num == <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(num % <span class="number">2</span>)</span><br><span class="line">        num = (num*<span class="number">3</span>+<span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        num /= <span class="number">2</span>;</span><br><span class="line">    set_flag(num, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">in_num</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; ++i)</span><br><span class="line">        <span class="keyword">if</span>(num[i] == n)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;maxn; ++i)</span><br><span class="line">        num_flag[i] = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;k; ++i)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; num[i];</span><br><span class="line">        set_flag(num[i], <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">bool</span> first = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=maxn<span class="number">-1</span>; i&gt;=<span class="number">0</span>; --i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(in_num(i))</span><br><span class="line">            <span class="keyword">if</span>(!num_flag[i])</span><br><span class="line">                <span class="keyword">if</span>(first)&#123;</span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; i;</span><br><span class="line">                    first = <span class="literal">false</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span></span><br><span class="line">                    <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h1><p>&emsp;需要注意，对于<code>num</code>中的数，在第一次传入递归函数时不要对其进行标记，未保持递归函数的可重载性，额外设置一个参数<code>bool org</code>，对于数列中的数首次对其遍历时令<code>org = true</code>，递归调用时令<code>org = false</code>。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -442,9 +447,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/极化码/" rel="tag"># 极化码</a>
-          
-            <a href="/tags/MATLAB/" rel="tag"># MATLAB</a>
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
         </div>
       
@@ -457,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/polar-2/" rel="next" title="Chapter2 极化码编码">
-                <i class="fa fa-chevron-left"></i> Chapter2 极化码编码
+              <a href="/2019/01/28/PAT-Advanced-1002/" rel="next" title="PAT甲级-1002">
+                <i class="fa fa-chevron-left"></i> PAT甲级-1002
               </a>
             
           </div>
@@ -466,10 +469,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/18/polar-4/" rel="prev" title="Chapter4 MATLAB仿真——编码部分">
-                Chapter4 MATLAB仿真——编码部分 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -624,6 +632,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目分析"><span class="nav-number">1.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法实现"><span class="nav-number">2.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩坑指南"><span class="nav-number">4.</span> <span class="nav-text">踩坑指南</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
