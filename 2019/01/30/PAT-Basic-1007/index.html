@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="PAT乙级-1007  题目分析&amp;emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。 &amp;emsp;素数的定义为除1和自身意外再没有其他因子的正整数。一般的想法是，用一个for循环内嵌if条件语句，结合一个开关量来完成这一判断。值得注意的是，这里for语句中的跳出条件最好使用平方小于而非简单的小于。前者是O(&amp;radic;n)的时间复杂度，后者是O(">
+  <meta name="description" content="PAT乙级-1007  题目分析&amp;emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT乙级-1007">
 <meta property="og:url" content="http://tinshine.github.io/2019/01/30/PAT-Basic-1007/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="PAT乙级-1007  题目分析&amp;emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。 &amp;emsp;素数的定义为除1和自身意外再没有其他因子的正整数。一般的想法是，用一个for循环内嵌if条件语句，结合一个开关量来完成这一判断。值得注意的是，这里for语句中的跳出条件最好使用平方小于而非简单的小于。前者是O(&amp;radic;n)的时间复杂度，后者是O(">
+<meta property="og:description" content="PAT乙级-1007  题目分析&amp;emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-30T15:22:10.738Z">
+<meta property="og:updated_time" content="2019-01-30T15:24:17.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT乙级-1007">
-<meta name="twitter:description" content="PAT乙级-1007  题目分析&amp;emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。 &amp;emsp;素数的定义为除1和自身意外再没有其他因子的正整数。一般的想法是，用一个for循环内嵌if条件语句，结合一个开关量来完成这一判断。值得注意的是，这里for语句中的跳出条件最好使用平方小于而非简单的小于。前者是O(&amp;radic;n)的时间复杂度，后者是O(">
+<meta name="twitter:description" content="PAT乙级-1007  题目分析&amp;emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。">
 
 
 
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-01-30 22:57:14 / 修改时间：23:22:10" itemprop="dateCreated datePublished" datetime="2019-01-30T22:57:14+08:00">2019-01-30</time>
+              <time title="创建时间：2019-01-30 22:57:14 / 修改时间：23:24:17" itemprop="dateCreated datePublished" datetime="2019-01-30T22:57:14+08:00">2019-01-30</time>
             
 
             
@@ -405,7 +405,7 @@
         <hr>
 <p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805317546655744" target="_blank" rel="noopener">PAT乙级-1007</a></p>
 <hr>
-<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。</p>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;本题主要解决两个点，一是如何判断一个数是否为素数；二是如何统计相邻素数之差等于2的对数。<br><a id="more"></a></p>
 <p>&emsp;素数的定义为除1和自身意外再没有其他因子的正整数。一般的想法是，用一个for循环内嵌if条件语句，结合一个开关量来完成这一判断。值得注意的是，这里for语句中的跳出条件最好使用平方小于而非简单的小于。前者是O(&radic;n)的时间复杂度，后者是O(n)的时间复杂度。由于题目要求N最大为10<sup>5</sup>，因此O(n)有出现时间超出要求的可能。</p>
 <p>&emsp;统计相邻差为2的素数对个数也有两种选择。一是将所有小于等于N的素数存于一个预设数组中，然后再一遍遍历计算相邻差值并统计。这种方法的缺点是占用了较大的空间。一个更精简的办法是采用一个<code>int pre</code>变量来存储上一步确认为素数的数，将其与当前确认的素数作差并更新<code>pre</code>的值。这种思想在很多优化算法中都有影子，应着重关注。</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100005</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i*i&lt;=n; ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n%i == <span class="number">0</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, pre = <span class="number">1</span>, cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(is_prime(i))&#123;</span><br><span class="line">            <span class="keyword">if</span>(i-pre == <span class="number">2</span>)</span><br><span class="line">                cnt++;</span><br><span class="line">            pre = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; cnt;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
