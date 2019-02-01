@@ -350,7 +350,7 @@
                 
               
 
-              <time title="创建时间：2019-02-01 22:31:11 / 修改时间：23:03:41" itemprop="dateCreated datePublished" datetime="2019-02-01T22:31:11+08:00">2019-02-01</time>
+              <time title="创建时间：2019-02-01 22:31:11 / 修改时间：23:06:52" itemprop="dateCreated datePublished" datetime="2019-02-01T22:31:11+08:00">2019-02-01</time>
             
 
             
@@ -407,20 +407,17 @@
 
       
         
-          
-            <hr>
+          <hr>
 <p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805316250615808" target="_blank" rel="noopener">PAT乙级-1008</a></p>
 <hr>
-<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;解决这种数组元素移位问题的一个常用算法是翻转法。</p>
-<p>&emsp;对具有n个元素的数组进行m位右移，数组元素位置从(a<sub>0</sub>, ··· a<sub>n-m-1</sub>, a<sub>n-m</sub> a<sub>n-1</sub>)变化为(a<sub>n-m</sub> ··· a<sub>n-1</sub>, a<sub>0</sub>, a<sub>n-m-1</sub>)。可将数组元素分为两部分，前半部分从a<sub>0</sub>到a<sub>n-m-1</sub>，后半部分从a<sub>n-m</sub>到a<sub>n-1</sub>，观察发现实际上完成的是前半部分和后半部分的整体位置互换。线性代数矩阵运算中，从AB向BA转化，我们可以借助转置运算来完成：(A<sup>T</sup>B<sup>T</sup>)<sup>T</sup>=BA，这对于解决这个问题有借鉴意义。</p>
-<p>&emsp;类似的，我们可以设置一个翻转函数，其功能为将给定数组的某一部分进行逆序翻转。这样通过三次部分和整体的逆序翻转，我们就能够得到移位后的数组。这一方法完全满足题目对于不使用额外数组和移动数据次数尽量少的要求。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 105</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(begin &lt; end)&#123;</span><br><span class="line">        tmp = a[end];</span><br><span class="line">        a[end] = a[begin];</span><br><span class="line">        a[begin] = tmp;</span><br><span class="line">        begin++, end--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m, num[maxn];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    m = m % n;       <span class="comment">// 针对m&gt;n的情况</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; num[i];</span><br><span class="line">    reverse(num, <span class="number">0</span>, n-m<span class="number">-1</span>);</span><br><span class="line">    reverse(num, n-m, n<span class="number">-1</span>);</span><br><span class="line">    reverse(num, <span class="number">0</span>, n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">bool</span> first = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="keyword">if</span>(first)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num[i];</span><br><span class="line">            first = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; num[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h1><p>&emsp;一个隐藏点是n和m的取值大小问题。当m取值大于n的时候，如果不进行特殊处理，会出现数组访问溢出的情况。因此程序中在读入n和m后，索性强制对m进行以n为除数的取余操作，这样可以保证无论m和n的大小关系如何都不会导致数组访问越界。</p>
-<hr>
-<p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
-<hr>
-
-          
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;解决这种数组元素移位问题的一个常用算法是翻转法。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/01/PAT-Basic-1008/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -494,7 +491,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2019/02/01/Cpp-preface/" itemprop="url">
-                  预备知识
+                  《C++ Prime Plus》（1）
                 </a>
               
             
@@ -520,7 +517,7 @@
                 
               
 
-              <time title="创建时间：2019-02-01 13:26:45 / 修改时间：22:30:25" itemprop="dateCreated datePublished" datetime="2019-02-01T13:26:45+08:00">2019-02-01</time>
+              <time title="创建时间：2019-02-01 13:26:45 / 修改时间：23:06:42" itemprop="dateCreated datePublished" datetime="2019-02-01T13:26:45+08:00">2019-02-01</time>
             
 
             
@@ -578,7 +575,8 @@
       
         
           
-            <h1 id="c-命名之谜"><a href="#c-命名之谜" class="headerlink" title="c++命名之谜"></a>c++命名之谜</h1><p>&emsp;C语言中的自增操作符++可将变量加一。命名C++表明它是C的扩充版本。</p>
+            <a id="more"></a>
+<h1 id="c-命名之谜"><a href="#c-命名之谜" class="headerlink" title="c++命名之谜"></a>c++命名之谜</h1><p>&emsp;C语言中的自增操作符++可将变量加一。命名C++表明它是C的扩充版本。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
