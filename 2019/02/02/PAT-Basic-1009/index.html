@@ -109,25 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="PAT乙级-1008  题目分析&amp;emsp;解决这种数组元素移位问题的一个常用算法是翻转法。">
+  <meta name="description" content="PAT乙级-1008  题目分析">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT乙级-1008">
-<meta property="og:url" content="http://tinshine.github.io/2019/02/01/PAT-Basic-1008/index.html">
+<meta property="og:title" content="PAT乙级-1009">
+<meta property="og:url" content="http://tinshine.github.io/2019/02/02/PAT-Basic-1009/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="PAT乙级-1008  题目分析&amp;emsp;解决这种数组元素移位问题的一个常用算法是翻转法。">
+<meta property="og:description" content="PAT乙级-1008  题目分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-01T15:06:52.982Z">
+<meta property="og:updated_time" content="2019-02-02T07:40:49.508Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PAT乙级-1008">
-<meta name="twitter:description" content="PAT乙级-1008  题目分析&amp;emsp;解决这种数组元素移位问题的一个常用算法是翻转法。">
+<meta name="twitter:title" content="PAT乙级-1009">
+<meta name="twitter:description" content="PAT乙级-1008  题目分析">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2019/02/01/PAT-Basic-1008/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/02/02/PAT-Basic-1009/"/>
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>PAT乙级-1008 | Tinshine's blog</title>
+  <title>PAT乙级-1009 | Tinshine's blog</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/02/01/PAT-Basic-1008/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/02/02/PAT-Basic-1009/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT乙级-1008
+          <h1 class="post-title" itemprop="name headline">PAT乙级-1009
               
             
           </h1>
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-02-01 22:31:11 / 修改时间：23:06:52" itemprop="dateCreated datePublished" datetime="2019-02-01T22:31:11+08:00">2019-02-01</time>
+              <time title="创建时间：2019-02-02 15:20:06 / 修改时间：15:40:49" itemprop="dateCreated datePublished" datetime="2019-02-02T15:20:06+08:00">2019-02-02</time>
             
 
             
@@ -403,12 +403,14 @@
 
       
         <hr>
-<p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805316250615808" target="_blank" rel="noopener">PAT乙级-1008</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805314941992960" target="_blank" rel="noopener">PAT乙级-1008</a></p>
 <hr>
-<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;解决这种数组元素移位问题的一个常用算法是翻转法。<br><a id="more"></a><br>&emsp;对具有n个元素的数组进行m位右移，数组元素位置从(a<sub>0</sub>, ··· a<sub>n-m-1</sub>, a<sub>n-m</sub> a<sub>n-1</sub>)变化为(a<sub>n-m</sub> ··· a<sub>n-1</sub>, a<sub>0</sub>, a<sub>n-m-1</sub>)。可将数组元素分为两部分，前半部分从a<sub>0</sub>到a<sub>n-m-1</sub>，后半部分从a<sub>n-m</sub>到a<sub>n-1</sub>，观察发现实际上完成的是前半部分和后半部分的整体位置互换。线性代数矩阵运算中，从AB向BA转化，我们可以借助转置运算来完成：(A<sup>T</sup>B<sup>T</sup>)<sup>T</sup>=BA，这对于解决这个问题有借鉴意义。</p>
-<p>&emsp;类似的，我们可以设置一个翻转函数，其功能为将给定数组的某一部分进行逆序翻转。这样通过三次部分和整体的逆序翻转，我们就能够得到移位后的数组。这一方法完全满足题目对于不使用额外数组和移动数据次数尽量少的要求。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 105</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(begin &lt; end)&#123;</span><br><span class="line">        tmp = a[end];</span><br><span class="line">        a[end] = a[begin];</span><br><span class="line">        a[begin] = tmp;</span><br><span class="line">        begin++, end--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m, num[maxn];</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    m = m % n;       <span class="comment">// 针对m&gt;n的情况</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; num[i];</span><br><span class="line">    reverse(num, <span class="number">0</span>, n-m<span class="number">-1</span>);</span><br><span class="line">    reverse(num, n-m, n<span class="number">-1</span>);</span><br><span class="line">    reverse(num, <span class="number">0</span>, n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">bool</span> first = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)</span><br><span class="line">        <span class="keyword">if</span>(first)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; num[i];</span><br><span class="line">            first = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; num[i];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h1><p>&emsp;一个隐藏点是n和m的取值大小问题。当m取值大于n的时候，如果不进行特殊处理，会出现数组访问溢出的情况。因此程序中在读入n和m后，索性强制对m进行以n为除数的取余操作，这样可以保证无论m和n的大小关系如何都不会导致数组访问越界。</p>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><a id="more"></a>
+<p>&emsp;涉及到字符串的操作，使用C++引进的string型变量可以很方便的解决。本题应用与PAT乙级1008题相同的算法，通过三次局部和整体的逆序转置就可以将整个字符串中的单词进行倒序重组。</p>
+<p>&emsp;本题的一个难点在于字符串中每个单词的长度是未知的，因此在处理字符串的时候我们使用循环变量<code>int i</code>和用于记录的变量<code>int pre</code>来界定每一个单词在字符串中的位置，分界符自然就是空格符<code>&quot; &quot;</code>。</p>
+<p>&emsp;初始化<code>i</code>和<code>pre</code>后，一遍循环逐个读入字符，读到空格符则将由<code>pre</code>和<code>i</code>确定的边界值所界定的单词进行逆置，直到字符串尾。再将局部逆置的字符串整个逆置就可以得到想要的输出。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstring"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> tmp;</span><br><span class="line">    <span class="keyword">while</span>(begin &lt; end)&#123;</span><br><span class="line">        tmp = s[end];</span><br><span class="line">        s[end] = s[begin];</span><br><span class="line">        s[begin] = tmp;</span><br><span class="line">        begin++, end--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> words;</span><br><span class="line">    getline(<span class="built_in">cin</span>, words);</span><br><span class="line">    <span class="keyword">int</span> pre = <span class="number">0</span>;        <span class="comment">// pre记录单词头下标</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=pre; i&lt;words.length();)&#123;</span><br><span class="line">        <span class="keyword">while</span>((i&lt;=words.length()) &amp;&amp; (words[i++] != <span class="string">' '</span>));</span><br><span class="line">        reverse(words, pre, i<span class="number">-2</span>);  <span class="comment">//i-2为单词尾下标</span></span><br><span class="line">        pre = i;    <span class="comment">// 更新pre</span></span><br><span class="line">    &#125;</span><br><span class="line">    reverse(words, <span class="number">0</span>, words.length()<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; words;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h1><p>&emsp;本题隐藏的坑有两点。其一是循环语句中下标的处理。在while循环语句中<code>i&lt;=words.length()</code>，尽管<code>i</code>的取值范围是超出数组范围的，但是也不能将≤号换成&lt;号，这与后续pre的赋值有关。其二是while循环条件中两个条件的摆放顺序。如果把判断空格符的条件放在前面，那么由于i++的后置加一处理，会导致第二个条件失去正确性，而按照程序中的顺序放置则没有问题。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -445,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/01/Cpp-preface/" rel="next" title="《C++ Prime Plus》（1）">
-                <i class="fa fa-chevron-left"></i> 《C++ Prime Plus》（1）
+              <a href="/2019/02/01/PAT-Basic-1008/" rel="next" title="PAT乙级-1008">
+                <i class="fa fa-chevron-left"></i> PAT乙级-1008
               </a>
             
           </div>
@@ -454,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/02/PAT-Basic-1009/" rel="prev" title="PAT乙级-1009">
-                PAT乙级-1009 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
