@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="PAT乙级-1008  题目分析">
+  <meta name="description" content="PAT乙级-1009  题目分析">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT乙级-1009">
 <meta property="og:url" content="http://tinshine.github.io/2019/02/02/PAT-Basic-1009/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="PAT乙级-1008  题目分析">
+<meta property="og:description" content="PAT乙级-1009  题目分析">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-02T07:40:49.508Z">
+<meta property="og:updated_time" content="2019-02-02T07:50:37.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT乙级-1009">
-<meta name="twitter:description" content="PAT乙级-1008  题目分析">
+<meta name="twitter:description" content="PAT乙级-1009  题目分析">
 
 
 
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-02-02 15:20:06 / 修改时间：15:40:49" itemprop="dateCreated datePublished" datetime="2019-02-02T15:20:06+08:00">2019-02-02</time>
+              <time title="创建时间：2019-02-02 15:20:06 / 修改时间：15:50:37" itemprop="dateCreated datePublished" datetime="2019-02-02T15:20:06+08:00">2019-02-02</time>
             
 
             
@@ -403,10 +403,10 @@
 
       
         <hr>
-<p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805314941992960" target="_blank" rel="noopener">PAT乙级-1008</a></p>
+<p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805314941992960" target="_blank" rel="noopener">PAT乙级-1009</a></p>
 <hr>
 <h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><a id="more"></a>
-<p>&emsp;涉及到字符串的操作，使用C++引进的string型变量可以很方便的解决。本题应用与PAT乙级1008题相同的算法，通过三次局部和整体的逆序转置就可以将整个字符串中的单词进行倒序重组。</p>
+<p>&emsp;涉及到字符串的操作，使用C++的string型变量可以很方便的解决。本题应用与PAT乙级1008题相同的算法，通过三次局部和整体的逆序转置就可以将整个字符串中的单词进行倒序重组。</p>
 <p>&emsp;本题的一个难点在于字符串中每个单词的长度是未知的，因此在处理字符串的时候我们使用循环变量<code>int i</code>和用于记录的变量<code>int pre</code>来界定每一个单词在字符串中的位置，分界符自然就是空格符<code>&quot; &quot;</code>。</p>
 <p>&emsp;初始化<code>i</code>和<code>pre</code>后，一遍循环逐个读入字符，读到空格符则将由<code>pre</code>和<code>i</code>确定的边界值所界定的单词进行逆置，直到字符串尾。再将局部逆置的字符串整个逆置就可以得到想要的输出。</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstring"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> tmp;</span><br><span class="line">    <span class="keyword">while</span>(begin &lt; end)&#123;</span><br><span class="line">        tmp = s[end];</span><br><span class="line">        s[end] = s[begin];</span><br><span class="line">        s[begin] = tmp;</span><br><span class="line">        begin++, end--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> words;</span><br><span class="line">    getline(<span class="built_in">cin</span>, words);</span><br><span class="line">    <span class="keyword">int</span> pre = <span class="number">0</span>;        <span class="comment">// pre记录单词头下标</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=pre; i&lt;words.length();)&#123;</span><br><span class="line">        <span class="keyword">while</span>((i&lt;=words.length()) &amp;&amp; (words[i++] != <span class="string">' '</span>));</span><br><span class="line">        reverse(words, pre, i<span class="number">-2</span>);  <span class="comment">//i-2为单词尾下标</span></span><br><span class="line">        pre = i;    <span class="comment">// 更新pre</span></span><br><span class="line">    &#125;</span><br><span class="line">    reverse(words, <span class="number">0</span>, words.length()<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; words;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
