@@ -109,24 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="Thanks for your visiting.">
-<meta name="keywords" content="MATLAB, PolarCodes, C++">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tinshine&#39;s blog">
-<meta property="og:url" content="http://tinshine.github.io/archives/2019/index.html">
+  <meta name="description" content="PAT乙级-1011  题目分析&amp;emsp;本题唯一难点在于输入数值的范围。根据题目，int型的变量刚好无法满足题目要求的数值范围，因此要考虑比int更大的类型。我们可以选择的有long long型和double型。根据C++的规定，long long型至少要比int型表示范围大，因此可以采用；而双精度浮点型double也能够表示比int大的数值范围，因此也可以采用。 &amp;emsp;对于多组输入和">
+<meta name="keywords" content="题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT-Basic-1011">
+<meta property="og:url" content="http://tinshine.github.io/2019/02/09/PAT-Basic-1011/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="Thanks for your visiting.">
+<meta property="og:description" content="PAT乙级-1011  题目分析&amp;emsp;本题唯一难点在于输入数值的范围。根据题目，int型的变量刚好无法满足题目要求的数值范围，因此要考虑比int更大的类型。我们可以选择的有long long型和double型。根据C++的规定，long long型至少要比int型表示范围大，因此可以采用；而双精度浮点型double也能够表示比int大的数值范围，因此也可以采用。 &amp;emsp;对于多组输入和">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-11T04:03:49.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tinshine&#39;s blog">
-<meta name="twitter:description" content="Thanks for your visiting.">
+<meta name="twitter:title" content="PAT-Basic-1011">
+<meta name="twitter:description" content="PAT乙级-1011  题目分析&amp;emsp;本题唯一难点在于输入数值的范围。根据题目，int型的变量刚好无法满足题目要求的数值范围，因此要考虑比int更大的类型。我们可以选择的有long long型和double型。根据C++的规定，long long型至少要比int型表示范围大，因此可以采用；而双精度浮点型double也能够表示比int大的数值范围，因此也可以采用。 &amp;emsp;对于多组输入和">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/archives/2019/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/02/09/PAT-Basic-1011/"/>
 
 
 
@@ -136,7 +137,7 @@
   };
 </script>
 
-  <title>归档 | Tinshine's blog</title>
+  <title>PAT-Basic-1011 | Tinshine's blog</title>
   
 
 
@@ -181,7 +182,7 @@
   
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,7 +243,7 @@
         
         
           
-          <li class="menu-item menu-item-时间轴 menu-item-active">
+          <li class="menu-item menu-item-时间轴">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />时间轴</a>
   </li>
@@ -262,28 +263,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -309,417 +288,213 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/02/09/PAT-Basic-1011/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="Thanks for your visiting.">
+      <meta itemprop="image" content="/uploads/head1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">PAT-Basic-1011
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-09 18:41:52" itemprop="dateCreated datePublished" datetime="2019-02-09T18:41:52+08:00">2019-02-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-11 12:03:49" itemprop="dateModified" datetime="2019-02-11T12:03:49+08:00">2019-02-11</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 24 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-Basic-Level-Practice/" itemprop="url" rel="index"><span itemprop="name">PAT(Basic Level Practice)</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/09/PAT-Basic-1011/" itemprop="url">
-              
-                <span itemprop="name">PAT-Basic-1011</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-02-09T18:41:52+08:00"
-              content="2019-02-09" >
-          02-09
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/03/PAT-Basic-1010/" itemprop="url">
-              
-                <span itemprop="name">PAT-Basic-1010</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-02-03T16:06:59+08:00"
-              content="2019-02-03" >
-          02-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/02/PAT-Basic-1009/" itemprop="url">
-              
-                <span itemprop="name">PAT乙级-1009</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-02-02T15:20:06+08:00"
-              content="2019-02-02" >
-          02-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <hr>
+<p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805312417021952" target="_blank" rel="noopener">PAT乙级-1011</a></p>
+<hr>
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;本题唯一难点在于输入数值的范围。根据题目，<code>int</code>型的变量刚好无法满足题目要求的数值范围，因此要考虑比<code>int</code>更大的类型。我们可以选择的有<code>long long</code>型和<code>double</code>型。根据C++的规定，<code>long long</code>型至少要比<code>int</code>型表示范围大，因此可以采用；而双精度浮点型<code>double</code>也能够表示比<code>int</code>大的数值范围，因此也可以采用。</p>
+<p>&emsp;对于多组输入和多组输出，解决的办法是使用一个布尔型数组并全部初始化为<code>false</code>。对于每组输入判断后设置相应位置的布尔数组元素，最后一个<code>for</code>循环按要求输出结果。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 15</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">bool</span> results[maxn];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;maxn; ++i)</span><br><span class="line">        results[i] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">double</span> a, b, c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        <span class="keyword">if</span>(a+b &gt; c)</span><br><span class="line">            results[i] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case #"</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">": "</span>;</span><br><span class="line">        <span class="keyword">if</span>(results[i])</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"true"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"false"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>转载 请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
+<hr>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/01/PAT-Basic-1008/" itemprop="url">
-              
-                <span itemprop="name">PAT乙级-1008</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-02-01T22:31:11+08:00"
-              content="2019-02-01" >
-          02-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/01/CppLearning-1/" itemprop="url">
-              
-                <span itemprop="name">《C++ Prime Plus》（1）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-02-01T13:26:45+08:00"
-              content="2019-02-01" >
-          02-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/30/PAT-Basic-1007/" itemprop="url">
-              
-                <span itemprop="name">PAT乙级-1007</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-30T22:57:14+08:00"
-              content="2019-01-30" >
-          01-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/30/PAT-Basic-1006/" itemprop="url">
-              
-                <span itemprop="name">PAT乙级-1006</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-30T11:50:09+08:00"
-              content="2019-01-30" >
-          01-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/28/PAT-Basic-1005/" itemprop="url">
-              
-                <span itemprop="name">PAT乙级-1005</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-28T22:11:46+08:00"
-              content="2019-01-28" >
-          01-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/28/PAT-Advanced-1002/" itemprop="url">
-              
-                <span itemprop="name">PAT甲级-1002</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-28T16:58:23+08:00"
-              content="2019-01-28" >
-          01-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/25/PAT-Advanced-1001/" itemprop="url">
-              
-                <span itemprop="name">PAT甲级-1001</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-25T16:14:06+08:00"
-              content="2019-01-25" >
-          01-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/03/PAT-Basic-1010/" rel="next" title="PAT-Basic-1010">
+                <i class="fa fa-chevron-left"></i> PAT-Basic-1010
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -742,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -846,6 +630,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目分析"><span class="nav-number">1.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1005,6 +805,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
