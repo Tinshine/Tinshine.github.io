@@ -367,7 +367,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-11 12:03:49" itemprop="dateModified" datetime="2019-02-11T12:03:49+08:00">2019-02-11</time>
+                <time title="修改时间：2019-02-11 12:10:40" itemprop="dateModified" datetime="2019-02-11T12:10:40+08:00">2019-02-11</time>
               
             
           </span>
@@ -419,18 +419,17 @@
 
       
         
-          
-            <hr>
+          <hr>
 <p><a href="https://pintia.cn/problem-sets/994805260223102976/problems/994805312417021952" target="_blank" rel="noopener">PAT乙级-1011</a></p>
 <hr>
-<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>&emsp;本题唯一难点在于输入数值的范围。根据题目，<code>int</code>型的变量刚好无法满足题目要求的数值范围，因此要考虑比<code>int</code>更大的类型。我们可以选择的有<code>long long</code>型和<code>double</code>型。根据C++的规定，<code>long long</code>型至少要比<code>int</code>型表示范围大，因此可以采用；而双精度浮点型<code>double</code>也能够表示比<code>int</code>大的数值范围，因此也可以采用。</p>
-<p>&emsp;对于多组输入和多组输出，解决的办法是使用一个布尔型数组并全部初始化为<code>false</code>。对于每组输入判断后设置相应位置的布尔数组元素，最后一个<code>for</code>循环按要求输出结果。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 15</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">bool</span> results[maxn];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;maxn; ++i)</span><br><span class="line">        results[i] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">double</span> a, b, c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line">        <span class="keyword">if</span>(a+b &gt; c)</span><br><span class="line">            results[i] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case #"</span> &lt;&lt; i+<span class="number">1</span> &lt;&lt; <span class="string">": "</span>;</span><br><span class="line">        <span class="keyword">if</span>(results[i])</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"true"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"false"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>转载 请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
-<hr>
-
-          
+<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/09/PAT-Basic-1011/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
