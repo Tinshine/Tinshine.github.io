@@ -350,7 +350,7 @@
                 
               
 
-              <time title="创建时间：2019-02-12 22:07:42 / 修改时间：22:41:01" itemprop="dateCreated datePublished" datetime="2019-02-12T22:07:42+08:00">2019-02-12</time>
+              <time title="创建时间：2019-02-12 22:07:42 / 修改时间：22:44:12" itemprop="dateCreated datePublished" datetime="2019-02-12T22:07:42+08:00">2019-02-12</time>
             
 
             
@@ -407,19 +407,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h1 id="不是所有的字符数组都叫字符串"><a href="#不是所有的字符数组都叫字符串" class="headerlink" title="不是所有的字符数组都叫字符串"></a>不是所有的字符数组都叫字符串</h1><p>&emsp;字符串以空字符<code>&#39;\0&#39;</code>结尾，而字符数组的最后一个字符不一定是空字符。因此不是所有的字符数组都能称为字符串。字符串以<code>&#39;\0&#39;</code>结尾，这一点很重要，因为许多涉及到字符串的操作都是读到空字符为止。</p>
-<p>&emsp;在初始化字符数组时，若赋值长度小于数组长度，则后续字符会被默认填上空字符：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">5</span>] = &#123;<span class="string">'h'</span>, <span class="string">'i'</span>&#125;;</span><br><span class="line"><span class="comment">// str[] = &#123;'h', 'i', '\0', '\0', '\0'&#125;;</span></span><br></pre></td></tr></table></figure></p>
-<p>&emsp;此外，在使用<code>strlen()</code>计算字符串长度时，空字符是不计入长度的。</p>
-<h1 id="get-和getline-：我们不一样"><a href="#get-和getline-：我们不一样" class="headerlink" title="get()和getline()：我们不一样"></a>get()和getline()：我们不一样</h1><p>&emsp;简而言之，<code>get()</code>识别换行符，<code>getline()</code>将换行符自动丢弃。使用<code>getline</code>读入一行字符到换行符为止并丢弃换行符，而<code>get</code>读入一行后保留换行符。如果使用<code>get</code>读入连续的几行则需要在中间额外使用一次无参的<code>get()</code>以消耗掉换行符。<code>get()</code>输入的优点是更加精细。</p>
-<p>&emsp;当混合输入数字和字符串时会出现一种典型错误：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line">getline(<span class="built_in">cin</span>, s);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// s = '\n'</span></span><br></pre></td></tr></table></figure></p>
-<p>&emsp;这是由于在输入整数并换行时，换行符隐藏在输入流中，这样后续再次以字符串形式去读入时，就直接获得了缓冲区中的换行符，导致了错误。</p>
-<hr>
-<p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
-<hr>
-
-          
+          <h1 id="不是所有的字符数组都叫字符串"><a href="#不是所有的字符数组都叫字符串" class="headerlink" title="不是所有的字符数组都叫字符串"></a>不是所有的字符数组都叫字符串</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/12/CppLearning-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
