@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="Tinshine&#39;s blog">
 <meta property="og:description" content="不是所有的字符数组都叫字符串">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-17T14:21:51.707Z">
+<meta property="og:updated_time" content="2019-02-21T07:46:51.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（2）">
 <meta name="twitter:description" content="不是所有的字符数组都叫字符串">
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-17 22:21:51" itemprop="dateModified" datetime="2019-02-17T22:21:51+08:00">2019-02-17</time>
+                <time title="修改时间：2019-02-21 15:46:51" itemprop="dateModified" datetime="2019-02-21T15:46:51+08:00">2019-02-21</time>
               
             
           </span>
@@ -431,6 +431,11 @@
 <h1 id="表达式的值"><a href="#表达式的值" class="headerlink" title="表达式的值"></a>表达式的值</h1><p>&emsp;每个C++表达式都有值。C++将赋值表达式的值定义为左侧成员的值；逗号表达式的值为最后一个分句的值。</p>
 <h1 id="字符数组型字符串的比较"><a href="#字符数组型字符串的比较" class="headerlink" title="字符数组型字符串的比较"></a>字符数组型字符串的比较</h1><p>&emsp;C++引入<code>string</code>型变量来处理字符串，但是C中包含了字符数组存储的字符串类型。如何比较字符数组存储的字符串是否相等呢？这里有一个隐藏的误区，试看以下代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> word[] = &#123;<span class="string">'d'</span>, <span class="string">'o'</span>, <span class="string">'g'</span>&#125;;</span><br><span class="line"><span class="keyword">if</span>(word == <span class="string">"dog"</span>)</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Equal"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Not equal"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;可想而知，程序无法正常输出“Equal”。其原因在于，C风格的字符数组将数组名作为地址常量来使用，因此上述<code>if</code>条件语句中的判断项比较的是地址而非字符数组内容。</p>
+<h1 id="clock-函数"><a href="#clock-函数" class="headerlink" title="clock()函数"></a>clock()函数</h1><p>&emsp;函数原型：<code>clock_t clock(void);</code>，用于返回该程序自执行起所用系统时间。两个问题，其一<code>clock()</code>的返回值不一定以秒为单位，其二返回类型在不同机器上可能有不同类型。</p>
+<p>&emsp;对于问题一，通过在头文件中包含<code>ctime</code>文件可以使用符号常量<code>CLOCKS_PER_SEC</code>，它表示每秒包含的系统单位时间数。用<code>clock()</code>返回的值除以这个常量就能得到秒数。</p>
+<p>&emsp;对于问题二，通过使用类型别名<code>clock_t</code>可以实现程序的跨平台移植而不必担心不同机器上类型长度不一的问题。C++中创建类型别名有两种方式：（1）使用<code>#define</code>来预定义替换，但是这样会带来潜在的问题，如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int_pointer int *</span></span><br><span class="line"></span><br><span class="line">int_pointer p1, p2; <span class="comment">// 相当于: int *p1, p2; 不符合预期</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;（2）使用<code>typedef</code>来起别名就不会出现上述问题，有时这种方法也是唯一可选的方法。</p>
+<h1 id="cin和cin-get-char-的区别"><a href="#cin和cin-get-char-的区别" class="headerlink" title="cin和cin.get(char)的区别"></a>cin和cin.get(char)的区别</h1><p>&emsp;一言蔽之，使用<code>cin</code>读取字符时将自动忽略空格符和换行符，而<code>cin.get(char)</code>则如实读入每一个遇到的字符。<code>cin.get()</code>有两种参数列表，除了以<code>char</code>型字符为参数外，还有<code>cin.get(char* name, int size)</code>的调用格式，意为从地址<code>name</code>中读取<code>size</code>个字符。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -651,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不是所有的字符数组都叫字符串"><span class="nav-number">1.</span> <span class="nav-text">不是所有的字符数组都叫字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#get-和getline-：我们不一样"><span class="nav-number">2.</span> <span class="nav-text">get()和getline()：我们不一样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针变量和数组名常量"><span class="nav-number">3.</span> <span class="nav-text">指针变量和数组名常量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出bool型变量的值"><span class="nav-number">4.</span> <span class="nav-text">输出bool型变量的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for语句中自增前缀-amp-后缀的效率"><span class="nav-number">5.</span> <span class="nav-text">for语句中自增前缀&amp;后缀的效率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句块"><span class="nav-number">6.</span> <span class="nav-text">语句块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表达式的值"><span class="nav-number">7.</span> <span class="nav-text">表达式的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符数组型字符串的比较"><span class="nav-number">8.</span> <span class="nav-text">字符数组型字符串的比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不是所有的字符数组都叫字符串"><span class="nav-number">1.</span> <span class="nav-text">不是所有的字符数组都叫字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#get-和getline-：我们不一样"><span class="nav-number">2.</span> <span class="nav-text">get()和getline()：我们不一样</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指针变量和数组名常量"><span class="nav-number">3.</span> <span class="nav-text">指针变量和数组名常量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出bool型变量的值"><span class="nav-number">4.</span> <span class="nav-text">输出bool型变量的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#for语句中自增前缀-amp-后缀的效率"><span class="nav-number">5.</span> <span class="nav-text">for语句中自增前缀&amp;后缀的效率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句块"><span class="nav-number">6.</span> <span class="nav-text">语句块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表达式的值"><span class="nav-number">7.</span> <span class="nav-text">表达式的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符数组型字符串的比较"><span class="nav-number">8.</span> <span class="nav-text">字符数组型字符串的比较</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#clock-函数"><span class="nav-number">9.</span> <span class="nav-text">clock()函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cin和cin-get-char-的区别"><span class="nav-number">10.</span> <span class="nav-text">cin和cin.get(char)的区别</span></a></li></ol></div>
             
 
           </div>
