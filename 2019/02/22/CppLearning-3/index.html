@@ -109,25 +109,27 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211">
-<meta name="keywords" content="题解">
+  <meta name="description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。 判断字符类型&amp;emsp;C++中通过在头文件中包含cctype可以调用其中函数来判断一个字符变量的类型，返回值为bool型值。可调用函数如下：      转载请注明来源：©Tinshine">
+<meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计数和数数">
-<meta property="og:url" content="http://tinshine.github.io/2019/01/20/Count_and_Counts/index.html">
+<meta property="og:title" content="《C++ Prime Plus》（3）">
+<meta property="og:url" content="http://tinshine.github.io/2019/02/22/CppLearning-3/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211">
+<meta property="og:description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。 判断字符类型&amp;emsp;C++中通过在头文件中包含cctype可以调用其中函数来判断一个字符变量的类型，返回值为bool型值。可调用函数如下：      转载请注明来源：©Tinshine">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-20T13:42:04.670Z">
+<meta property="og:image" content="http://tinshine.github.io/uploads/CppPrimePlus/cctype.png">
+<meta property="og:updated_time" content="2019-02-22T08:00:42.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计数和数数">
-<meta name="twitter:description" content="来源：@计蒜客—计数和数数 题目一个找规律的题目：123456f(1) = 1f(2) = 11f(3) = 21f(4) = 1211f(5) = 111221f(6) = 312211">
+<meta name="twitter:title" content="《C++ Prime Plus》（3）">
+<meta name="twitter:description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。 判断字符类型&amp;emsp;C++中通过在头文件中包含cctype可以调用其中函数来判断一个字符变量的类型，返回值为bool型值。可调用函数如下：      转载请注明来源：©Tinshine">
+<meta name="twitter:image" content="http://tinshine.github.io/uploads/CppPrimePlus/cctype.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/2019/01/20/Count_and_Counts/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/02/22/CppLearning-3/"/>
 
 
 
@@ -137,7 +139,7 @@
   };
 </script>
 
-  <title>计数和数数 | Tinshine's blog</title>
+  <title>《C++ Prime Plus》（3） | Tinshine's blog</title>
   
 
 
@@ -304,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/01/20/Count_and_Counts/">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/02/22/CppLearning-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tinshine">
@@ -321,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">计数和数数
+          <h1 class="post-title" itemprop="name headline">《C++ Prime Plus》（3）
               
             
           </h1>
@@ -346,7 +348,7 @@
                 
               
 
-              <time title="创建时间：2019-01-20 19:20:35 / 修改时间：21:42:04" itemprop="dateCreated datePublished" datetime="2019-01-20T19:20:35+08:00">2019-01-20</time>
+              <time title="创建时间：2019-02-22 11:42:46 / 修改时间：16:00:42" itemprop="dateCreated datePublished" datetime="2019-02-22T11:42:46+08:00">2019-02-22</time>
             
 
             
@@ -402,17 +404,12 @@
       
 
       
-        <p>来源：@<a href="https://nanti.jisuanke.com/t/23" target="_blank" rel="noopener">计蒜客—计数和数数</a></p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>一个找规律的题目：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">1</span>)</span></span> = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">2</span>)</span></span> = <span class="number">11</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">3</span>)</span></span> = <span class="number">21</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">4</span>)</span></span> = <span class="number">1211</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">5</span>)</span></span> = <span class="number">111221</span></span><br><span class="line"><span class="function"><span class="title">f</span><span class="params">(<span class="number">6</span>)</span></span> = <span class="number">312211</span></span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h1 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h1><p>多组输入，读到文件结束，每组一个整数n（1≤n≤30）。输出为每个n相应的序列，样例如下：<br><figure class="highlight cpp"><figcaption><span>Input:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line">eof</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight cpp"><figcaption><span>output:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">21</span></span><br><span class="line"><span class="number">13112221</span></span><br></pre></td></tr></table></figure>
-<h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><h2 id="规律"><a href="#规律" class="headerlink" title="规律"></a>规律</h2><p>&emsp;这是一个类似斐波那契数列的迭代过程。n=1时，f(1)=1。将其看作一个字符串，这就是1个’1’，将两个数字写在一起就是：f(2)=’11’。依此类推，’11’是2个’1’，f(3)就应该是’21’；’21’是1个’2’，1个’1’，因此f(4)=’1211’。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>&emsp;对于上述的迭代过程，考虑使用递归函数来实现。对于任意一个n值，要得到相应的序列，都需要从1开始迭代n次。每次迭代，对当前已知的字符串进行计数，逐字符的统计出某个字符连续出现的次数，并生成相应字符串附加到一个新串的串尾。</p>
-<p>&emsp;比如，通过f(4)得到f(5)，转化算法实现如下：f(4)作为主串传入，新建一个串str，一个计数器cnt，一个用于记录前个字符的pre，扫描f(4)=’1211’，将pre设为首个字符’1’，将cnt+1；扫描’2’，对比发现pre不等于’2’；这时得知有cnt个pre，也即1个’1’，将字符串”11”附加在新串str后······最终得到新串str = f(5)，如果此时迭代仍未结束，则将str作为主串，递归调用这个转化函数，直至满足需要。</p>
-<p>&emsp;此外，还要注意边界情况的考虑，即对首个字符和最后一个字符要特殊处理。</p>
-<h2 id="C-知识"><a href="#C-知识" class="headerlink" title="C++知识"></a>C++知识</h2><p>题目提到要有多组输入，一直读到文件尾。在c++中，可以通过一个while循环来实现这个功能：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n)&#123;</span><br><span class="line">    <span class="comment">// your code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstring"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transform</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;          </span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;  </span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>; <span class="keyword">char</span> pre = s[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">string</span> str;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); ++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>)&#123;                 </span><br><span class="line">            ++cnt;                  </span><br><span class="line">            <span class="keyword">if</span>(s.length() == <span class="number">1</span>)&#123;                </span><br><span class="line">                str.append(<span class="number">1</span>, s[<span class="number">0</span>]).append(<span class="number">1</span>, <span class="keyword">char</span>(cnt + <span class="string">'0'</span>));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i == s.length()<span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == pre)&#123;</span><br><span class="line">                str.append(<span class="number">1</span>, <span class="keyword">char</span>(++cnt + <span class="string">'0'</span>)).append(<span class="number">1</span>, pre);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                str.append(<span class="number">1</span>, <span class="keyword">char</span>(cnt + <span class="string">'0'</span>)).append(<span class="number">1</span>, pre).append(<span class="number">1</span>, <span class="string">'1'</span>).append(<span class="number">1</span>, s[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i] == pre)&#123;</span><br><span class="line">                ++cnt; </span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                str.append(<span class="number">1</span>, <span class="keyword">char</span>(cnt + <span class="string">'0'</span>)).append(<span class="number">1</span>, s[i<span class="number">-1</span>]);</span><br><span class="line">                cnt = <span class="number">1</span>; </span><br><span class="line">                pre = s[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    transform(str, n<span class="number">-1</span>);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s = <span class="string">"1"</span>; </span><br><span class="line">    <span class="keyword">int</span> n;  </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n)&#123;</span><br><span class="line">        transform(s, n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="逻辑操作符的运算优先级"><a href="#逻辑操作符的运算优先级" class="headerlink" title="逻辑操作符的运算优先级"></a>逻辑操作符的运算优先级</h1><p>&emsp;优先级：<code>NOT</code>操作符&gt;关系运算符&gt;<code>AND</code>逻辑运算符&gt;<code>OR</code>逻辑运算符。</p>
+<h1 id="判断字符类型"><a href="#判断字符类型" class="headerlink" title="判断字符类型"></a>判断字符类型</h1><p>&emsp;C++中通过在头文件中包含<code>cctype</code>可以调用其中函数来判断一个字符变量的类型，返回值为<code>bool</code>型值。可调用函数如下：</p>
+<div align="center"><img width="350" height="300" src="/uploads/CppPrimePlus/cctype.png"></div>
+
+
+
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -436,7 +433,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/题解/" rel="tag"># 题解</a>
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
           
         </div>
       
@@ -449,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/19/Introduce_StringType/" rel="next" title="C++中的string类型">
-                <i class="fa fa-chevron-left"></i> C++中的string类型
+              <a href="/2019/02/12/CppLearning-2/" rel="next" title="《C++ Prime Plus》（2）">
+                <i class="fa fa-chevron-left"></i> 《C++ Prime Plus》（2）
               </a>
             
           </div>
@@ -458,10 +455,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/24/Limit-of-DataType/" rel="prev" title="常见数据类型的取值范围">
-                常见数据类型的取值范围 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -637,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#要求"><span class="nav-number">2.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析"><span class="nav-number">3.</span> <span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#规律"><span class="nav-number">3.1.</span> <span class="nav-text">规律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-知识"><span class="nav-number">3.3.</span> <span class="nav-text">C++知识</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑操作符的运算优先级"><span class="nav-number">1.</span> <span class="nav-text">逻辑操作符的运算优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断字符类型"><span class="nav-number">2.</span> <span class="nav-text">判断字符类型</span></a></li></ol></div>
             
 
           </div>
