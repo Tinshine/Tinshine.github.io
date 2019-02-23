@@ -118,7 +118,7 @@
 <meta property="og:description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tinshine.github.io/uploads/CppPrimePlus/cctype.png">
-<meta property="og:updated_time" content="2019-02-22T08:17:26.769Z">
+<meta property="og:updated_time" content="2019-02-23T09:59:56.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（3）">
 <meta name="twitter:description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。">
@@ -348,12 +348,24 @@
                 
               
 
-              <time title="创建时间：2019-02-22 11:42:46 / 修改时间：16:17:26" itemprop="dateCreated datePublished" datetime="2019-02-22T11:42:46+08:00">2019-02-22</time>
+              <time title="创建时间：2019-02-22 11:42:46" itemprop="dateCreated datePublished" datetime="2019-02-22T11:42:46+08:00">2019-02-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-23 17:59:56" itemprop="dateModified" datetime="2019-02-23T17:59:56+08:00">2019-02-23</time>
               
             
           </span>
@@ -409,6 +421,12 @@
 <div align="center"><img width="700" height="600" src="/uploads/CppPrimePlus/cctype.png"></div>
 
 <h1 id="switch···case使用注意事项"><a href="#switch···case使用注意事项" class="headerlink" title="switch···case使用注意事项"></a>switch···case使用注意事项</h1><p>&emsp;在<code>switch···case</code>语句中，<code>case</code>的标签只能是一个值，而且这个值必须是整型（包括char型）而不能是浮点型。</p>
+<h1 id="处理错误的cin读入"><a href="#处理错误的cin读入" class="headerlink" title="处理错误的cin读入"></a>处理错误的cin读入</h1><p>&emsp;例如，申请一个<code>int n</code>，但是却在执行<code>cin &gt;&gt; n</code>时键入了一个字母，此时将会出现意料外的错误输入。对于这种输入，<code>cin</code>对象中的一个错误标记将被激活，对<code>cin</code>方法的调用将返回<code>false</code>。对于这种错误，我们可能有两种处理方式：</p>
+<p>&emsp;（1）结束输入。只需将<code>cin &gt;&gt; n</code>置于条件判断语句中即可，例如写成<code>while(cin &gt;&gt; n)</code>，这样当输入非法类型时，<code>while</code>语句判断条件失效，跳过输入，执行后续语句。</p>
+<p>&emsp;（2）忽略这个错误，继续输入。为了继续输入，我们需要调用<code>clear()</code>方法清除错误标记，这一方法同时也能清楚<code>EOF</code>标记，调用格式为<code>cin.clear();</code>。</p>
+<p>&emsp;<code>cin</code>有两个错误标记，<code>cin.eof()</code>用于检测是否读到文件尾，<code>cin.fail()</code>除了检测文件尾，还能检测类型不匹配的情况。</p>
+<h1 id="二维数组相关"><a href="#二维数组相关" class="headerlink" title="二维数组相关"></a>二维数组相关</h1><p>&emsp;数组作为形参传入函数时，常用形式如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> size)</span></span>; <span class="comment">// 一维数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[][col], <span class="keyword">int</span> row)</span></span>; <span class="comment">// 二维数组，col为列数，row为行数</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;对于二维数组<code>int arr[row][col]</code>以下表达式的不同含义：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr <span class="comment">// 指向二维数组首行的指针；</span></span><br><span class="line">arr+row <span class="comment">// 指向二维数组第row行的指针；</span></span><br><span class="line">*(arr+row) <span class="comment">// 指向二维数组第row行首个元素的指针；</span></span><br><span class="line">*(arr+row)+col <span class="comment">// 指向二维数组第row行第col个元素的指针；</span></span><br><span class="line">*(*(arr+row)+col) <span class="comment">// 二维数组第row行第col列的元素的值。</span></span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -629,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑操作符的运算优先级"><span class="nav-number">1.</span> <span class="nav-text">逻辑操作符的运算优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断字符类型"><span class="nav-number">2.</span> <span class="nav-text">判断字符类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch···case使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">switch···case使用注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑操作符的运算优先级"><span class="nav-number">1.</span> <span class="nav-text">逻辑操作符的运算优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断字符类型"><span class="nav-number">2.</span> <span class="nav-text">判断字符类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch···case使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">switch···case使用注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理错误的cin读入"><span class="nav-number">4.</span> <span class="nav-text">处理错误的cin读入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维数组相关"><span class="nav-number">5.</span> <span class="nav-text">二维数组相关</span></a></li></ol></div>
             
 
           </div>
