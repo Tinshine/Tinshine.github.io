@@ -118,7 +118,7 @@
 <meta property="og:description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://tinshine.github.io/uploads/CppPrimePlus/cctype.png">
-<meta property="og:updated_time" content="2019-02-23T09:59:56.303Z">
+<meta property="og:updated_time" content="2019-02-23T14:59:17.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（3）">
 <meta name="twitter:description" content="逻辑操作符的运算优先级&amp;emsp;优先级：NOT操作符&amp;gt;关系运算符&amp;gt;AND逻辑运算符&amp;gt;OR逻辑运算符。">
@@ -365,7 +365,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-23 17:59:56" itemprop="dateModified" datetime="2019-02-23T17:59:56+08:00">2019-02-23</time>
+                <time title="修改时间：2019-02-23 22:59:17" itemprop="dateModified" datetime="2019-02-23T22:59:17+08:00">2019-02-23</time>
               
             
           </span>
@@ -427,6 +427,10 @@
 <p>&emsp;<code>cin</code>有两个错误标记，<code>cin.eof()</code>用于检测是否读到文件尾，<code>cin.fail()</code>除了检测文件尾，还能检测类型不匹配的情况。</p>
 <h1 id="二维数组相关"><a href="#二维数组相关" class="headerlink" title="二维数组相关"></a>二维数组相关</h1><p>&emsp;数组作为形参传入函数时，常用形式如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> size)</span></span>; <span class="comment">// 一维数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> arr[][col], <span class="keyword">int</span> row)</span></span>; <span class="comment">// 二维数组，col为列数，row为行数</span></span><br></pre></td></tr></table></figure></p>
 <p>&emsp;对于二维数组<code>int arr[row][col]</code>以下表达式的不同含义：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr <span class="comment">// 指向二维数组首行的指针；</span></span><br><span class="line">arr+row <span class="comment">// 指向二维数组第row行的指针；</span></span><br><span class="line">*(arr+row) <span class="comment">// 指向二维数组第row行首个元素的指针；</span></span><br><span class="line">*(arr+row)+col <span class="comment">// 指向二维数组第row行第col个元素的指针；</span></span><br><span class="line">*(*(arr+row)+col) <span class="comment">// 二维数组第row行第col列的元素的值。</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h1><p>&emsp;函数指针，即用一个指针指向函数来进行相关的操作。例：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数原型声明</span></span><br><span class="line">double GDP(Type1 data, Type2 (*pf)(int));</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">scheme1</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">scheme2</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数调用</span></span><br><span class="line">GDP(data, scheme1);</span><br><span class="line">GDP(data, scheme2);</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;上例中，<code>GDP()</code>是一个计算GDP的函数。不同学者对于计算GDP的方式有不同看法，<code>scheme1()</code>，<code>scheme2()</code>分别是两个不同的计算方案。问题是，如何在不重新编写GDP计算函数的前提下，通过代入不同的计算方案实现部分改变<code>GDP()</code>函数呢？函数指针就为我们提供了这样一种便捷的方法。在<code>GDP()</code>的参数列表中，第二个参数就是GDP的具体计算方案，它实际上是一个指针函数，<code>pf</code>就是指向这个函数的指针。</p>
+<p>&emsp;使用中，我们也可以通过用函数名初始化一个指针来实现指针函数，例：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">scheme1</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="keyword">double</span> (*pf)(<span class="keyword">int</span>);</span><br><span class="line">pf = scheme1; <span class="comment">// 此时，double value = (*pf)(123) = pf(123) = scheme1(123);</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;在上例中，不要对<code>(*pf)(123) = pf(123)</code>感到奇怪，C++允许像使用函数名一样使用指针名来调用函数，但是切记<code>(*pf)(123) ≠ *pf(123)</code>。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -647,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑操作符的运算优先级"><span class="nav-number">1.</span> <span class="nav-text">逻辑操作符的运算优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断字符类型"><span class="nav-number">2.</span> <span class="nav-text">判断字符类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch···case使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">switch···case使用注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理错误的cin读入"><span class="nav-number">4.</span> <span class="nav-text">处理错误的cin读入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维数组相关"><span class="nav-number">5.</span> <span class="nav-text">二维数组相关</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑操作符的运算优先级"><span class="nav-number">1.</span> <span class="nav-text">逻辑操作符的运算优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断字符类型"><span class="nav-number">2.</span> <span class="nav-text">判断字符类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch···case使用注意事项"><span class="nav-number">3.</span> <span class="nav-text">switch···case使用注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理错误的cin读入"><span class="nav-number">4.</span> <span class="nav-text">处理错误的cin读入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维数组相关"><span class="nav-number">5.</span> <span class="nav-text">二维数组相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数指针"><span class="nav-number">6.</span> <span class="nav-text">函数指针</span></a></li></ol></div>
             
 
           </div>
