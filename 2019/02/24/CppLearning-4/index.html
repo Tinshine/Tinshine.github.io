@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="重载解析&amp;emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&amp;gt;不够具体的非模板函数&amp;gt;较为具体的模板函数&amp;gt;不够具体的模板函数 包含头文件用尖括号还是引号&amp;emsp;使用尖括号#include&amp;lt;HeadFiles&amp;gt;时编译器将在存储标准头文件的主机系统的文件系统中查找该头文件；而使">
+  <meta name="description" content="重载解析&amp;emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&amp;gt;不够具体的非模板函数&amp;gt;较为具体的模板函数&amp;gt;不够具体的模板函数">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《C++ Prime Plus》（4）">
 <meta property="og:url" content="http://tinshine.github.io/2019/02/24/CppLearning-4/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="重载解析&amp;emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&amp;gt;不够具体的非模板函数&amp;gt;较为具体的模板函数&amp;gt;不够具体的模板函数 包含头文件用尖括号还是引号&amp;emsp;使用尖括号#include&amp;lt;HeadFiles&amp;gt;时编译器将在存储标准头文件的主机系统的文件系统中查找该头文件；而使">
+<meta property="og:description" content="重载解析&amp;emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&amp;gt;不够具体的非模板函数&amp;gt;较为具体的模板函数&amp;gt;不够具体的模板函数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T13:23:03.262Z">
+<meta property="og:updated_time" content="2019-02-24T14:57:22.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（4）">
-<meta name="twitter:description" content="重载解析&amp;emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&amp;gt;不够具体的非模板函数&amp;gt;较为具体的模板函数&amp;gt;不够具体的模板函数 包含头文件用尖括号还是引号&amp;emsp;使用尖括号#include&amp;lt;HeadFiles&amp;gt;时编译器将在存储标准头文件的主机系统的文件系统中查找该头文件；而使">
+<meta name="twitter:description" content="重载解析&amp;emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&amp;gt;不够具体的非模板函数&amp;gt;较为具体的模板函数&amp;gt;不够具体的模板函数">
 
 
 
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-02-24 21:01:46 / 修改时间：21:23:03" itemprop="dateCreated datePublished" datetime="2019-02-24T21:01:46+08:00">2019-02-24</time>
+              <time title="创建时间：2019-02-24 21:01:46 / 修改时间：22:57:22" itemprop="dateCreated datePublished" datetime="2019-02-24T21:01:46+08:00">2019-02-24</time>
             
 
             
@@ -402,8 +402,16 @@
       
 
       
-        <h1 id="重载解析"><a href="#重载解析" class="headerlink" title="重载解析"></a>重载解析</h1><p>&emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&gt;不够具体的非模板函数&gt;较为具体的模板函数&gt;不够具体的模板函数</p>
-<h1 id="包含头文件用尖括号还是引号"><a href="#包含头文件用尖括号还是引号" class="headerlink" title="包含头文件用尖括号还是引号"></a>包含头文件用尖括号还是引号</h1><p>&emsp;使用尖括号<code>#include&lt;HeadFiles&gt;</code>时编译器将在存储标准头文件的主机系统的文件系统中查找该头文件；而使用引号<code>#include &quot;HeadFiles&quot;</code>时，编译器首先查找当前工作目录或源代码目录，如果没有找到才会再到标准位置查找。因此在包含标准库文件时最好使用尖括号，在包含用户自定义头文件时最好使用引号。</p>
+        <h1 id="重载解析"><a href="#重载解析" class="headerlink" title="重载解析"></a>重载解析</h1><p>&emsp;所谓重载解析，也即当程序中存在多个重载函数时编译器决定调用哪一个函数的分析过程。一般来说，调用重载函数的优先级为：较为具体的非模板函数&gt;不够具体的非模板函数&gt;较为具体的模板函数&gt;不够具体的模板函数<br><a id="more"></a></p>
+<h1 id="头文件：尖括号与引号之争"><a href="#头文件：尖括号与引号之争" class="headerlink" title="头文件：尖括号与引号之争"></a>头文件：尖括号与引号之争</h1><p>&emsp;使用尖括号<code>#include&lt;HeadFiles&gt;</code>时编译器将在存储标准头文件的主机系统的文件系统中查找该头文件；而使用引号<code>#include &quot;HeadFiles&quot;</code>时，编译器首先查找当前工作目录或源代码目录，如果没有找到才会再到标准位置查找。因此在包含标准库文件时最好使用尖括号，在包含用户自定义头文件时最好使用引号。</p>
+<h1 id="头文件：避免多次包含"><a href="#头文件：避免多次包含" class="headerlink" title="头文件：避免多次包含"></a>头文件：避免多次包含</h1><p>&emsp;多文件编译时，常常将结构定义，函数原型等放在头文件中，有时可能出现在多个代码文件中包含头文件的情况。使用预处理编译指令<code>#ifndef</code>能够避免这种情况：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> HEADFILE_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HEADFILE_H_  <span class="comment">// 单纯定义名称，并不创建符号常量；</span></span></span><br><span class="line"><span class="comment">// content of head file</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<h1 id="数据的存储持续性"><a href="#数据的存储持续性" class="headerlink" title="数据的存储持续性"></a>数据的存储持续性</h1><p>&emsp;（1）自动存储持续性：</p>
+<p>&emsp;在程序中正常定义的变量都为自动存储持续性。这类变量的数目在运行过程中会发生改变，编译器一般使用堆栈来管理此类变量。新数据被象征性的置于原有数据之上，通过两个堆栈指针分别指向栈顶和栈底来管理堆栈。例如，函数内部定义的变量处在调用程序变量的“上方”，当函数返回时栈顶指针又指回原先所在位置，此时在函数中定义的变量存放于堆栈中的数据并未被删除，但它们不再被标记，当有新的内存单元需求时，这些数据就会被覆盖。</p>
+<p>&emsp;除了堆栈外，通过在变量声明前使用<code>register</code>关键字也可以请求将变量存入CPU寄存器中，这样的好处是访问该变量的速度很快。需要注意的是，对于此类变量，它们没有内存地址，因此无法执行取地址等操作。</p>
+<p>&emsp;（2）静态持续变量</p>
+<p>&emsp;这类变量的数目在程序运行过程中是不发生变化的，因此编译器分配固定大小的内存块来存储它们。如果没有显式地初始化静态持续变量，则编译器会默认其为0（对于数组元素、结构成员同样默认为0）。</p>
+<p>&emsp;静态持续变量有三种。第一种具有外部链接性，直接定义在代码块外部（比如在<code>main()</code>之前定义的全局变量），作用范围最广，可以被程序中的其他文件使用；第二种具有内部链接性，同样定义在代码块外部但使用<code>static</code>限定符修饰它，只能在当前文件中使用；第三种没有链接性，定义在代码块内部并使用<code>staic</code>限定符修饰它，只能在当前语句块中使用。对于静态持续性变量，只能使用常量（表达式）来初始化它。</p>
+<p>&emsp;对于具有外部连结性的静态持续变量（实际上就是全局变量），在首次定义（定义声明）时系统为其分配存储空间，此时可以对其进行初始化。在引用其他地方（函数）定义的变量的声明中应使用<code>extern</code>关键字，表示这是一个引用声明（而非定义声明）。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -624,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重载解析"><span class="nav-number">1.</span> <span class="nav-text">重载解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包含头文件用尖括号还是引号"><span class="nav-number">2.</span> <span class="nav-text">包含头文件用尖括号还是引号</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#重载解析"><span class="nav-number">1.</span> <span class="nav-text">重载解析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#头文件：尖括号与引号之争"><span class="nav-number">2.</span> <span class="nav-text">头文件：尖括号与引号之争</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#头文件：避免多次包含"><span class="nav-number">3.</span> <span class="nav-text">头文件：避免多次包含</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据的存储持续性"><span class="nav-number">4.</span> <span class="nav-text">数据的存储持续性</span></a></li></ol></div>
             
 
           </div>
