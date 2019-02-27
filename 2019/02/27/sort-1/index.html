@@ -109,24 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="Thanks for your visiting.">
-<meta name="keywords" content="MATLAB, PolarCodes, C++">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tinshine&#39;s blog">
-<meta property="og:url" content="http://tinshine.github.io/archives/2018/index.html">
+  <meta name="description" content="算法描述&amp;emsp;假设待排数据存放在一维数组L[n]中，待排表在某一时刻的状态可分为三部分： &amp;emsp;第一部分。前面i个数据L[0],···,L[i-1]是已经使用直接插入排序排好的有序子表，简记为A。 &amp;emsp;第二部分。第i个元素L[i]是本轮排序待排元素，简记为B。 &amp;emsp;第三部分。后面n-i-1个元素L[i+1],···,L[n]是未排序的原始数据，简记为C。 &amp;emsp;每">
+<meta name="keywords" content="排序算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="直接插入排序算法">
+<meta property="og:url" content="http://tinshine.github.io/2019/02/27/sort-1/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="Thanks for your visiting.">
+<meta property="og:description" content="算法描述&amp;emsp;假设待排数据存放在一维数组L[n]中，待排表在某一时刻的状态可分为三部分： &amp;emsp;第一部分。前面i个数据L[0],···,L[i-1]是已经使用直接插入排序排好的有序子表，简记为A。 &amp;emsp;第二部分。第i个元素L[i]是本轮排序待排元素，简记为B。 &amp;emsp;第三部分。后面n-i-1个元素L[i+1],···,L[n]是未排序的原始数据，简记为C。 &amp;emsp;每">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-27T14:35:55.187Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tinshine&#39;s blog">
-<meta name="twitter:description" content="Thanks for your visiting.">
+<meta name="twitter:title" content="直接插入排序算法">
+<meta name="twitter:description" content="算法描述&amp;emsp;假设待排数据存放在一维数组L[n]中，待排表在某一时刻的状态可分为三部分： &amp;emsp;第一部分。前面i个数据L[0],···,L[i-1]是已经使用直接插入排序排好的有序子表，简记为A。 &amp;emsp;第二部分。第i个元素L[i]是本轮排序待排元素，简记为B。 &amp;emsp;第三部分。后面n-i-1个元素L[i+1],···,L[n]是未排序的原始数据，简记为C。 &amp;emsp;每">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/archives/2018/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/02/27/sort-1/"/>
 
 
 
@@ -136,7 +137,7 @@
   };
 </script>
 
-  <title>归档 | Tinshine's blog</title>
+  <title>直接插入排序算法 | Tinshine's blog</title>
   
 
 
@@ -181,7 +182,7 @@
   
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -242,7 +243,7 @@
         
         
           
-          <li class="menu-item menu-item-时间轴 menu-item-active">
+          <li class="menu-item menu-item-时间轴">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />时间轴</a>
   </li>
@@ -262,28 +263,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -309,227 +288,205 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        还行! 目前共计 33 篇日志。 继续努力。
-      </span>
-      
+  
 
-      
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/02/27/sort-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="Thanks for your visiting.">
+      <meta itemprop="image" content="/uploads/head1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">直接插入排序算法
+              
+            
+          </h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-27 22:16:14 / 修改时间：22:35:55" itemprop="dateCreated datePublished" datetime="2019-02-27T22:16:14+08:00">2019-02-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/18/polar-4/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">Chapter4 MATLAB仿真——编码部分</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-进阶/" itemprop="url" rel="index"><span itemprop="name">C++进阶</span></a></span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-18T17:57:17+08:00"
-              content="2018-06-18" >
-          06-18
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/polar-3/" itemprop="url">
-              
-                <span itemprop="name">Chapter3 MATLAB仿真——系统参数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T10:25:26+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/12/polar-2/" itemprop="url">
-              
-                <span itemprop="name">Chapter2 极化码编码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-12T22:32:34+08:00"
-              content="2018-06-12" >
-          06-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><p>&emsp;假设待排数据存放在一维数组<code>L[n]</code>中，待排表在某一时刻的状态可分为三部分：</p>
+<p>&emsp;第一部分。前面<code>i</code>个数据<code>L[0],···,L[i-1]</code>是已经使用直接插入排序排好的有序子表，简记为<code>A</code>。</p>
+<p>&emsp;第二部分。第<code>i</code>个元素<code>L[i]</code>是本轮排序待排元素，简记为B。</p>
+<p>&emsp;第三部分。后面<code>n-i-1</code>个元素<code>L[i+1],···,L[n]</code>是未排序的原始数据，简记为C。</p>
+<p>&emsp;每一轮排序需要做三件事：</p>
+<p>&emsp;（1）找到B在A中的插入位置<code>k</code>；</p>
+<p>&emsp;（2）将<code>L[n]</code>中位置<code>k</code>后所有元素往后移一位；</p>
+<p>&emsp;（3）将B复制覆盖元素<code>L[k]</code>。</p>
+<p>&emsp;从第二个元素到最后一个元素，需要进行<code>n-1</code>轮上述排序操作。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
+<hr>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/polar-1/" itemprop="url">
-              
-                <span itemprop="name">Chapter1 极化码简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T09:46:03+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/preface/" itemprop="url">
-              
-                <span itemprop="name">开启极化码之路</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T00:16:11+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/排序算法/" rel="tag"># 排序算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/27/USTC-SF-review/" rel="next" title="科软面试148问">
+                <i class="fa fa-chevron-left"></i> 科软面试148问
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -552,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -662,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法描述"><span class="nav-number">1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -821,6 +803,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
