@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。&amp;emsp; 对象无法调用构造函数&amp;emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类">
+  <meta name="description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《C++ Prime Plus》（5）">
 <meta property="og:url" content="http://tinshine.github.io/2019/02/26/CppLearning-5/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。&amp;emsp; 对象无法调用构造函数&amp;emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类">
+<meta property="og:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T01:46:57.275Z">
+<meta property="og:updated_time" content="2019-02-27T02:17:51.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（5）">
-<meta name="twitter:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。&amp;emsp; 对象无法调用构造函数&amp;emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类">
+<meta name="twitter:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。">
 
 
 
@@ -363,7 +363,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-27 09:46:57" itemprop="dateModified" datetime="2019-02-27T09:46:57+08:00">2019-02-27</time>
+                <time title="修改时间：2019-02-27 10:17:51" itemprop="dateModified" datetime="2019-02-27T10:17:51+08:00">2019-02-27</time>
               
             
           </span>
@@ -414,9 +414,13 @@
       
 
       
-        <h1 id="同一类的所有对象共享同一组类方法"><a href="#同一类的所有对象共享同一组类方法" class="headerlink" title="同一类的所有对象共享同一组类方法"></a>同一类的所有对象共享同一组类方法</h1><p>&emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。<br>&emsp;</p>
+        <h1 id="同一类的所有对象共享同一组类方法"><a href="#同一类的所有对象共享同一组类方法" class="headerlink" title="同一类的所有对象共享同一组类方法"></a>同一类的所有对象共享同一组类方法</h1><p>&emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。<br><a id="more"></a></p>
 <h1 id="对象无法调用构造函数"><a href="#对象无法调用构造函数" class="headerlink" title="对象无法调用构造函数"></a>对象无法调用构造函数</h1><p>&emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类成员函数来实现，而无法通过构造函数实现。</p>
 <h1 id="类的默认构造函数"><a href="#类的默认构造函数" class="headerlink" title="类的默认构造函数"></a>类的默认构造函数</h1><p>&emsp;默认构造函数有两种，第一种为<code>Student(){};</code>，第二种为<code>Student(type1 para1 = 0, type2 para2 = 1, ···){};</code>。一个类必须要有默认构造函数，其目的是保证在实例化一个对象时，这个对象的各个私有成员都被初始化。当程序员不提供构造函数时，编译器会自动提供上述第一种默认构造函数，它会为私有成员提供一个随机的初始值。当程序员提供构造函数，但没有像上述第二种默认构造函数那样指定每一个私有成员的默认值（如：<code>Student(int ID, string name = &quot;Tom&quot;, double scores = 0){};</code>，则在使用此类实例化一个对象时，编译器拒绝以下的语句：<code>Student stu1;</code>。总而言之，编译器着力避免在构造一个类对象时出现某个私有成员未被初始化的情形。</p>
+<h1 id="对象间赋值"><a href="#对象间赋值" class="headerlink" title="对象间赋值"></a>对象间赋值</h1><p>&emsp;用类实例化两个对象<code>stu1</code>和<code>stu2</code>，在使用<code>stu1 = stu2;</code>语句后，<code>stu1</code>中的内存单元将被来自<code>stu2</code>的相应内存单元的数据所覆盖。这一赋值语句的特点是它直接在内存间复制数据，而不考虑类私有成员的<code>private</code>特性。</p>
+<h1 id="const成员函数"><a href="#const成员函数" class="headerlink" title="const成员函数"></a>const成员函数</h1><p>&emsp;在使用C++时，一个需要遵守的原则是，当传入参数主观上不存在修改意图时，应该使用<code>const</code>修饰符来保护传入数据。对于类成员以及成员函数的操作也是如此。</p>
+<p>&emsp;C++拒绝编译类似这样的语句：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_ID;</span><br><span class="line">    <span class="built_in">string</span> m_name;</span><br><span class="line">    <span class="keyword">double</span> scores;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Student(<span class="keyword">int</span> ID, <span class="built_in">string</span> name, <span class="keyword">double</span> scores)&#123;</span><br><span class="line">        m_ID = ID, m_name = name, m_double = <span class="keyword">double</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print_info</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; m_ID &lt;&lt; <span class="string">" "</span> &lt;&lt; m_name &lt;&lt; <span class="string">" "</span> &lt;&lt; m_scores &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">const</span> Student <span class="title">stu1</span><span class="params">(<span class="number">1</span>, <span class="string">"Tom"</span>, <span class="number">95.5</span>)</span></span>;</span><br><span class="line">stu1.print_info();      <span class="comment">// errors!</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;拒绝的理由是，<code>stu1</code>是个<code>const Student</code>型的变量，它在参与程序运行时不能被改变。而<code>print_info()</code>只是一个普通函数，无法保证调用它的对象在调用过程中数据的一致性。正确的做法是将<code>print_info()</code>的定义改为：``void print_info const(void){···}```。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -637,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同一类的所有对象共享同一组类方法"><span class="nav-number">1.</span> <span class="nav-text">同一类的所有对象共享同一组类方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象无法调用构造函数"><span class="nav-number">2.</span> <span class="nav-text">对象无法调用构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的默认构造函数"><span class="nav-number">3.</span> <span class="nav-text">类的默认构造函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同一类的所有对象共享同一组类方法"><span class="nav-number">1.</span> <span class="nav-text">同一类的所有对象共享同一组类方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象无法调用构造函数"><span class="nav-number">2.</span> <span class="nav-text">对象无法调用构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的默认构造函数"><span class="nav-number">3.</span> <span class="nav-text">类的默认构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象间赋值"><span class="nav-number">4.</span> <span class="nav-text">对象间赋值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const成员函数"><span class="nav-number">5.</span> <span class="nav-text">const成员函数</span></a></li></ol></div>
             
 
           </div>
