@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="Tinshine&#39;s blog">
 <meta property="og:description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T07:34:16.134Z">
+<meta property="og:updated_time" content="2019-02-27T07:45:09.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CppLearning-6">
 <meta name="twitter:description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-02-27 15:09:43 / 修改时间：15:34:16" itemprop="dateCreated datePublished" datetime="2019-02-27T15:09:43+08:00">2019-02-27</time>
+              <time title="创建时间：2019-02-27 15:09:43 / 修改时间：15:45:09" itemprop="dateCreated datePublished" datetime="2019-02-27T15:09:43+08:00">2019-02-27</time>
             
 
             
@@ -406,9 +406,10 @@
 <a id="more"></a>
 <p>&emsp;也即，位于操作符左侧的操作数实际上是操作符重载函数的调用者，而右侧操作数作为函数参数传入操作符重载函数。这就带来了一个问题，试想一个操作符重载函数如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Type <span class="keyword">operator</span>+(<span class="keyword">int</span> n); <span class="comment">// 函数原型</span></span><br><span class="line">A = B * <span class="number">3</span>;  <span class="comment">// A = B.operator+(3)  有效语句！</span></span><br><span class="line">A = <span class="number">3</span> * B;  <span class="comment">// A = 3.operator+(B)  无效语句！</span></span><br></pre></td></tr></table></figure></p>
 <p>&emsp;按照思维习惯，操作符一般满足反身性，我们希望重载出来的操作符能够在交换左右操作数前后保持相同的有效的计算特性，但是上例告诉我们，还需要对操作符重载做进一步的升级才能满足我们的期望。</p>
-<p>&emsp;一种解决方式是利用非成员函数实现操作符重载（之前的操作符重载都是基于类的，将操作符重载函数作为类的成员函数来使用，实际上大多数的操作符都支持非成员函数实现操作符重载），例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>;</span><br><span class="line">A = B * <span class="number">3</span>; <span class="comment">// A = B.operator+(3)  有效语句！</span></span><br><span class="line">A = <span class="number">3</span> * B; <span class="comment">// A = operator(3, B)  有效语句！</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;一种解决方式是利用非成员函数实现操作符重载（之前的操作符重载都是基于类的，将操作符重载函数作为类的成员函数来使用，实际上大多数的操作符都支持非成员函数实现操作符重载），例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>;</span><br><span class="line">A = B * <span class="number">3</span>; <span class="comment">// A = B.operator+(3)  有效语句！</span></span><br><span class="line">A = <span class="number">3</span> * B; <span class="comment">// A = operator(3, B)  有效语句（实际并非，详见下）！</span></span><br></pre></td></tr></table></figure></p>
 <p>&emsp;如此，在交换操作数前后都能够的期望的结果。</p>
-<h1 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h1><p>&emsp;使用非成员函数重载操作符虽然解决了操作数地位不平等问题，但同时也带来了新的问题——由于类的数据隐藏特性，非成员函数无法访问类的私有成员。为了解决这一问题，出现了可以访问类私有成员的非成员函数——友元函数。</p>
+<h1 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h1><p>&emsp;使用非成员函数重载操作符虽然解决了操作数地位不平等问题，但同时也带来了新的问题——由于类的数据隐藏特性，非成员函数无法访问类的私有成员，因此上面语句块中的最后一条仍然不能被通过编译。为了解决这一问题，出现了可以访问类私有成员的非成员函数——友元函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Type</span>&#123;</span></span><br><span class="line">···</span><br><span class="line"><span class="function"><span class="keyword">friend</span> Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>; <span class="comment">// 函数原型</span></span><br><span class="line">···</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>&#123;</span><br><span class="line">···        <span class="comment">// 函数实现</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;友元函数原型放在类声明中，但是它不是成员函数，因此不能使用成员函数操作符调用，在写函数实现时也不必带上<code>Type::</code>限定符，此外函数实现也不用写关键字<code>friend</code>。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
