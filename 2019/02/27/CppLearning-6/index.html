@@ -109,24 +109,25 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="Thanks for your visiting.">
-<meta name="keywords" content="MATLAB, PolarCodes, C++">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tinshine&#39;s blog">
-<meta property="og:url" content="http://tinshine.github.io/categories/极化码之路/index.html">
+  <meta name="description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CppLearning-6">
+<meta property="og:url" content="http://tinshine.github.io/2019/02/27/CppLearning-6/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="Thanks for your visiting.">
+<meta property="og:description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-27T07:34:16.134Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tinshine&#39;s blog">
-<meta name="twitter:description" content="Thanks for your visiting.">
+<meta name="twitter:title" content="CppLearning-6">
+<meta name="twitter:description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
 
 
 
 
 
 
-  <link rel="canonical" href="http://tinshine.github.io/categories/极化码之路/"/>
+  <link rel="canonical" href="http://tinshine.github.io/2019/02/27/CppLearning-6/"/>
 
 
 
@@ -136,7 +137,7 @@
   };
 </script>
 
-  <title>分类: 极化码之路 | Tinshine's blog</title>
+  <title>CppLearning-6 | Tinshine's blog</title>
   
 
 
@@ -181,7 +182,7 @@
   
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container  page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,7 +235,7 @@
         
         
           
-          <li class="menu-item menu-item-分类 menu-item-active">
+          <li class="menu-item menu-item-分类">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
@@ -263,28 +264,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -309,171 +288,202 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>极化码之路<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tinshine.github.io/2019/02/27/CppLearning-6/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tinshine">
+      <meta itemprop="description" content="Thanks for your visiting.">
+      <meta itemprop="image" content="/uploads/head1.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tinshine's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/18/polar-4/" itemprop="url">
-              
-                <span itemprop="name">Chapter4 MATLAB仿真——编码部分</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">CppLearning-6
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-18T17:57:17+08:00"
-              content="2018-06-18" >
-          06-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-27 15:09:43 / 修改时间：15:34:16" itemprop="dateCreated datePublished" datetime="2019-02-27T15:09:43+08:00">2019-02-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/初识C/" itemprop="url" rel="index"><span itemprop="name">初识C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/15/polar-3/" itemprop="url">
-              
-                <span itemprop="name">Chapter3 MATLAB仿真——系统参数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-15T10:25:26+08:00"
-              content="2018-06-15" >
-          06-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/12/polar-2/" itemprop="url">
-              
-                <span itemprop="name">Chapter2 极化码编码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-12T22:32:34+08:00"
-              content="2018-06-12" >
-          06-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/polar-1/" itemprop="url">
-              
-                <span itemprop="name">Chapter1 极化码简介</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T09:46:03+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/preface/" itemprop="url">
-              
-                <span itemprop="name">开启极化码之路</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T00:16:11+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="成员函数重载操作符的缺陷"><a href="#成员函数重载操作符的缺陷" class="headerlink" title="成员函数重载操作符的缺陷"></a>成员函数重载操作符的缺陷</h1><p>&emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Time time3 = time1 + time2;</span><br><span class="line"><span class="comment">// equals to</span></span><br><span class="line">Time time3 = time1+(time2);</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>&emsp;也即，位于操作符左侧的操作数实际上是操作符重载函数的调用者，而右侧操作数作为函数参数传入操作符重载函数。这就带来了一个问题，试想一个操作符重载函数如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Type <span class="keyword">operator</span>+(<span class="keyword">int</span> n); <span class="comment">// 函数原型</span></span><br><span class="line">A = B * <span class="number">3</span>;  <span class="comment">// A = B.operator+(3)  有效语句！</span></span><br><span class="line">A = <span class="number">3</span> * B;  <span class="comment">// A = 3.operator+(B)  无效语句！</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;按照思维习惯，操作符一般满足反身性，我们希望重载出来的操作符能够在交换左右操作数前后保持相同的有效的计算特性，但是上例告诉我们，还需要对操作符重载做进一步的升级才能满足我们的期望。</p>
+<p>&emsp;一种解决方式是利用非成员函数实现操作符重载（之前的操作符重载都是基于类的，将操作符重载函数作为类的成员函数来使用，实际上大多数的操作符都支持非成员函数实现操作符重载），例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>;</span><br><span class="line">A = B * <span class="number">3</span>; <span class="comment">// A = B.operator+(3)  有效语句！</span></span><br><span class="line">A = <span class="number">3</span> * B; <span class="comment">// A = operator(3, B)  有效语句！</span></span><br></pre></td></tr></table></figure></p>
+<p>&emsp;如此，在交换操作数前后都能够的期望的结果。</p>
+<h1 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h1><p>&emsp;使用非成员函数重载操作符虽然解决了操作数地位不平等问题，但同时也带来了新的问题——由于类的数据隐藏特性，非成员函数无法访问类的私有成员。为了解决这一问题，出现了可以访问类私有成员的非成员函数——友元函数。</p>
+<hr>
+<p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
+<hr>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/26/CppLearning-5/" rel="next" title="《C++ Prime Plus》（5）">
+                <i class="fa fa-chevron-left"></i> 《C++ Prime Plus》（5）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -496,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -600,6 +619,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#成员函数重载操作符的缺陷"><span class="nav-number">1.</span> <span class="nav-text">成员函数重载操作符的缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元函数"><span class="nav-number">2.</span> <span class="nav-text">友元函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -759,6 +794,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
