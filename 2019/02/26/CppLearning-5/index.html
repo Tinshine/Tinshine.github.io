@@ -109,18 +109,18 @@
 
 <link href="/static_css/background.css" rel="stylesheet" type="text/css" />
 
-  <meta name="description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。  转载请注明来源：©Tinshine">
+  <meta name="description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。&amp;emsp; 对象无法调用构造函数&amp;emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《C++ Prime Plus》（5）">
 <meta property="og:url" content="http://tinshine.github.io/2019/02/26/CppLearning-5/index.html">
 <meta property="og:site_name" content="Tinshine&#39;s blog">
-<meta property="og:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。  转载请注明来源：©Tinshine">
+<meta property="og:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。&amp;emsp; 对象无法调用构造函数&amp;emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T15:07:42.756Z">
+<meta property="og:updated_time" content="2019-02-27T01:46:57.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（5）">
-<meta name="twitter:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。  转载请注明来源：©Tinshine">
+<meta name="twitter:description" content="同一类的所有对象共享同一组类方法&amp;emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。&amp;emsp; 对象无法调用构造函数&amp;emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类">
 
 
 
@@ -346,12 +346,24 @@
                 
               
 
-              <time title="创建时间：2019-02-26 20:17:50 / 修改时间：23:07:42" itemprop="dateCreated datePublished" datetime="2019-02-26T20:17:50+08:00">2019-02-26</time>
+              <time title="创建时间：2019-02-26 20:17:50" itemprop="dateCreated datePublished" datetime="2019-02-26T20:17:50+08:00">2019-02-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 09:46:57" itemprop="dateModified" datetime="2019-02-27T09:46:57+08:00">2019-02-27</time>
               
             
           </span>
@@ -402,7 +414,9 @@
       
 
       
-        <h1 id="同一类的所有对象共享同一组类方法"><a href="#同一类的所有对象共享同一组类方法" class="headerlink" title="同一类的所有对象共享同一组类方法"></a>同一类的所有对象共享同一组类方法</h1><p>&emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。</p>
+        <h1 id="同一类的所有对象共享同一组类方法"><a href="#同一类的所有对象共享同一组类方法" class="headerlink" title="同一类的所有对象共享同一组类方法"></a>同一类的所有对象共享同一组类方法</h1><p>&emsp;也就是说，对于一个类，创建多个对象时会申请各自的内存空间用于存放内部变量和成员，但是类方法（成员函数）只有一个副本，多个对象在使用类方法时实际上访问的是同一个内存块。<br>&emsp;</p>
+<h1 id="对象无法调用构造函数"><a href="#对象无法调用构造函数" class="headerlink" title="对象无法调用构造函数"></a>对象无法调用构造函数</h1><p>&emsp;道理是显然的，对象本就是由构造函数创建出来的，在构造函数被调用之前对象是不存在的，因此对象无法调用构造函数。如果想要改变私有成员的值，应该通过类成员函数来实现，而无法通过构造函数实现。</p>
+<h1 id="类的默认构造函数"><a href="#类的默认构造函数" class="headerlink" title="类的默认构造函数"></a>类的默认构造函数</h1><p>&emsp;默认构造函数有两种，第一种为<code>Student(){};</code>，第二种为<code>Student(type1 para1 = 0, type2 para2 = 1, ···){};</code>。一个类必须要有默认构造函数，其目的是保证在实例化一个对象时，这个对象的各个私有成员都被初始化。当程序员不提供构造函数时，编译器会自动提供上述第一种默认构造函数，它会为私有成员提供一个随机的初始值。当程序员提供构造函数，但没有像上述第二种默认构造函数那样指定每一个私有成员的默认值（如：<code>Student(int ID, string name = &quot;Tom&quot;, double scores = 0){};</code>，则在使用此类实例化一个对象时，编译器拒绝以下的语句：<code>Student stu1;</code>。总而言之，编译器着力避免在构造一个类对象时出现某个私有成员未被初始化的情形。</p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -623,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同一类的所有对象共享同一组类方法"><span class="nav-number">1.</span> <span class="nav-text">同一类的所有对象共享同一组类方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同一类的所有对象共享同一组类方法"><span class="nav-number">1.</span> <span class="nav-text">同一类的所有对象共享同一组类方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象无法调用构造函数"><span class="nav-number">2.</span> <span class="nav-text">对象无法调用构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类的默认构造函数"><span class="nav-number">3.</span> <span class="nav-text">类的默认构造函数</span></a></li></ol></div>
             
 
           </div>
