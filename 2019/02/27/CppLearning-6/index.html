@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="Tinshine&#39;s blog">
 <meta property="og:description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-27T13:47:42.623Z">
+<meta property="og:updated_time" content="2019-03-01T08:37:05.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《C++ Prime Plus》（6）">
 <meta name="twitter:description" content="成员函数重载操作符的缺陷&amp;emsp;在上一篇笔记中提到的操作符重载函数有一个隐藏的缺陷。看似平等的位于操作符两侧的两个操作数，实际上却不平等：123Time time3 = time1 + time2;// equals toTime time3 = time1+(time2);">
@@ -346,12 +346,24 @@
                 
               
 
-              <time title="创建时间：2019-02-27 15:09:43 / 修改时间：21:47:42" itemprop="dateCreated datePublished" datetime="2019-02-27T15:09:43+08:00">2019-02-27</time>
+              <time title="创建时间：2019-02-27 15:09:43" itemprop="dateCreated datePublished" datetime="2019-02-27T15:09:43+08:00">2019-02-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-01 16:37:05" itemprop="dateModified" datetime="2019-03-01T16:37:05+08:00">2019-03-01</time>
               
             
           </span>
@@ -410,6 +422,14 @@
 <p>&emsp;如此，在交换操作数前后都能够的期望的结果。</p>
 <h1 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h1><p>&emsp;使用非成员函数重载操作符虽然解决了操作数地位不平等问题，但同时也带来了新的问题——由于类的数据隐藏特性，非成员函数无法访问类的私有成员，因此上面语句块中的最后一条仍然不能被通过编译。为了解决这一问题，出现了可以访问类私有成员的非成员函数——友元函数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Type</span>&#123;</span></span><br><span class="line">···</span><br><span class="line"><span class="function"><span class="keyword">friend</span> Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>; <span class="comment">// 函数原型</span></span><br><span class="line">···</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Type <span class="title">operator</span><span class="params">(<span class="keyword">int</span> n, Type B)</span></span>&#123;</span><br><span class="line">···        <span class="comment">// 函数实现</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>&emsp;友元函数原型放在类声明中，但是它不是成员函数，因此不能使用成员函数操作符调用，在写函数实现时也不必带上<code>Type::</code>限定符，此外函数实现也不用写关键字<code>friend</code>。</p>
+<h1 id="new和delete配套使用"><a href="#new和delete配套使用" class="headerlink" title="new和delete配套使用"></a>new和delete配套使用</h1><p>&emsp;在类的定义中，如果构造函数使用了<code>new</code>操作符来申请内存空间，那么就需要在析构函数中配套使用<code>delete</code>操作符来释放相应内存以避免内存泄露。</p>
+<h1 id="C-编译器的故作聪明"><a href="#C-编译器的故作聪明" class="headerlink" title="C++编译器的故作聪明"></a>C++编译器的故作聪明</h1><p>&emsp;在C++的类定义中，存在以下几种特殊的成员函数，如果程序员没有主动定义这类函数，C++编译器就会自动生成这些默认函数用于类操作，这原本是C++编译器智能化的表现，但是在某些应用场合下，这种隐藏操作可能导致与预期不符合的结果。</p>
+<p>&emsp;（1）默认构造函数和默认析构函数。如果程序员没有定义这两类函数，则编译器将自动添加以满足类的初始化和销毁需求。</p>
+<p>&emsp;（2）复制构造函数。当程序中有语句利用已有对象来初始化一个新的对象时，如果程序员未提供此类函数，系统将自动提供一个原型为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class_name(<span class="keyword">const</span> class_name &amp;);</span><br></pre></td></tr></table></figure></p>
+<p>的复制构造函数来完成要求。默认的复制构造函数将逐个复制对象的非静态成员的值，若成员本身也是类则调用这个类的复制构造函数来复制成员对象。</p>
+<p>&emsp;（3）赋值运算符。当程序语句将相同类型的一个对象用<code>=</code>赋值给另一个对象时，如果程序员没有定义，则编译器将提供一个原型为：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class_name &amp; class_name::<span class="keyword">operator</span>=(<span class="keyword">const</span> class_name &amp;);</span><br></pre></td></tr></table></figure></p>
+<p>的赋值运算形式。</p>
+<p>&emsp;复制构造函数和赋值运算符的区别如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>&#123;</span>···&#125;;</span><br><span class="line"><span class="function">Student <span class="title">stu1</span><span class="params">(···)</span></span>;</span><br><span class="line">Student stu2 = stu1; <span class="comment">// 调用复制构造函数</span></span><br><span class="line"><span class="function">Student <span class="title">stu3</span><span class="params">(···)</span></span>;</span><br><span class="line">stu3 = stu1;    <span class="comment">// 使用赋值运算符</span></span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>转载请注明来源：©<a href="https://tinshine.github.io/">Tinshine</a></p>
 <hr>
@@ -640,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#成员函数重载操作符的缺陷"><span class="nav-number">1.</span> <span class="nav-text">成员函数重载操作符的缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元函数"><span class="nav-number">2.</span> <span class="nav-text">友元函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#成员函数重载操作符的缺陷"><span class="nav-number">1.</span> <span class="nav-text">成员函数重载操作符的缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元函数"><span class="nav-number">2.</span> <span class="nav-text">友元函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#new和delete配套使用"><span class="nav-number">3.</span> <span class="nav-text">new和delete配套使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-编译器的故作聪明"><span class="nav-number">4.</span> <span class="nav-text">C++编译器的故作聪明</span></a></li></ol></div>
             
 
           </div>
